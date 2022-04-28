@@ -1,0 +1,17 @@
+[
+  { 
+    "id": 0,
+    "info": "this is a vueX_testDemo",
+    "done": false
+  },
+  { 
+    "id": 1,
+    "info": "this is a vueX_testDemo",
+    "done": true
+  },
+  { 
+    "id": 2,
+    "info": "this is a vueX_testDemo",
+    "done": false
+  }
+]

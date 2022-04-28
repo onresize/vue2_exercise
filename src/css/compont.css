@@ -1,0 +1,47 @@
+/* 表格隔行变色 */
+::v-deep .ant-table-tbody .ant-table-row:nth-child(even) {
+    background-color: #fafafa;
+  }
+  
+  /* 表头背景色 */
+  ::v-deep .ant-table-thead > tr > th {
+    padding: 12px;
+    font-size: 14px;
+    height: 33px;
+    font-weight: 800;
+    color: #012f55;
+    background: #f2f2f2 !important;
+  }
+  
+  /* 设置a-modal弹出框去除两条横线 */
+  ::v-deep .ant-modal-content .ant-modal-header {
+    border-bottom: none !important;
+  }
+  
+  ::v-deep .ant-modal-content .ant-modal-footer {
+    border-top: none !important;
+  }
+  
+  /** 修改表格滚动条整体 */
+  ::v-deep ::-webkit-scrollbar {
+    width: 12px;
+    background-color: #f2f2f2;
+  }
+  /** 修改表格滚动条 内部滚动轴 */
+  ::v-deep ::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: #DDDDDD;
+  }
+  
+  ::v-deep .ant-table {
+    line-height: 0.9;
+  }
+  
+  ::v-deep .el-form-item .el-form-item__label {
+    width: 112px;
+  }
+  /** 去除侧边栏展开折叠出现的x和y轴的滚动条 */
+  .el-aside::-webkit-scrollbar {
+    display: none;
+  }
+  

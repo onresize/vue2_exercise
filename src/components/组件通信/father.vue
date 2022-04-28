@@ -1,0 +1,49 @@
+<template>
+  <div>
+    <h2>父组件--{{ num }}</h2>
+    <p>姓名：{{ name1 }}</p>
+    <p>年龄：{{ age1 }}</p>
+    <el-button @click="getChild">改变</el-button>
+    <Child1 :name1="name1" :age1="age1" @changeMe="clickMe"></Child1>
+    <Child2></Child2>
+  </div>
+</template>
+ 
+<script>
+export default {
+  components: {
+    Child1: () => import('./child1.vue'),
+    Child2: (resolve) => {
+      require(['./child2.vue'], resolve)
+    },
+  },
+  provide: {
+    name: '张三',
+  },
+  data() {
+    return {
+      num: 0,
+      name1: '李四',
+      age1: 20,
+    }
+  },
+  create() {},
+  mounted() {
+    this.$bus.$on('changeNum', (e) => {
+      console.log('父组件', e)
+      this.num = e
+    })
+  },
+  methods: {
+    getChild() {
+      this.num = this.$children[1].age
+    },
+    clickMe() {
+      this.name1 = '老六'
+    },
+  },
+}
+</script>
+ 
+<style scoped >
+</style>

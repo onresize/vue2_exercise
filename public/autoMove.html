@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>多个小球运动</title>
+	<style>   
+		*{
+			margin:0;
+			padding:0;
+		}
+		.box{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100px;
+			height: 100px;
+			background: pink;
+			border-radius: 50%;
+		}
+
+	</style>
+</head>
+<body>
+    <script>
+		
+		
+    	run(20);
+		var speed;
+    	function run(num){
+    		for (var i = 0; i < num; i++) {
+    			speed = Math.floor(Math.random()*6+2);
+    			var div = document.createElement("div");
+    			div.className = 'box';
+    			div.speedY = Math.floor(Math.random()*6+2); // [2,7]
+    			div.speedX = Math.floor(Math.random()*6+2); 
+    			document.body.appendChild(div);
+    		}
+
+    		var box = document.getElementsByClassName("box"),
+
+    			maxY = document.documentElement.clientHeight - box[0].offsetHeight,
+    			maxX = document.documentElement.clientWidth - box[0].offsetWidth;
+
+
+    		window.onresize = function () {
+    			maxY = document.documentElement.clientHeight - box[0].offsetHeight,
+    			maxX = document.documentElement.clientWidth - box[0].offsetWidth;
+    		}
+
+
+    		play();
+    		function play(){
+    			for (var i = 0; i < num; i++) {
+    				var ball = box[i],
+    					startTop = ball.offsetTop,
+    					startLeft = ball.offsetLeft,
+
+    					top = startTop + ball.speedY,
+    					left = startLeft + ball.speedX;
+
+    				if (top <= 0 || top >= maxY) {
+    					ball.speedY = -ball.speedY;
+    					top = Math.max(0,top);
+    					top = Math.min(maxY,top);
+    					ball.style.background = randomColor();
+    				}
+
+    				if (left <=0 || left >= maxX) {
+    					ball.speedX = -ball.speedX;
+    					left = Math.max(0,left);
+    					left = Math.min(maxX,left);
+    					ball.style.background = randomColor();
+    				}
+
+    				ball.style.top = top + "px";
+    				ball.style.left = left + "px";
+
+    			}
+
+    			requestAnimationFrame(play)
+
+
+    		}
+
+    		
+
+    		function randomColor(){
+    			return "rgb("+ Math.floor(Math.random()*256) +","+ Math.floor(Math.random()*256) +","+ Math.floor(Math.random()*256) +")";
+    		}
+
+    	}
+
+
+
+
+    </script>
+</body>
+</html>
