@@ -109,6 +109,7 @@ export default {
         'weChatLogin',
         'pdfToImg',
         'canvas',
+        'codeBlock',
       ],
     }
   },

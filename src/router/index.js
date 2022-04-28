@@ -80,6 +80,7 @@ const isArray = () => import('@/components/引号包裹数组转真正数组/ind
 const weChatLogin = () => import('@/components/微信扫码登入/index.vue')
 const PdfToImg = () => import('@/components/pdf转图片/index.vue')
 const Canvas = () => import('@/components/cavas基本使用/index.vue')
+const CodeBlock = () => import('@/components/实现code block代码块/index.vue')
 
 Vue.use(VueRouter)
 
@@ -171,6 +172,7 @@ const router = new VueRouter({
                 { path: '/weChatLogin', component: weChatLogin },
                 { path: '/pdfToImg', component: PdfToImg },
                 { path: '/canvas', component: Canvas },
+                { path: '/codeBlock', component: CodeBlock },
             ]
         },
     ]

@@ -17,6 +17,10 @@ import Antd from 'ant-design-vue';
 import 'ant-design-vue/dist/antd.css';
 Vue.use(Antd);
 
+// 引入代码预览插件
+import CodeView from "vue-code-view";
+Vue.use(CodeView);
+
 // require('video.js/dist/video-js.css')
 // require('vue-video-player/src/custom-theme.css')
 // // 兼容mu38

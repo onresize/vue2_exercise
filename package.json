@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "build": "vue-cli-service build",
+    "clean": "rimraf node_modules"
   },
   "dependencies": {
     "@easydarwin/easyplayer": "^4.1.0",
@@ -28,6 +29,7 @@
     "timetables": "^1.1.0",
     "viewerjs": "^1.10.2",
     "vue": "^2.6.11",
+    "vue-code-view": "^0.4.1",
     "vue-baidu-map": "^0.21.22",
     "vue-json-excel": "^0.3.0",
     "vue-print-nb": "^1.7.5",
