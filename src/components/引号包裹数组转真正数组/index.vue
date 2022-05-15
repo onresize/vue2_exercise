@@ -29,7 +29,7 @@
 export default {
   data() {
     return {
-      str: "[{name: '张三',age: 18}]",
+      str: "[{name: '张三']",
       str1: "[{name: '张三1',age: 18},{name: '王杰1',age: 20}]",
     }
   },

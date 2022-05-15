@@ -81,6 +81,14 @@ Vue.filter('changename', value => {
   return value + `------`
 })
 
+// 自定义指令解决vue-router切换后代码无法高亮问题
+import hljs from 'highlight.js';
+
+Vue.directive('hljs', el => {
+  let blocks = el.querySelectorAll('pre code');
+  Array.prototype.forEach.call(blocks, hljs.highlightBlock);
+});
+
 Vue.config.productionTip = false
 
 //创建eventBus实例、用来兄弟组件通信

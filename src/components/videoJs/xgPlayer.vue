@@ -1,11 +1,24 @@
 <template>
   <div>
     <h2>西瓜视频播放器测试flv、hls流地址播放</h2>
-    <h3>cnpm i xgplayer --save</h3>
-    <h3>cnpm i xgplayer-hls.js --save</h3>
-    <h3>cnpm i xgplayer --save</h3>
-    <h3>cnpm i xgplayer-flv.js --save</h3>
-    <el-card>
+    <div style="display: flex">
+      <h3 style="background:pink;padding:5px;border-radius:5px">
+        cnpm i xgplayer --save
+      </h3>
+      &nbsp;&nbsp;
+      <h3 style="background:pink;padding:5px;border-radius:5px">
+        cnpm i xgplayer-hls.js --save
+      </h3>
+      &nbsp;&nbsp;
+      <h3 style="background:pink;padding:5px;border-radius:5px">
+        cnpm i xgplayer --save
+      </h3>
+      &nbsp;&nbsp;
+      <h3 style="background:pink;padding:5px;border-radius:5px">
+        cnpm i xgplayer-flv.js --save
+      </h3>
+    </div>
+    <el-card style="display:flex;justify-content:center">
       <div id="mse_hls"></div>
       <div id="mse_flv"></div>
     </el-card>

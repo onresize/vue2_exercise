@@ -8,7 +8,7 @@
     <h2>textarea标签包裹代码块可以将代码直接显示在网页上</h2>
     <h2 style="color: pink">
       <pre>
-    <textarea cols="80" rows="10">
+    <textarea cols="80" rows="11">
       &lt;div class="home">
         &lt;iframe
           class="iframe_box"
@@ -63,8 +63,8 @@
       </iframe>
     </div>
     <el-button @click="$router.back()">$router.back()后退</el-button>
-    <h2>$router是路由实例</h2>
-    <h2>$route是路由跳转对象</h2>
+    <h2>$router是路由实例、（用于路由跳转）</h2>
+    <h2>$route是路由元信息对象、（watch监听路由）</h2>
   </div>
 </template>
 
