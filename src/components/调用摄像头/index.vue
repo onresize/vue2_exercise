@@ -9,17 +9,14 @@
     <div class="videoBox">
       <video id="videoCamera" autoplay></video>
     </div>
-    <canvas
-      style="display: none"
-      id="canvasCamera"
-    ></canvas>
+    <canvas style="display: none" id="canvasCamera"></canvas>
     <div v-if="imgSrc" class="img_bg_camera">
       <p>效果预览</p>
       <img :src="imgSrc" alt class="tx_img" />
     </div>
   </div>
 </template>
-  <script>
+<script>
 export default {
   data() {
     return {
@@ -29,8 +26,11 @@ export default {
       thisCancas: null,
       thisContext: null,
       thisVideo: null,
-      openVideo: false,
+      openVideo: false
     }
+  },
+  created() {
+    console.log('进入了camera页面')
   },
   mounted() {
     //this.getCompetence()//进入页面就调用摄像头
@@ -51,7 +51,7 @@ export default {
       // 使用getUserMedia，因为它会覆盖现有的属性。
       // 这里，如果缺少getUserMedia属性，就添加它。
       if (navigator.mediaDevices.getUserMedia === undefined) {
-        navigator.mediaDevices.getUserMedia = function (constraints) {
+        navigator.mediaDevices.getUserMedia = function(constraints) {
           // 首先获取现存的getUserMedia(如果存在)
           var getUserMedia =
             navigator.webkitGetUserMedia ||
@@ -68,7 +68,7 @@ export default {
             )
           }
           // 否则，使用Promise将调用包装到旧的navigator.getUserMedia
-          return new Promise(function (resolve, reject) {
+          return new Promise(function(resolve, reject) {
             getUserMedia.call(navigator, constraints, resolve, reject)
           })
         }
@@ -78,12 +78,12 @@ export default {
         video: {
           width: this.videoWidth,
           height: this.videoHeight,
-          transform: 'scaleX(-1)',
-        },
+          transform: 'scaleX(-1)'
+        }
       }
       navigator.mediaDevices
         .getUserMedia(constraints)
-        .then(function (stream) {
+        .then(function(stream) {
           // 旧的浏览器可能没有srcObject
           if ('srcObject' in that.thisVideo) {
             that.thisVideo.srcObject = stream
@@ -91,11 +91,11 @@ export default {
             // 避免在新的浏览器中使用它，因为它正在被弃用。
             that.thisVideo.src = window.URL.createObjectURL(stream)
           }
-          that.thisVideo.onloadedmetadata = function (e) {
+          that.thisVideo.onloadedmetadata = function(e) {
             that.thisVideo.play()
           }
         })
-        .catch((err) => {
+        .catch(err => {
           console.log(err)
         })
     },
@@ -129,8 +129,8 @@ export default {
         u8arr[n] = bstr.charCodeAt(n)
       }
       return new File([u8arr], filename, { type: mime })
-    },
-  },
+    }
+  }
 }
 </script>
 <style scoped lang="less">

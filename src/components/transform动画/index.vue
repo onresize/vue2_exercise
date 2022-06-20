@@ -1,6 +1,6 @@
 <template>
-  <div style="height: 95vh">
-    <div style="overflow: hidden">
+  <div class="container">
+    <div style="width: 70vw;">
       <h2>
         css3基本属性大全：
         <a
@@ -51,11 +51,20 @@
       </div>
       <h2>:enabled 或 :disabled选择器 非禁用和禁用时设置样式</h2>
       <el-input class="ipt" v-model="item"></el-input>
+      <div class="btn">
+        vuePress按钮样式
+      </div>
       <h3>模仿掘金头像旋转动画</h3>
       <img
         class="circleImg"
         src="https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2020/6/11/172a2c2c076cd9f2~tplv-t2oaga2asx-no-mark:180:180:180:180.awebp"
-        alt=""
+        alt
+      />
+      <h3>鼠标移入动画和移出动画</h3>
+      <img
+        class="pic"
+        src="https://markdownlivepreview.com/image/sample.png"
+        alt
       />
     </div>
   </div>
@@ -65,16 +74,55 @@
 export default {
   data() {
     return {
-      item: null
+      item: null,
+      isMouse: false
     }
   },
-  mounted() {},
-  created() {},
-  methods: {}
+  methods: {
+    mouseover(e) {
+      this.isMouse = true
+      console.log('鼠标移入', this.isMouse)
+    },
+    mouseleave(e) {
+      this.isMouse = false
+      console.log('移出', this.isMouse)
+    }
+  }
 }
 </script>
 
 <style scoped lang="less">
+.pic {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  transition: transform .5s ease-out;
+}
+.pic:hover {
+  transform: rotate(360deg);
+}
+/* 隐藏滚动条 */
+.container {
+  scrollbar-width: none !important;
+}
+.container::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  background-color: #ffffff;
+}
+.container::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: #ffffff;
+}
+.container::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #ffffff;
+}
+.container {
+  height: 97vh;
+  padding: 20px;
+  overflow: scroll;
+}
 .ipt :enabled {
   margin: 10px 0;
   width: 200px;
@@ -107,8 +155,8 @@ h1 {
   box-shadow: 10px 4px 5px gray inset;
   transform-origin: right top;
   &:hover {
-    transform: rotate(-360deg);
     transition: all 1s;
+    transform: rotate(-360deg);
   }
   .box_child {
     width: 40px;
@@ -176,7 +224,6 @@ h1 {
     }
   }
 }
-
 .circleImg {
   width: 100px;
   height: 100px;
@@ -189,5 +236,11 @@ h1 {
     transition-duration: 59s;
     transition-timing-function: cubic-bezier(0.34, 0, 0.84, 1);
   }
+}
+.btn {
+  width: 120px;
+  border-radius: 2px;
+  box-shadow: inset 0 -2px 0 0 #cdcde6, inset 0 0 1px 1px #fff,
+    0 1px 2px 1px;
 }
 </style>

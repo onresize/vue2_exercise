@@ -23,6 +23,7 @@
     "highlight.js": "^11.5.1",
     "hls.js": "^1.1.1",
     "html2canvas": "^1.4.1",
+    "jsbarcode": "^3.11.5",
     "outils": "^1.6.1",
     "photo-sphere-viewer": "^4.5.1",
     "sortablejs": "^1.14.0",
@@ -53,10 +54,13 @@
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
+    "autoprefixer": "^9.8.8",
     "babel-plugin-component": "^1.1.1",
     "less": "^3.0.4",
     "less-loader": "^4.1.0",
+    "postcss": "^7.0.39",
     "svg-sprite-loader": "5.1.1",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat",
     "vue-template-compiler": "^2.6.11",
     "vue-wxlogin": "^1.0.4"
   },

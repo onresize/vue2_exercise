@@ -1,14 +1,17 @@
 <template>
   <div>
     <h2>Map()实例对象的基本使用</h2>
-    https://www.cnblogs.com/wangyong1997/articles/11160341.html
+    <a
+      href="https://www.cnblogs.com/wangyong1997/articles/11160341.html"
+      >参考</a
+    >
     <h2>
-      验证$nextTick是同步还是异步:
+      验证$nextTick是同步还是异步：
       同步、等待dom更新立即执行、在同步操作之后在异步操作之前
     </h2>
   </div>
 </template>
- 
+
 <script>
 export default {
   data() {
@@ -60,9 +63,8 @@ export default {
     // setTimeout(() => {
     //   console.log(2)
     // }, 0)
-  },
+  }
 }
 </script>
- 
-<style scoped >
-</style>
+
+<style scoped></style>

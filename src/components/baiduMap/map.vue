@@ -2,6 +2,7 @@
   <div>
     <el-card>
       <!-- 114.758709  26.472829 -->
+      <!-- 地图类型 mapType="BMAP_SATELLITE_MAP" -->
       <baidu-map
         class="bm-view"
         center="万安县"
@@ -9,7 +10,6 @@
         :scroll-wheel-zoom="true"
         @click="handMap"
         @ready="handler"
-        mapType="BMAP_SATELLITE_MAP"
       >
         <!-- 行政区域范围 -->
         <bm-boundary name="万安县" :strokeWeight="2" strokeColor="blue" @click="alertContent"></bm-boundary>

@@ -81,6 +81,10 @@ const weChatLogin = () => import('@/components/微信扫码登入/index.vue')
 const PdfToImg = () => import('@/components/pdf转图片/index.vue')
 const Canvas = () => import('@/components/cavas基本使用/index.vue')
 const CodeBlock = () => import('@/components/实现code block代码块/index.vue')
+const textAlign = () => import('@/components/text-aligin布局/index.vue')
+const superCenter = () => import('@/components/superCenter/index.vue')
+const tryCatch = () => import('@/components/try-catch-finally/index.vue')
+const windCss = () => import('@/components/windCss基本使用/index.vue')
 
 Vue.use(VueRouter)
 
@@ -144,7 +148,7 @@ const router = new VueRouter({
                 { path: '/emjo', component: Emjo },
                 { path: '/imagesku', component: Imagesku },
                 { path: '/model', component: Model },
-                { path: '/sync', component: FatherSync },
+                { path: '/fatherSync', component: FatherSync },
                 { path: '/drag_dialog', component: DragDialog },
                 { path: '/dataTest', component: DataTest },
                 { path: '/dataList', component: DataList },
@@ -173,6 +177,10 @@ const router = new VueRouter({
                 { path: '/pdfToImg', component: PdfToImg },
                 { path: '/canvas', component: Canvas },
                 { path: '/codeBlock', component: CodeBlock },
+                { path: '/textAlign', component: textAlign },
+                { path: '/superCenter', component: superCenter },
+                { path: '/tryCatch', component: tryCatch },
+                { path: '/windCss', component: windCss },
             ]
         },
     ]

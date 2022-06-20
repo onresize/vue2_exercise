@@ -1,18 +1,25 @@
 <template>
-  <el-card>
+  <el-card style="width: 70vw;">
     <a-button
       style="margin-left: 800px"
       class="btn"
       icon="plus-circle"
       @click="addDdialogFormVisible = true"
-      >新增</a-button
+      >单击</a-button
     >
-     <a-button
+    <a-button
       style="margin-left: 700px"
       class="btn"
       icon="plus-circle"
       @dblclick="doubleclick"
       >双击</a-button
+    >
+    <a-button
+      style="margin-left: 700px"
+      class="btn"
+      icon="plus-circle"
+      @contextmenu="contextmenu"
+      >右击</a-button
     >
 
     <!-- 新增对话框 -->
@@ -38,10 +45,7 @@
           </el-col>
           <el-col :span="12">
             <el-form-item label="上级区域" prop="area">
-              <el-cascader
-                style="width: 200px"
-                v-model="value"
-              >
+              <el-cascader style="width: 200px" v-model="value">
               </el-cascader>
             </el-form-item>
           </el-col>
@@ -55,7 +59,9 @@
                 autocomplete="off"
                 disabled
               ></el-input>
-              <label style="font-weight: 600; color: #585a5d">-</label>
+              <label style="font-weight: 600; color: #585a5d"
+                >-</label
+              >
               <el-input
                 v-model="addform.areaPlaceId"
                 placeholder="请输入区域编号"
@@ -140,10 +146,14 @@
           </el-col>
         </el-row>
 
-        <span class="content-style1">{{ addform.note.length }}/200</span>
+        <span class="content-style1"
+          >{{ addform.note.length }}/200</span
+        >
       </el-form>
       <div slot="footer" class="dialog-footer">
-        <a-button key="back" icon="close" @click="addCancel"> 关闭 </a-button>
+        <a-button key="back" icon="close" @click="addCancel">
+          关闭
+        </a-button>
         <a-button key="submit" type="primary" icon="check">
           保存
         </a-button>
@@ -169,7 +179,7 @@ export default {
         totalArea: '',
         orderNo: 0,
         areaPeople: '',
-        note: '',
+        note: ''
       },
       /** 修改数据 */
       editform: {
@@ -178,7 +188,7 @@ export default {
         totalArea: '',
         orderNo: 0,
         areaPeople: '',
-        note: '',
+        note: ''
       },
       content: '',
       value: '',
@@ -188,22 +198,40 @@ export default {
       /** 表单验证规则 */
       formRules: {
         areaName: [
-          { required: true, message: '输入名称不能为空', trigger: 'blur' },
+          {
+            required: true,
+            message: '输入名称不能为空',
+            trigger: 'blur'
+          }
         ],
-        area: [{ required: true, message: '不能为空', trigger: 'blur' }],
+        area: [
+          { required: true, message: '不能为空', trigger: 'blur' }
+        ],
         totalArea: [
-          { required: true, message: '输入总面积不能为空', trigger: 'blur' },
-          { validator: blurText, trigger: 'blur' },
+          {
+            required: true,
+            message: '输入总面积不能为空',
+            trigger: 'blur'
+          },
+          { validator: blurText, trigger: 'blur' }
         ],
         areaPlaceId: [
-          { required: true, message: '输入区域编号不能为空', trigger: 'blur' },
-          { validator: blurText, trigger: 'blur' },
+          {
+            required: true,
+            message: '输入区域编号不能为空',
+            trigger: 'blur'
+          },
+          { validator: blurText, trigger: 'blur' }
         ],
         orderNo: [
-          { required: true, message: '排序号不能为空', trigger: 'blur' },
-          { validator: blurText, trigger: 'blur' },
-        ],
-      },
+          {
+            required: true,
+            message: '排序号不能为空',
+            trigger: 'blur'
+          },
+          { validator: blurText, trigger: 'blur' }
+        ]
+      }
     }
   },
   methods: {
@@ -217,8 +245,13 @@ export default {
     doubleclick() {
       console.log('双击')
       this.addDdialogFormVisible = true
+    },
+    contextmenu(e) {
+      e.preventDefault()
+      console.log('右击')
+      this.addDdialogFormVisible = true
     }
-  },
+  }
 }
 </script>
 

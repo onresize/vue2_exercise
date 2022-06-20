@@ -1,6 +1,9 @@
 <template>
   <div>
-    <h2>this.$nextTick回调下次dom更新之后再执行、相当于setTimeout(() => {}, 0)</h2>
+    <h2>
+      this.$nextTick回调下次dom更新之后再执行、相当于setTimeout(() =>
+      {}, 0)
+    </h2>
     <h3 style="width:700px;">
       使用场景：this.$nextTick()方法主要是用在随数据改变而改变的dom应用场景中。
       vue中数据和dom渲染由于是异步的，所以，要让dom结构随数据改变这样的操作都应该放进this.$nextTick()的回调函数中。
@@ -14,15 +17,15 @@
     </div>
   </div>
 </template>
- 
+
 <script>
 export default {
   data() {
     return {
-      name: '更新之前',
+      name: '更新之前'
     }
   },
-  created() {
+  async created() {
     this.$nextTick(() => {
       console.log(this.$refs.spanRef.innerText)
     })
@@ -34,10 +37,9 @@ export default {
       this.$nextTick(() => {
         console.log(this.$refs.spanRef.innerText)
       })
-    },
-  },
+    }
+  }
 }
 </script>
- 
-<style scoped >
-</style>
+
+<style scoped></style>
