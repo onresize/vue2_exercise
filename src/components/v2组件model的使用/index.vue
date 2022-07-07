@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>v-model 只是同时完成 数据的绑定 和 事件的监听 而已</h1>
+    <h1 style="background-color:yellow; width:fit-content;">v-model 只是同时完成 数据的绑定 和 事件的监听、它是value属性和input事件的语法糖</h1>
     <h2>
       探究vue2中组件上使用v-model双向绑定、使用model: {prop:'checked',
       event: 'change'}自定义

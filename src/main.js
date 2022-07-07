@@ -22,6 +22,10 @@ Vue.use(Antd);
 import CodeView from "vue-code-view";
 Vue.use(CodeView);
 
+// 复制插件 （npm i vue-clipboard2）
+import VueClipboard from 'vue-clipboard2'
+Vue.use(VueClipboard)
+
 // require('video.js/dist/video-js.css')
 // require('vue-video-player/src/custom-theme.css')
 // // 兼容mu38
