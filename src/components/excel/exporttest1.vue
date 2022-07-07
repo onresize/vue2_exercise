@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <el-card>
     <h2>测试excel导出</h2>
     <a href="https://blog.csdn.net/qq_42313028/article/details/103069876">参考链接：</a>
     <el-button type="primary">
@@ -21,7 +21,7 @@
         <el-table-column label="手机号" prop="phone"></el-table-column>
         <el-table-column label="注册时间" prop="createTime"></el-table-column>
     </el-table>
-  </div>
+  </el-card>
 </template>
  
 <script>

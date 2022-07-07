@@ -1,11 +1,17 @@
 <template>
   <div>
     <h2>
-      图片懒加载的实现、监听滚动时间触发按钮返回顶部(大于5000显示按钮)
+      图片懒加载的实现、监听滚动时间触发按钮返回顶部(大于100显示按钮) PS：注意查看NetWork
     </h2>
     <div v-show="show" class="btn" @click="toTop">回到顶部</div>
     <div class="imgFrame" ref="imgBoxRef">
-      <el-image v-for="url in imgData" :key="url" :src="url" lazy></el-image>
+      <el-image
+        class="image"
+        v-for="url in imgData"
+        :key="url"
+        :src="url"
+        lazy
+      ></el-image>
     </div>
   </div>
 </template>
@@ -17,30 +23,43 @@ export default {
       show: false,
       imgSrcArray: [],
       imgData: [
-        'https://cdn.jsdelivr.net/gh/lztnb/img@master/3.jpg',
-        'https://cdn.jsdelivr.net/gh/lztnb/img@master/4.jpg',
-        'https://cdn.jsdelivr.net/gh/lztnb/img@master/5.jpg',
-        'https://cdn.jsdelivr.net/gh/lztnb/img@master/6.jpg',
-        'https://cdn.jsdelivr.net/gh/lztnb/img@master/7.jpg',
-        'https://cdn.jsdelivr.net/gh/lztnb/img@master/14.jpg',
-        'https://cdn.jsdelivr.net/gh/lztnb/img@master/15.jpg',
-        'https://cdn.jsdelivr.net/gh/lztnb/img@master/16.jpg',
-        'https://cdn.jsdelivr.net/gh/lztnb/img@master/17.jpg',
-        'https://cdn.jsdelivr.net/gh/lztnb/img@master/18.jpg',
-        'https://cdn.jsdelivr.net/gh/lztnb/img@master/19.jpg',
-        'https://cdn.jsdelivr.net/gh/lztnb/img@master/20.jpg',
-        'https://cdn.jsdelivr.net/gh/lztnb/img@master/22.jpg',
-        'https://cdn.jsdelivr.net/gh/lztnb/img@master/23.jpg',
-        'https://cdn.jsdelivr.net/gh/lztnb/img@master/24.jpg',
-        'https://cdn.jsdelivr.net/gh/lztnb/img@master/25.jpg',
-        'https://cdn.jsdelivr.net/gh/lztnb/img@master/26.jpg',
-        'https://cdn.jsdelivr.net/gh/lztnb/img@master/27.jpg',
-        'https://cdn.jsdelivr.net/gh/lztnb/img@master/28.jpg',
-        'https://cdn.jsdelivr.net/gh/lztnb/img@master/29.jpg',
-        'https://cdn.jsdelivr.net/gh/lztnb/img@master/30.jpg',
-        'https://cdn.jsdelivr.net/gh/lztnb/img@master/31.jpg',
-        'https://cdn.jsdelivr.net/gh/lztnb/img@master/32.jpg',
-        'https://cdn.jsdelivr.net/gh/lztnb/img@master/33.jpg',
+        // 'https://cdn.jsdelivr.net/gh/lztnb/img@master/3.jpg',
+        // 'https://cdn.jsdelivr.net/gh/lztnb/img@master/4.jpg',
+        // 'https://cdn.jsdelivr.net/gh/lztnb/img@master/5.jpg',
+        // 'https://cdn.jsdelivr.net/gh/lztnb/img@master/6.jpg',
+        // 'https://cdn.jsdelivr.net/gh/lztnb/img@master/7.jpg',
+        // 'https://cdn.jsdelivr.net/gh/lztnb/img@master/14.jpg',
+        // 'https://cdn.jsdelivr.net/gh/lztnb/img@master/15.jpg',
+        // 'https://cdn.jsdelivr.net/gh/lztnb/img@master/16.jpg',
+        // 'https://cdn.jsdelivr.net/gh/lztnb/img@master/17.jpg',
+        // 'https://cdn.jsdelivr.net/gh/lztnb/img@master/18.jpg',
+        // 'https://cdn.jsdelivr.net/gh/lztnb/img@master/19.jpg',
+        // 'https://cdn.jsdelivr.net/gh/lztnb/img@master/20.jpg',
+        // 'https://cdn.jsdelivr.net/gh/lztnb/img@master/22.jpg',
+        // 'https://cdn.jsdelivr.net/gh/lztnb/img@master/23.jpg',
+        // 'https://cdn.jsdelivr.net/gh/lztnb/img@master/24.jpg',
+        // 'https://cdn.jsdelivr.net/gh/lztnb/img@master/25.jpg',
+        // 'https://cdn.jsdelivr.net/gh/lztnb/img@master/26.jpg',
+        // 'https://cdn.jsdelivr.net/gh/lztnb/img@master/27.jpg',
+        // 'https://cdn.jsdelivr.net/gh/lztnb/img@master/28.jpg',
+        // 'https://cdn.jsdelivr.net/gh/lztnb/img@master/29.jpg',
+        // 'https://cdn.jsdelivr.net/gh/lztnb/img@master/30.jpg',
+        // 'https://cdn.jsdelivr.net/gh/lztnb/img@master/31.jpg',
+        // 'https://cdn.jsdelivr.net/gh/lztnb/img@master/32.jpg',
+        // 'https://cdn.jsdelivr.net/gh/lztnb/img@master/33.jpg',
+        'http://placeimg.com/640/480/people',
+        'http://placeimg.com/640/480/nature',
+        'http://placeimg.com/640/480/cats',
+        'http://placeimg.com/640/480/animals',
+        'http://placeimg.com/640/480/fashion',
+        'http://placeimg.com/640/480',
+        'http://placeimg.com/640/480/nightlife',
+        'http://placeimg.com/640/480/abstract',
+        'http://placeimg.com/640/480/business',
+        'http://placeimg.com/640/480/food',
+        'http://placeimg.com/640/480/transport',
+        'data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20baseProfile%3D%22full%22%20width%3D%22undefined%22%20height%3D%22undefined%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22grey%22%2F%3E%3Ctext%20x%3D%22NaN%22%20y%3D%22NaN%22%20font-size%3D%2220%22%20alignment-baseline%3D%22middle%22%20text-anchor%3D%22middle%22%20fill%3D%22white%22%3Eundefinedxundefined%3C%2Ftext%3E%3C%2Fsvg%3E',
+        'http://placeimg.com/640/480/sports',
       ],
     }
   },
@@ -62,7 +81,7 @@ export default {
     obServerScroll() {
       let scroll = this.$refs['imgBoxRef'].scrollTop
       // console.log('当前距顶部高度：', ~~scroll)
-      if (~~scroll > 5000) {
+      if (~~scroll > 100) {
         this.show = true
       } else {
         this.show = false
@@ -86,6 +105,10 @@ export default {
 </script>
 
 <style scoped>
+.image {
+  width: 100%;
+  height: 80vh;
+}
 .btn {
   position: fixed;
   right: 50px;

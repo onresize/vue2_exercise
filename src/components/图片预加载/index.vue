@@ -34,13 +34,13 @@
     </h2>
     <h2>
       预加载：
-      <el-tag color="yellow">
+      <el-tag color="yellow" class="tag1">
         提前加载、加载完成缓存到本地、牺牲服务器性能提高用户体验</el-tag
       >
     </h2>
     <h2>
       懒加载：
-      <el-tag color="yellow">
+      <el-tag color="yellow" class="tag1">
         延迟加载、主要目的是作为服务器前端的优化、减少请求数或延迟请求、可以减轻服务器压力、提高用户体验
       </el-tag>
     </h2>
@@ -75,10 +75,14 @@ export default {
     return {
       imgInd: 0,
       imgData: [
-        'https://cdn.jsdelivr.net/gh/lztnb/img@master/3.jpg',
-        'https://cdn.jsdelivr.net/gh/lztnb/img@master/4.jpg',
-        'https://cdn.jsdelivr.net/gh/lztnb/img@master/5.jpg',
-        'https://cdn.jsdelivr.net/gh/lztnb/img@master/7.jpg',
+        // 'https://cdn.jsdelivr.net/gh/lztnb/img@master/3.jpg',
+        // 'https://cdn.jsdelivr.net/gh/lztnb/img@master/4.jpg',
+        // 'https://cdn.jsdelivr.net/gh/lztnb/img@master/5.jpg',
+        // 'https://cdn.jsdelivr.net/gh/lztnb/img@master/7.jpg',
+        'http://placeimg.com/640/480/people',
+        'http://placeimg.com/640/480/nature',
+        'http://placeimg.com/640/480/cats',
+        'http://placeimg.com/640/480/animals',
       ],
       imgInd1: 0,
       imgData1: [
@@ -124,6 +128,13 @@ export default {
 <style scoped>
 .tag {
   color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+}
+.tag1 {
+  color: #000;
+  font-size: 16px;
+  font-weight: bold;
 }
 .el-button {
   margin: 5px;

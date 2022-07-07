@@ -1,10 +1,13 @@
 <template>
-  <div>
+  <el-card>
     <!-- 借鉴 vue-element-admin组件二次封装的excel -->
     <!-- 导出excel -->
     <a-button icon="upload" @click="handleDownload">导出</a-button>
     <!-- 导入excel -->
-    <upload-excel-component class="upload" :on-success="handleSuccess" />
+    <upload-excel-component
+      class="upload"
+      :on-success="handleSuccess"
+    />
     <!-- <el-table
       :data="tableData"
       border
@@ -22,18 +25,18 @@
     <a-table
       class="AStockOutDetailTable"
       ref="table"
-      style="height: 600px; padding-bottom: 15px"
-      :scroll="{ y: 550 }"
+      style="width: 600px; height: 600px; padding-bottom: 15px"
+      :scroll="{ y: 250 }"
       rowKey="id"
       :columns="columns"
       :data-source="tableData"
       :pagination="false"
     >
     </a-table>
-    <div>{{ this.tableData}}</div>
-  </div>
+    <div>{{ this.tableData }}</div>
+  </el-card>
 </template>
- 
+
 <script>
 import UploadExcelComponent from '@/components/UploadExcel/index.vue'
 
@@ -43,9 +46,9 @@ export default {
     return {
       // 表格行数据
       tableData: [
-        { 序号: 1, "areaName": '华南', "areaPlaceId": 1811, "note": '无' },
-        { 序号: 2, "areaName": '华东', "areaPlaceId": 1522, "note": '无' },
-        { 序号: 3, "areaName": '华北', "areaPlaceId": 1923, "note": '无' },
+        { 序号: 1, areaName: '华南', areaPlaceId: 1811, note: '无' },
+        { 序号: 2, areaName: '华东', areaPlaceId: 1522, note: '无' },
+        { 序号: 3, areaName: '华北', areaPlaceId: 1923, note: '无' },
       ],
       // 表头
       columns: [
@@ -87,10 +90,30 @@ export default {
     getList() {
       setTimeout(() => {
         this.tableData = [
-          { id: 11, areaName: '勐海县', areaPlaceId: '8810101', note: '无' },
-          { id: 12, areaName: '勐海镇', areaPlaceId: '8810102', note: '无' },
-          { id: 13, areaName: '勐海村', areaPlaceId: '8810103', note: '无' },
-          { id: 14, areaName: '勐海乡', areaPlaceId: '8810104', note: '无' },
+          {
+            id: 11,
+            areaName: '勐海县',
+            areaPlaceId: '8810101',
+            note: '无',
+          },
+          {
+            id: 12,
+            areaName: '勐海镇',
+            areaPlaceId: '8810102',
+            note: '无',
+          },
+          {
+            id: 13,
+            areaName: '勐海村',
+            areaPlaceId: '8810103',
+            note: '无',
+          },
+          {
+            id: 14,
+            areaName: '勐海乡',
+            areaPlaceId: '8810104',
+            note: '无',
+          },
         ]
       }, 1000)
     },
@@ -99,7 +122,7 @@ export default {
       import('@/vendor/Export2Excel').then((excel) => {
         const column = ['序号', '区域名称', '区域编码', '备注']
         const keys = ['index', 'areaName', 'areaPlaceId', 'note']
-         for (let i in this.tableData) {
+        for (let i in this.tableData) {
           this.tableData[i].index = parseInt(i) + 1
         }
         const data = this.tableData.map((r) => {
@@ -149,8 +172,8 @@ export default {
   },
 }
 </script>
- 
-<style scoped >
+
+<style scoped>
 .upload {
   margin-top: -32px;
   margin-left: 100px;

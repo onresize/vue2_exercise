@@ -1,7 +1,7 @@
 <template>
-  <div>
-    <!-- <h2 style="color: red">子组件</h2> -->
-    <el-input :value="query" @input="changeInput" clearable></el-input>{{ query }}
+  <div style="border: 3px solid gray;margin-top:10px; padding:10px;">
+    <h2>子组件2：{{ query }}</h2>
+    <el-input :value="query" @input="changeInput" clearable style="width: 200px"></el-input>
   </div>
 </template>
  

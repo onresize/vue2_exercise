@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <el-card>
     <h2>ant-design表格</h2>
     <a-table
       :rowSelection="{
@@ -12,7 +12,7 @@
       :customRow="setRow"
     >
     </a-table>
-  </div>
+  </el-card>
 </template>
 <script>
 const columns = [

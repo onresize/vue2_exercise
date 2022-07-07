@@ -1,7 +1,8 @@
 <template>
-  <div>
+  <el-card>
     <h2>测试excel导入(待完善)</h2>
-    <a href="https://xrkffgg.js.cool/Knotes/blog/3.html#_1-%E5%89%8D%E8%A8%80"
+    <a
+      href="https://xrkffgg.js.cool/Knotes/blog/3.html#_1-%E5%89%8D%E8%A8%80"
       >参考链接：</a
     >
     <el-upload
@@ -15,11 +16,13 @@
       :auto-upload="false"
     >
       <el-button size="small" type="primary">点击上传</el-button>
-      <div slot="tip" class="el-upload__tip">只 能 上 传 xlsx / xls 文 件</div>
+      <div slot="tip" class="el-upload__tip">
+        只 能 上 传 xlsx / xls 文 件
+      </div>
     </el-upload>
-  </div>
+  </el-card>
 </template>
-    
+
 <script>
 export default {
   data() {
@@ -39,8 +42,11 @@ export default {
     // 上传前做判断
     beforeUpload() {
       if (this.fileTemp) {
-        if (this.fileTemp.type == 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' ||
-          this.fileTemp.type == 'application/vnd.ms-excel') {
+        if (
+          this.fileTemp.type ==
+            'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' ||
+          this.fileTemp.type == 'application/vnd.ms-excel'
+        ) {
           this.importfxx(this.fileTemp)
         } else {
           this.$message({
@@ -88,7 +94,9 @@ export default {
               type: 'binary',
             })
           }
-          outdata = XLSX.utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]]) //outdata就是你想要的东西
+          outdata = XLSX.utils.sheet_to_json(
+            wb.Sheets[wb.SheetNames[0]]
+          ) //outdata就是你想要的东西
           this.da = [...outdata]
           let arr = []
           this.da.map((v) => {

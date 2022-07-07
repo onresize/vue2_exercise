@@ -47,7 +47,6 @@ const TableEacharts = () => import('@/components/table嵌入echarts/index.vue')
 const QuillText = () => import('@/components/quill-text/index.vue')
 const Emjo = () => import('@/components/emjo表情/index.vue')
 const Imagesku = () => import('@/components/emjo表情/imagesku.vue')
-const Model = () => import('@/components/组件上v-model/index.vue')
 const FatherSync = () => import('@/components/父子组件.sync修饰符/father.vue')
 const DragDialog = () => import('@/components/drag_dialog/index.vue')
 const DataTest = () => import('@/components/dataTest/index.vue')
@@ -89,6 +88,7 @@ const hover = () => import('@/components/hover/index.vue')
 const v2model = () => import('@/components/v2组件model的使用/index.vue')
 const imgPreLoad = () => import('@/components/图片预加载/index.vue')
 const imgLazy = () => import('@/components/图片懒加载/index.vue')
+const for_await_of = () => import('@/components/for_await_of异步迭代器/index.vue')
 
 Vue.use(VueRouter)
 
@@ -151,7 +151,6 @@ const router = new VueRouter({
                 { path: '/quill-text', component: QuillText },
                 { path: '/emjo', component: Emjo },
                 { path: '/imagesku', component: Imagesku },
-                { path: '/model', component: Model },
                 { path: '/fatherSync', component: FatherSync },
                 { path: '/drag_dialog', component: DragDialog },
                 { path: '/dataTest', component: DataTest },
@@ -189,6 +188,7 @@ const router = new VueRouter({
                 { path: '/v2model', component: v2model },
                 { path: '/imgPreLoad', component: imgPreLoad },
                 { path: '/imgLazy', component: imgLazy },
+                { path: '/for_await_of', component: for_await_of },
             ]
         },
     ]

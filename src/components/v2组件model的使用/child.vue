@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div style="border: 3px solid gray;margin-top:10px; padding:10px;">
     <input type="checkbox" :checked="checked" @change="myChange" />
-    <h2>子组件：{{ checked }}</h2>
+    <h2>子组件1：{{ checked }}</h2>
   </div>
 </template>
 <script>

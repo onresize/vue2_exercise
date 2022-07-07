@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div style="width: 70vw;">
+    <div style="width: 70vw">
       <h2>
         css3基本属性大全：
         <a
@@ -51,9 +51,7 @@
       </div>
       <h2>:enabled 或 :disabled选择器 非禁用和禁用时设置样式</h2>
       <el-input class="ipt" v-model="item"></el-input>
-      <div class="btn">
-        vuePress按钮样式
-      </div>
+      <div class="btn">vuePress按钮样式</div>
       <h3>模仿掘金头像旋转动画</h3>
       <img
         class="circleImg"
@@ -75,7 +73,7 @@ export default {
   data() {
     return {
       item: null,
-      isMouse: false
+      isMouse: false,
     }
   },
   methods: {
@@ -86,8 +84,8 @@ export default {
     mouseleave(e) {
       this.isMouse = false
       console.log('移出', this.isMouse)
-    }
-  }
+    },
+  },
 }
 </script>
 
@@ -96,7 +94,7 @@ export default {
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  transition: transform .5s ease-out;
+  transition: transform 0.5s ease-out; // 过渡放的位置不同会有不同效果
 }
 .pic:hover {
   transform: rotate(360deg);

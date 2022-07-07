@@ -3,9 +3,13 @@
     <a-table
       :columns="columns"
       :data-source="data"
-      :scroll="{ y: 550 }"
+      :scroll="{ y: 250 }"
       rowKey="key"
-      :row-selection="{ selectedRowKeys: selectedRowKeys, onChange: onSelectChange }"
+      style="width: 600px; height: 350px; margin-bottom: 20px"
+      :row-selection="{
+        selectedRowKeys: selectedRowKeys,
+        onChange: onSelectChange,
+      }"
       :customRow="setRow"
       :pagination="false"
     >
@@ -49,28 +53,28 @@ const data = [
     name: 'John Brown',
     age: 32,
     address: 'New York No. 1 Lake Park',
-    expandTarget: '展开测试1'
+    expandTarget: '展开测试1',
   },
   {
     key: '2',
     name: 'Jim Green',
     age: 42,
     address: 'London No. 1 Lake Park',
-    expandTarget: '展开测试2'
+    expandTarget: '展开测试2',
   },
   {
     key: '3',
     name: 'Joe Black',
     age: 32,
     address: 'Sidney No. 1 Lake Park',
-    expandTarget: '展开测试3'
+    expandTarget: '展开测试3',
   },
   {
     key: '4',
     name: 'Disabled User',
     age: 99,
     address: 'Sidney No. 1 Lake Park',
-    expandTarget: '展开测试4'
+    expandTarget: '展开测试4',
   },
 ]
 
@@ -80,7 +84,7 @@ export default {
       data,
       columns,
       visible: false,
-      selectedRowKeys: []
+      selectedRowKeys: [],
     }
   },
   methods: {
@@ -93,7 +97,7 @@ export default {
     handleCancel() {
       this.visible = false
     },
-     /** 选中表格多选框 触发 */
+    /** 选中表格多选框 触发 */
     onSelectChange(selectedRowKeys) {
       console.log('选中表格多选框: ', selectedRowKeys)
       this.selectedRowKeys = selectedRowKeys
@@ -105,7 +109,11 @@ export default {
           /** 单击当前行(单选多选框) */
           click: () => {
             let keys = []
-            if (this.selectedRowKeys.length == 0 || (this.selectedRowKeys.length > 0 && this.selectedRowKeys[0] != record.key)) {
+            if (
+              this.selectedRowKeys.length == 0 ||
+              (this.selectedRowKeys.length > 0 &&
+                this.selectedRowKeys[0] != record.key)
+            ) {
               keys.push(record.key)
             }
             this.selectedRowKeys = keys
@@ -113,10 +121,12 @@ export default {
           },
           dblclick: () => {
             this.getsolt(record)
-          }
+          },
         },
       }
     },
   },
 }
 </script>
+
+<style scoped></style>

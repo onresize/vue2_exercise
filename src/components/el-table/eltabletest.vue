@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <el-card>
     <el-table
       stripe
       ref="tableDom"
@@ -15,9 +15,14 @@
       @selection-change="handleSelectionChange"
       @row-click="toggleSelection"
     >
-      <el-table-column type="index" label="序号" width="60"></el-table-column>
+      <el-table-column
+        type="index"
+        label="序号"
+        width="60"
+      ></el-table-column>
       <el-table-column type="selection" width="55"> </el-table-column>
-      <el-table-column prop="name" label="姓名" width="100"> </el-table-column>
+      <el-table-column prop="name" label="姓名" width="100">
+      </el-table-column>
       <el-table-column prop="address" label="操作">
         <el-button size="small" type="primary">编辑</el-button>
       </el-table-column>
@@ -33,9 +38,9 @@
       :total="total"
     >
     </el-pagination>
-  </div>
+  </el-card>
 </template>
- 
+
 <script>
 export default {
   data() {
@@ -184,7 +189,7 @@ export default {
   },
 }
 </script>
- 
+
 <style scoped lang="less">
 // 设置滚动条的宽度
 ::v-deep .el-table__body-wrapper::-webkit-scrollbar {
