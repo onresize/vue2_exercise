@@ -10,14 +10,39 @@
     <img id="barcode" />
 
     <!-- 带logo二维码 -->
-    <vue-qr
+    <!-- <vue-qr
       :logoSrc="imageUrl"
       :size="200"
       text="https://cloud1-6ggvcwwa04ba413a-1312305621.tcloudbaseapp.com"
-    ></vue-qr>
+    ></vue-qr> -->
     <!-- text="https://tcbe.cn/8D7mt7tb" -->
     <!-- text="weixin://dl/business/?t=o75nY87pfym" -->
     <!--  location.href = 'weixin://dl/business/?t=o75nY87pfym' -->
+    <vue-qr
+      :logoSrc="imageUrl1"
+      :size="200"
+      text="https://wws.lanzouj.com/iVseK0223hwh"
+    ></vue-qr>
+    <vue-qr
+      :logoSrc="imageUrl2"
+      :size="200"
+      text="https://henji.lanzoui.com/il8aosxdgje"
+    ></vue-qr>
+    <vue-qr
+      :logoSrc="imageUrl3"
+      :size="200"
+      text="https://www.lanzoui.com/b00zujzmh"
+    ></vue-qr>
+    <vue-qr
+      :logoSrc="imageUrl4"
+      :size="200"
+      text="https://www.aliyundrive.com/s/RxMYSsAMeBJ"
+    ></vue-qr>
+    <vue-qr
+      :logoSrc="imageUrl5"
+      :size="200"
+      text="https://www.aliyundrive.com/s/YLqcJsoeMcx"
+    ></vue-qr>
   </div>
 </template>
 
@@ -33,7 +58,22 @@ export default {
   computed: {
     imageUrl() {
       return require('../../assets/img/logo.png')
-    }
+    },
+    imageUrl1() {
+      return require('../../assets/qrImg/1.png')
+    },
+    imageUrl2() {
+      return require('../../assets/qrImg/2.png')
+    },
+    imageUrl3() {
+      return require('../../assets/qrImg/3.png')
+    },
+    imageUrl4() {
+      return require('../../assets/qrImg/4.png')
+    },
+    imageUrl5() {
+      return require('../../assets/qrImg/5.png')
+    },
   },
   mounted() {
     this.setQrCode('123123')
@@ -45,12 +85,13 @@ export default {
         lineColor: '#000', //条码颜色
         width: 3, //条码之间的距离
         height: 100, //条码高度
-        displayValue: true //是否在条形码下方显示文字
+        displayValue: true, //是否在条形码下方显示文字
       }
       JsBarcode('#barcode', txt, options)
     },
-  }
+  },
 }
 </script>
+<style scoped>
+</style>
 
-<style scoped></style>

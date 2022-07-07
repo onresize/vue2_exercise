@@ -85,6 +85,10 @@ const textAlign = () => import('@/components/text-aligin布局/index.vue')
 const superCenter = () => import('@/components/superCenter/index.vue')
 const tryCatch = () => import('@/components/try-catch-finally/index.vue')
 const windCss = () => import('@/components/windCss基本使用/index.vue')
+const hover = () => import('@/components/hover/index.vue')
+const v2model = () => import('@/components/v2组件model的使用/index.vue')
+const imgPreLoad = () => import('@/components/图片预加载/index.vue')
+const imgLazy = () => import('@/components/图片懒加载/index.vue')
 
 Vue.use(VueRouter)
 
@@ -181,6 +185,10 @@ const router = new VueRouter({
                 { path: '/superCenter', component: superCenter },
                 { path: '/tryCatch', component: tryCatch },
                 { path: '/windCss', component: windCss },
+                { path: '/hover', component: hover },
+                { path: '/v2model', component: v2model },
+                { path: '/imgPreLoad', component: imgPreLoad },
+                { path: '/imgLazy', component: imgLazy },
             ]
         },
     ]

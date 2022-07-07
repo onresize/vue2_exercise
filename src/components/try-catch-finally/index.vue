@@ -12,7 +12,7 @@
       2.try-catch不能直接捕获异步代码、使用await同步化可以
     </h3>
     <span
-      >只要代码中包含 finally 子句，那么无论try 还是catch
+      >只要代码中包含 finally 字段，那么无论try 还是catch
       语句块中的return 语句都将被忽略。</span
     >
   </div>

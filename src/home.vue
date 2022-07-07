@@ -114,13 +114,17 @@ export default {
         'superCenter',
         'tryCatch',
         'windCss',
+        'hover',
+        'v2model',
+        'imgPreLoad',
+        'imgLazy',
       ],
     }
   },
 }
 </script>
 
-<style scoped>
+<style scoped lang="less">
 .aa {
   margin: 10px;
   width: 100%;
@@ -160,8 +164,21 @@ a {
   overflow-x: hidden;
 }
 .home_container_main {
-  overflow: hidden;
-  height: 99vh;
+  height: 100vh;
+  overflow-y: scroll;
+}
+.home_container_main::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  background-color: #ffffff;
+}
+.home_container_main::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: #ffffff;
+}
+.home_container_main::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #ffffff;
 }
 .el-aside::-webkit-scrollbar {
   display: none;

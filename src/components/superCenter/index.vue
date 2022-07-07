@@ -5,6 +5,7 @@
       <div class="div_pre">
       display: grid;
       place-items: center;
+      或 place-content: center
       </div>
     </pre>
     <div class="box">
