@@ -1,18 +1,22 @@
 <template>
   <div>
     <h2>扁平数据递归转成树状结构数据</h2>
-    <el-card style="width: 300px"> {{ arrList }} </el-card>
-    <el-button @click="toTreeList"> 转成树结构 </el-button>
-    <el-card style="width: 300px"> {{ treeList }} </el-card>
+    <el-card style="width: 380px">
+      <code>{{ arrList }}</code>
+    </el-card>
+    <el-button @click="toTreeList" style="margin: 10px  120px;"> 转成树结构 </el-button>
+    <el-card style="width: 380px">
+      <pre>{{ treeList }}</pre>
+    </el-card>
   </div>
 </template>
- 
+
 <script>
 export default {
   data() {
     return {
       list: [],
-      treeList: [],
+      treeList: '',
     }
   },
   computed: {

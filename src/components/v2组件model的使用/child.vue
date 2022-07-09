@@ -28,15 +28,3 @@ export default {
   },
 }
 </script>
-
-<style scoped lang="less">
-// input {
-//   border: 1px solid #000;
-//   &:focus {
-//     border: 1px solid red;
-//   }
-//   &::placeholder {
-//     color: gray;
-//   }
-// }
-</style>

@@ -36,6 +36,7 @@
       href="https://blog.csdn.net/xubingnan123/article/details/78837498"
       >width: fit-content属性: 盒子正好等于内容宽度</el-link
     >
+    <h3>fit-content属性、让div自适应英文字母长度（针对英文字母）、中文字体超过指定div宽度会自适应换行</h3>
     <div class="dix_box">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</div>
   </div>
 </template>

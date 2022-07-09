@@ -49,8 +49,18 @@
       <div class="div_img">
         测试background-origin属性、注意内容开始显示的地方
       </div>
-      <h2>:enabled 或 :disabled选择器 非禁用和禁用时设置样式</h2>
-      <el-input class="ipt" v-model="item"></el-input>
+      <h2>
+        :enabled 或 :disabled选择器
+        非禁用和禁用时设置样式、::placeholder可以改变占位符文字样式、:focus
+        聚焦时改变样式
+      </h2>
+      <el-input
+        class="ipt"
+        :disabled="false"
+        placeholder="请输入"
+        clearable
+        v-model="item"
+      ></el-input>
       <div class="btn">vuePress按钮样式</div>
       <h3>模仿掘金头像旋转动画</h3>
       <img
@@ -72,7 +82,7 @@
 export default {
   data() {
     return {
-      item: null,
+      item: '',
       isMouse: false,
     }
   },
@@ -121,11 +131,26 @@ export default {
   padding: 20px;
   overflow: scroll;
 }
-.ipt :enabled {
+.ipt {
   margin: 10px 0;
   width: 200px;
-  background: pink;
-  border: 1px solid green;
+  font-size: 20px;
+  & :enabled {
+    background: pink;
+    border: 1px solid green;
+  }
+  & :disabled {
+    background: gray;
+    border: 1px solid black;
+  }
+  & :focus {
+    border: 3px solid blue;
+    box-shadow: 5px 5px 5px gray;
+    transition: box-shadow 0.3s;
+  }
+  & ::placeholder {
+    color: green;
+  }
 }
 h1 {
   text-shadow: 5px -5px 3px gray;
