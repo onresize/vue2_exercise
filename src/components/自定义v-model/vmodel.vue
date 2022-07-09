@@ -30,12 +30,25 @@
         &lt;sync-input v-model="value1"/><span class="color_red">
           相当于</span
         >
-         &lt;sync-input :value1.sync="value1" /><span class="color_red">
+        &lt;sync-input :value1.sync="value1" /><span class="color_red">
           相当于</span
         >
         &lt;sync-input
         :value1="value1"
         @update:value1="value1 = $event"  />
+      </div>
+       <span style="color: green;">
+          另外一种写法如下（针对.sync多个绑定的写法、valueObj为响应式对象）：</span
+        >
+          <div>
+        &lt;sync-input v-bind.sync="valueObj" /><span class="color_red">
+          相当于</span
+        >
+        &lt;sync-input
+        :value1="valueObj.value1"
+        @update:value1="value1 = $event"
+        :value2="valueObj.value2"
+        @update:value2="value2 = $event"  />
       </div>
     </pre>
     <el-link
@@ -91,6 +104,6 @@ export default {
   background-color: pink;
 }
 .noSelect {
-  user-select: none;  /* 设置不可选中文字 */
+  user-select: none; /* 设置不可选中文字 */
 }
 </style>
