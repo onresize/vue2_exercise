@@ -89,6 +89,8 @@ const v2model = () => import('@/components/v2组件model的使用/index.vue')
 const imgPreLoad = () => import('@/components/图片预加载/index.vue')
 const imgLazy = () => import('@/components/图片懒加载/index.vue')
 const for_await_of = () => import('@/components/for_await_of异步迭代器/index.vue')
+const changeTheme = () => import('@/components/一键换肤/index.vue')
+const emitFather = () => import('@/components/子组件向父组件通信/index.vue')
 
 Vue.use(VueRouter)
 
@@ -189,6 +191,8 @@ const router = new VueRouter({
                 { path: '/imgPreLoad', component: imgPreLoad },
                 { path: '/imgLazy', component: imgLazy },
                 { path: '/for_await_of', component: for_await_of },
+                { path: '/changeTheme', component: changeTheme },
+                { path: '/emitFather', component: emitFather },
             ]
         },
     ]

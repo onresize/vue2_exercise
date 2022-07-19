@@ -42,8 +42,8 @@ export default {
       } catch (e) {
         console.log('catch到了回调？', e)
       }
-    }
-  }
+    },
+  },
 }
 </script>
 

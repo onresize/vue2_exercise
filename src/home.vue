@@ -137,6 +137,8 @@ export default {
         'imgPreLoad',
         'imgLazy',
         'for_await_of',
+        'changeTheme',
+        'emitFather',
       ],
     }
   },
