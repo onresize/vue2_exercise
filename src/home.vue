@@ -139,6 +139,7 @@ export default {
         'for_await_of',
         'changeTheme',
         'emitFather',
+        'npmTest',
       ],
     }
   },

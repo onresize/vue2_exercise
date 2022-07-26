@@ -91,6 +91,7 @@ const imgLazy = () => import('@/components/图片懒加载/index.vue')
 const for_await_of = () => import('@/components/for_await_of异步迭代器/index.vue')
 const changeTheme = () => import('@/components/一键换肤/index.vue')
 const emitFather = () => import('@/components/子组件向父组件通信/index.vue')
+const npmTest = () => import('@/components/发布npm包组件测试/index.vue')
 
 Vue.use(VueRouter)
 
@@ -193,6 +194,7 @@ const router = new VueRouter({
                 { path: '/for_await_of', component: for_await_of },
                 { path: '/changeTheme', component: changeTheme },
                 { path: '/emitFather', component: emitFather },
+                { path: '/npmTest', component: npmTest },
             ]
         },
     ]

@@ -40,7 +40,6 @@
     <div class="dix_box">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</div>
   </div>
 </template>
-
 <script>
 export default {
   data() {
