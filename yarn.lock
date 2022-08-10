@@ -9112,6 +9112,11 @@
   "resolved" "https://registry.npm.taobao.org/to-arraybuffer/download/to-arraybuffer-1.0.1.tgz"
   "version" "1.0.1"
 
+"to-fast-lt@^1.1.1":
+  "integrity" "sha512-8DntBuZH6CwhLDNXmi36XM+CS3qN4gt9qkBEeVC7V8piwnntLfpBg25muNb41QsOVRXhb7Sun/Srsq/O1JgZ4A=="
+  "resolved" "https://registry.npmjs.org/to-fast-lt/-/to-fast-lt-1.1.1.tgz"
+  "version" "1.1.1"
+
 "to-fast-properties@^2.0.0":
   "integrity" "sha1-3F5pjL0HkmW8c+A3doGk5Og/YW4="
   "resolved" "https://registry.nlark.com/to-fast-properties/download/to-fast-properties-2.0.0.tgz?cache=0&sync_timestamp=1628418893613&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fto-fast-properties%2Fdownload%2Fto-fast-properties-2.0.0.tgz"

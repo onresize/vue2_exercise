@@ -23,7 +23,7 @@
             class="aa"
           >
             <div class="cc">
-              <router-link :to="item" tag="div" active-class="bb"
+              <router-link :to="item" active-class="bb"
                 >{{ item }}测试</router-link
               >
             </div>
@@ -140,6 +140,8 @@ export default {
         'changeTheme',
         'emitFather',
         'npmTest',
+        'awaitError',
+        'ipHere',
       ],
     }
   },

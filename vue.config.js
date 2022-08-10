@@ -5,4 +5,19 @@ module.exports = {
   //   config.resolve.alias
   //     .set("vue$", "vue/dist/vue.esm.js");
   // },
+  devServer: {
+    host: '0.0.0.0',
+    port: 80,
+    open: false,
+    proxy: {
+      '/apiSohu': {
+        target: 'http://pv.sohu.com/', // localhost=>target
+        changeOrigin: true,
+        pathRewrite: {
+          '/apiSohu': '/'
+        }
+      },
+    },
+    disableHostCheck: true
+  },
 }; 

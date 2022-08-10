@@ -93,7 +93,7 @@ export default {
       if (this.$refs['imgBoxRef'].scrollTop > 0) {
         setTimeout(() => {
           this.returnTop()
-        }, 10)
+        }, 30)
       }
     },
     toTop() {
