@@ -11,9 +11,14 @@ export default new Vuex.Store({
         inputValue: 'aaa',
         list: [],
         nextId: 4,
-        viewKey: 'all'
+        viewKey: 'all',
+        cancelAxios: null // 终止axios请求
     },
     mutations: {
+        setCancelAxios(state, n) {
+            console.log('执行了vueX同步setCancelAxios')
+            state.cancelAxios = n
+        },
         initList(state, res) {
             state.list = res
         },
@@ -53,6 +58,10 @@ export default new Vuex.Store({
         }
     },
     actions: {
+        setCancelAxios({ commit }, n) {
+            console.log('执行了vueX异步setCancelAxios')
+            commit('setCancelAxios', n)
+        },
         async getList(e) {
             const { data: res } = await Axios.get('/list.json')
             console.log(res)

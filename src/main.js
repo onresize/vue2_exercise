@@ -87,6 +87,10 @@ Vue.filter('changename', value => {
   return value + `------`
 })
 
+// 将工具函数放在全局
+import { awaitJS } from '@/utils'
+Vue.prototype.$awaitJS = awaitJS
+
 // 自定义指令解决vue-router切换后代码无法高亮问题
 import hljs from 'highlight.js';
 
