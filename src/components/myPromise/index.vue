@@ -7,6 +7,7 @@
       >
       > <span class="prom">微任务</span> >
       <span class="prom">dom渲染</span> >
+       <span class="prom">nextTick(第一个宏任务前执行)</span> >
       <span class="prom">宏任务</span>)
     </h2>
     <h2>

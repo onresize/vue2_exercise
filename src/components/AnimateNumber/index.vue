@@ -4,13 +4,14 @@
       测试数字减缓动画插件 npm install animated-number-vue --save
     </h2>
     <animated-number
+      class="animated-number"
       :value="value"
       :duration="duration"
       :formatValue="formatToPrice"
     />
   </div>
 </template>
- 
+
 <script>
 import AnimatedNumber from 'animated-number-vue'
 export default {
@@ -20,7 +21,7 @@ export default {
   data() {
     return {
       value: 19999,
-      duration: 1000, // 动画时长 ms
+      duration: 1500, // 动画时长 ms
     }
   },
   created() {},
@@ -34,6 +35,10 @@ export default {
   },
 }
 </script>
- 
-<style scoped >
+
+<style scoped>
+.animated-number {
+  font-family: 'LT';
+  font-size: 30px;
+}
 </style>

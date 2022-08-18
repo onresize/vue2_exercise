@@ -1,0 +1,16 @@
+@font-face {
+  /* 重命名字体 */
+  font-family: "LT";
+  /* font-family: electronicFont; */
+  /* src: url('./DS-DIGIT.TTF'); */
+  src: url(DS-DIGIT.TTF);
+}
+
+@font-face {
+  font-family: "HM";
+  src: url(HarmonyOS_Sans_SC_Regular.ttf);
+}
+@font-face {
+  font-family: "YS";
+  src: url(YouSheBiaoTiHei-2.ttf);
+}
