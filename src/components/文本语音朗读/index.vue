@@ -1,5 +1,5 @@
 <template>
-  <button @click="playVoice">播放语音</button>
+  <button @click="playVoice">原生API播放语音</button>
 </template>
 <script>
 const synth = window.speechSynthesis

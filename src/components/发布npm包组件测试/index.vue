@@ -10,10 +10,11 @@
     <vue-scratch-card
       element-id="scratchWrap"
       :ratio="0.5"
-      :move-radius="60"
+      :move-radius="30"
       :start-callback="startCallback"
       :clear-callback="clearCallback"
       cover-color="#caa"
+      class="scratch"
     />
   </div>
 </template>
@@ -46,4 +47,11 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+.scratch {
+  width: 300px;
+  height: 180px;
+  position: absolute;
+  left: 300px;
+}
+</style>

@@ -92,6 +92,7 @@ const for_await_of = () => import('@/components/for_await_of异步迭代器/inde
 const changeTheme = () => import('@/components/一键换肤/index.vue')
 const emitFather = () => import('@/components/子组件向父组件通信/index.vue')
 const npmTest = () => import('@/components/发布npm包组件测试/index.vue')
+const componentTest = () => import('@/components/插件测试/index.vue')
 const awaitError = () => import('@/components/anyc_await处理异常/index.vue')
 const ipHere = () => import('@/components/获取ip属地/index.vue')
 
@@ -197,6 +198,7 @@ const router = new VueRouter({
                 { path: '/changeTheme', component: changeTheme },
                 { path: '/emitFather', component: emitFather },
                 { path: '/npmTest', component: npmTest },
+                { path: '/componentTest', component: componentTest },
                 { path: '/awaitError', component: awaitError },
                 { path: '/ipHere', component: ipHere },
             ]

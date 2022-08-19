@@ -1,17 +1,21 @@
 <template>
   <div class="home_container">
     <!-- 拖拽博客参考：https://blog.csdn.net/vvv3171071/article/details/122705408 -->
-    <img
-      title="双击查看源码、滚轮缩放图标、左键拖拽图标"
-      class="home_image"
-      src="./assets/svg/gitee.svg"
+    <div
+      class="div-box"
       @dblclick="openWindow"
       draggable="true"
       @dragstart="dragstart"
       @dragend="dragend"
       @wheel="handWheel"
       :style="`right:${elRight}px;bottom:${elBottom}px;width:${elWidth}px;height:${elHeight}px`"
-    />
+    >
+      <img class="home_image" src="./assets/svg/gitee.svg" />
+      <div
+        class="box-border"
+        title="双击查看源码、滚轮缩放图标、左键长按拖拽图标"
+      ></div>
+    </div>
     <!-- 内容主体区 -->
     <el-container class="container">
       <!-- 侧边栏 -->
@@ -140,6 +144,7 @@ export default {
         'changeTheme',
         'emitFather',
         'npmTest',
+        'componentTest',
         'awaitError',
         'ipHere',
       ],
@@ -187,15 +192,6 @@ export default {
 </script>
 
 <style scoped lang="less">
-.home_image {
-  position: fixed;
-  z-index: 999;
-  bottom: 15px;
-  right: 15px;
-  width: 40px;
-  height: 40px;
-  cursor: pointer;
-}
 .aa {
   margin: 10px;
   width: 100%;
@@ -253,5 +249,43 @@ a {
 }
 .el-aside::-webkit-scrollbar {
   display: none;
+}
+.div-box {
+  position: fixed;
+  z-index: 998;
+  bottom: 15px;
+  right: 15px;
+  width: 30px;
+  height: 30px;
+  border: 5px solid #034995;
+  border-radius: 50%;
+  background-color: #f5f5f5;
+  opacity: 0.8;
+  box-sizing: border-box;
+  .home_image {
+    width: 60%;
+    height: 60%;
+    opacity: 0.6;
+    position: absolute;
+    left: calc(50% - 30%);
+    top: calc(50% - 30%);
+  }
+  .box-border {
+    width: 60%;
+    height: 60%;
+    border-radius: 50%;
+    border: 3px solid red;
+    position: absolute;
+    left: calc(50% - 30%);
+    top: calc(50% - 30%);
+    animation: waves 1.5s ease-out;
+    animation-iteration-count: infinite;
+  }
+  @keyframes waves {
+    100% {
+      opacity: 0;
+      transform: scale(2);
+    }
+  }
 }
 </style>
