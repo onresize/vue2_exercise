@@ -2,32 +2,28 @@
   <div
     style="border: 3px solid gray; margin-top: 10px; padding: 10px"
   >
-    <h2>子组件2：{{ query }}</h2>
-    <el-input
-      :value="query"
-      @input="changeInput"
-      clearable
-      style="width: 200px"
-      placeholder="请输入"
-    ></el-input>
+    <h2>子组件2：{{ query122 }}</h2>
+    <input type="text" :value="query122" @input="changeInput" />
   </div>
 </template>
 
 <script>
 export default {
   props: {
-    query: {
+    query122: {
       type: String,
     },
   },
   model: {
-    prop: 'query',
-    event: 'change',
+    //XXX 这里写prop指定接收props内的参数名为 'query122'、如果不写那么props就默认是value
+    prop: 'query122',
+    // event指定下面触发给父组件标签的事件名是ipt
+    event: 'ipt',
   },
-  watch: {},
   methods: {
     changeInput(e) {
-      this.$emit('change', e)
+      // this.$emit('change', e)
+      this.$emit('ipt', e.target.value)
     },
   },
 }

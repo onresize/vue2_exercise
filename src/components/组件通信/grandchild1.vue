@@ -5,19 +5,18 @@
     <p>年龄：{{ $attrs.age1 }}</p>
   </div>
 </template>
- 
+
 <script>
 export default {
+  inject: ['age'],
   data() {
     return {}
   },
-  watch: {},
-  computed: {},
-  mounted() {},
-  created() {},
+  created() {
+    console.log('孙组件拿到祖组件的age:', this.age)
+  },
   methods: {},
 }
 </script>
- 
-<style scoped >
-</style>
+
+<style scoped></style>

@@ -8,7 +8,7 @@
     <Child2></Child2>
   </div>
 </template>
- 
+
 <script>
 export default {
   components: {
@@ -19,6 +19,7 @@ export default {
   },
   provide: {
     name: '张三',
+    age: 19,
   },
   data() {
     return {
@@ -27,7 +28,10 @@ export default {
       age1: 20,
     }
   },
-  create() {},
+  async created() {
+    await this.$nextTick()
+    // console.log('父组件拿到子组件的参数：', this.$children)
+  },
   mounted() {
     this.$bus.$on('changeNum', (e) => {
       console.log('父组件', e)
@@ -44,6 +48,5 @@ export default {
   },
 }
 </script>
- 
-<style scoped >
-</style>
+
+<style scoped></style>

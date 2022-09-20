@@ -48,11 +48,12 @@ export default {
  
 <style scoped lang="less">
 .father {
-  width: 622px;
+  width: 623px;
   height: 600px;
+  border: 1px solid black;
   // padding: 2px;
   display: grid;
-  // grid-template-columns: repeat(4, 3fr);
+  // grid-template-columns: repeat(6, 3fr);
   // grid-template-rows: repeat(4, 25%);
   grid-template-columns: repeat(auto-fill, 100px);
   column-gap: 4px; // 列间距

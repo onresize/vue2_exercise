@@ -37,7 +37,9 @@
       <!-- 右侧内容 -->
       <el-main class="home_container_main">
         <!-- home改用嵌套路由 占位符 -->
-        <router-view> </router-view>
+        <router-view>
+          <!-- <keep-alive> </keep-alive> -->
+        </router-view>
       </el-main>
     </el-container>
   </div>
@@ -147,6 +149,10 @@ export default {
         'componentTest',
         'awaitError',
         'ipHere',
+        'waterfall',
+        'waterfall1',
+        'childModelProps',
+        'vMyModel',
       ],
     }
   },

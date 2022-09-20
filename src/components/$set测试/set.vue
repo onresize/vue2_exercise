@@ -1,6 +1,8 @@
 <template>
   <div>
-    <h2>测试this.$set(obj, key, val)方法、更新对象数据同时更新视图</h2>
+    <h2>
+      测试this.$set(obj, key, val)方法、更新对象数据同时更新视图
+    </h2>
     <el-date-picker
       v-model="date.value"
       align="right"
@@ -11,9 +13,11 @@
     </el-date-picker>
     <el-button @click="yesToday">前天</el-button>
     <el-button @click="weekToday">两周前</el-button>
+    <el-button @click="changeArr">修改数组</el-button>
+    <h2>通过下标方式修改数组是无法同步视图的、用$set修改解决这个问题：{{ arr }}</h2>
   </div>
 </template>
- 
+
 <script>
 import axios from 'axios'
 export default {
@@ -51,9 +55,10 @@ export default {
       date: {
         value: '',
       },
+      arr: [1, 2, 3],
+      obj: { a: 2 },
     }
   },
-  created() {},
   methods: {
     // 时间戳 转 日期 方法、参数为时间戳
     newDate(date) {
@@ -80,9 +85,13 @@ export default {
       let res = this.newDate(date1)
       this.$set(this.date, 'value', res)
     },
+    changeArr() {
+      // this.arr[0] = 4
+      this.$set(this.arr, 0, 4)
+      console.log('数组：', this.arr)
+    },
   },
 }
 </script>
- 
-<style scoped >
-</style>
+
+<style scoped></style>

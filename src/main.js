@@ -4,6 +4,12 @@ import router from './router'
 import './css/index.css'
 import "@/assets/font/font.css";
 
+Vue.config.productionTip = false // 阻止显示生产模式信息
+
+// 瀑布流插件
+import waterfall from 'vue-waterfall2'
+Vue.use(waterfall)
+
 // 引入element
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css';
@@ -104,6 +110,7 @@ Vue.config.productionTip = false
 
 //创建eventBus实例、用来兄弟组件通信
 Vue.prototype.$bus = new Vue()
+window.AAA = '全局变量AAA'
 
 new Vue({
   // 全局挂载vuex

@@ -21,7 +21,6 @@ function loadBaiDuMap() {
     }
   })
 }
-export { loadBaiDuMap }
 /**
  * 异步加载百度地图,以及绘制工具
  * @returns {Promise}
@@ -51,4 +50,4 @@ function loadBaiDuDrawMap() {
     return BMapGL
   })
 }
-export { loadBaiDuDrawMap }
+export default { loadBaiDuMap, loadBaiDuDrawMap }

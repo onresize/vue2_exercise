@@ -75,14 +75,10 @@ export default {
     return {
       imgInd: 0,
       imgData: [
-        // 'https://cdn.jsdelivr.net/gh/lztnb/img@master/3.jpg',
-        // 'https://cdn.jsdelivr.net/gh/lztnb/img@master/4.jpg',
-        // 'https://cdn.jsdelivr.net/gh/lztnb/img@master/5.jpg',
-        // 'https://cdn.jsdelivr.net/gh/lztnb/img@master/7.jpg',
-        'http://placeimg.com/640/480/people',
-        'http://placeimg.com/640/480/nature',
-        'http://placeimg.com/640/480/cats',
-        'http://placeimg.com/640/480/animals',
+        'https://cdn.jsdelivr.net/gh/lztnb/img@master/3.jpg',
+        'https://cdn.jsdelivr.net/gh/lztnb/img@master/4.jpg',
+        'https://cdn.jsdelivr.net/gh/lztnb/img@master/5.jpg',
+        'https://cdn.jsdelivr.net/gh/lztnb/img@master/7.jpg',
       ],
       imgInd1: 0,
       imgData1: [

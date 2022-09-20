@@ -1,13 +1,13 @@
 <template>
   <div>
-    <!-- TODO -->
     <h2>扫码登入 安装：npm install vue-wxlogin --save-dev</h2>
     <el-link
       href="https://blog.csdn.net/estrusKing/article/details/121125475"
       target="_blank"
     >
-      <h2>参考：</h2>
+      <mark>参考：</mark>
     </el-link>
+    <h2>微信开放平台参考：https://open.weixin.qq.com/cgi-bin/showdocument?action=dir_list&t=resource/res_list&verify=1&id=open1419316505&token=&lang=zh_CN</h2>
     <div class="wxLogin">
       <span class="title">微信扫一扫登录</span>
       <div class="main_wx">
@@ -17,16 +17,22 @@
           redirect_uri： 扫码成功后的重定向地址、用encodeURIComponent进行UrlEncode
           href： 自定义样式链接，第三方可根据实际需求覆盖默认样式。
          -->
+        <!-- XXX方法一 -->
         <wxlogin
           v-if="appid && redirect_uri"
           :appid="appid"
-          scope="snsapi_login"
+          :scope="scope"
           :redirect_uri="redirect_uri"
           :href="href"
           :state="state"
         ></wxlogin>
+
+        <!-- XXX方法二 -->
+        <!-- <div
+          id="login_container"
+          class="height100 d-flex jc-center ai-center"
+        ></div> -->
       </div>
-      <p>请使用微信扫描二维码登录</p>
     </div>
   </div>
 </template>
@@ -38,21 +44,39 @@ export default {
   components: { wxlogin },
   data() {
     return {
-      appid: '',
-      redirect_uri: encodeURIComponent('https://www.baidu.com/'),
-      state: Math.random(),
+      // 方法一的参数
+      appid: 'wxe2b011f61dd4b5e1',
+      scope: 'snsapi_login',
+      redirect_uri: encodeURIComponent(
+        'https://www.yaoxiaosi.com/#/login'
+      ),
+      state: Math.random().toString(10).substr(3),
       href: 'data:text/css;base64,LmJveHsKICBiYWNrZ3JvdW5kOiByZWQ7Cn0=', // 自定义样式链接
     }
   },
-  created() {
-    this.getWeChatUrl()
+  mounted() {
+    // this.showWeChatQrCode()
+  },
+  destroyed() {
+    this.appid = ''
+    this.scope = ''
+    this.redirect_uri = ''
+    this.state = ''
   },
   methods: {
-    getWeChatUrl() {
-      this.appid = 'wxb7bde41befa78e4e'
-      this.redirect_uri = encodeURIComponent(
-        'https://www.9cddc.com/pages/index/index'
-      )
+    // 方法二
+    showWeChatQrCode() {
+      new WxLogin({
+        id: 'login_container',
+        appid: 'wxe2b011f61dd4b5e1',
+        scope: 'snsapi_login',
+        redirect_uri: encodeURIComponent(
+          'https://www.yaoxiaosi.com/#/login'
+        ),
+        state: Math.random().toString(10).substr(3),
+        style: 'black',
+        href: 'https://juyaoproduct-1304700934.cos.ap-nanjing.myqcloud.com/css/weChatQr.css',
+      })
     },
   },
 }

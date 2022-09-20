@@ -1,7 +1,8 @@
 <template>
   <div>
     <h2>
-      图片懒加载的实现、监听滚动时间触发按钮返回顶部(大于100显示按钮) PS：注意查看NetWork
+      图片懒加载、监听滚动时间触发按钮返回顶部(大于100显示按钮)
+      PS：注意查看NetWork
     </h2>
     <div v-show="show" class="btn" @click="toTop">回到顶部</div>
     <div class="imgFrame" ref="imgBoxRef">
@@ -23,41 +24,31 @@ export default {
       show: false,
       imgSrcArray: [],
       imgData: [
-        // 'https://cdn.jsdelivr.net/gh/lztnb/img@master/3.jpg',
-        // 'https://cdn.jsdelivr.net/gh/lztnb/img@master/4.jpg',
-        // 'https://cdn.jsdelivr.net/gh/lztnb/img@master/5.jpg',
-        // 'https://cdn.jsdelivr.net/gh/lztnb/img@master/6.jpg',
-        // 'https://cdn.jsdelivr.net/gh/lztnb/img@master/7.jpg',
-        // 'https://cdn.jsdelivr.net/gh/lztnb/img@master/14.jpg',
-        // 'https://cdn.jsdelivr.net/gh/lztnb/img@master/15.jpg',
-        // 'https://cdn.jsdelivr.net/gh/lztnb/img@master/16.jpg',
-        // 'https://cdn.jsdelivr.net/gh/lztnb/img@master/17.jpg',
-        // 'https://cdn.jsdelivr.net/gh/lztnb/img@master/18.jpg',
-        // 'https://cdn.jsdelivr.net/gh/lztnb/img@master/19.jpg',
-        // 'https://cdn.jsdelivr.net/gh/lztnb/img@master/20.jpg',
-        // 'https://cdn.jsdelivr.net/gh/lztnb/img@master/22.jpg',
-        // 'https://cdn.jsdelivr.net/gh/lztnb/img@master/23.jpg',
-        // 'https://cdn.jsdelivr.net/gh/lztnb/img@master/24.jpg',
-        // 'https://cdn.jsdelivr.net/gh/lztnb/img@master/25.jpg',
-        // 'https://cdn.jsdelivr.net/gh/lztnb/img@master/26.jpg',
-        // 'https://cdn.jsdelivr.net/gh/lztnb/img@master/27.jpg',
-        // 'https://cdn.jsdelivr.net/gh/lztnb/img@master/28.jpg',
-        // 'https://cdn.jsdelivr.net/gh/lztnb/img@master/29.jpg',
-        // 'https://cdn.jsdelivr.net/gh/lztnb/img@master/30.jpg',
-        // 'https://cdn.jsdelivr.net/gh/lztnb/img@master/31.jpg',
-        // 'https://cdn.jsdelivr.net/gh/lztnb/img@master/32.jpg',
-        // 'https://cdn.jsdelivr.net/gh/lztnb/img@master/33.jpg',
-        'http://placeimg.com/640/480/people',
-        'http://placeimg.com/640/480/nature',
-        'http://placeimg.com/640/480/cats',
-        'http://placeimg.com/640/480/animals',
-        'http://placeimg.com/640/480/fashion',
-        'http://placeimg.com/640/480',
-        'http://placeimg.com/640/480/nightlife',
-        'http://placeimg.com/640/480/abstract',
-        'http://placeimg.com/640/480/business',
-        'http://placeimg.com/640/480/food',
-        'http://placeimg.com/640/480/transport',
+        'https://cdn.jsdelivr.net/gh/lztnb/img@master/3.jpg',
+        'https://cdn.jsdelivr.net/gh/lztnb/img@master/4.jpg',
+        'https://cdn.jsdelivr.net/gh/lztnb/img@master/5.jpg',
+        'https://cdn.jsdelivr.net/gh/lztnb/img@master/6.jpg',
+        'https://cdn.jsdelivr.net/gh/lztnb/img@master/7.jpg',
+        'https://cdn.jsdelivr.net/gh/lztnb/img@master/14.jpg',
+        'https://cdn.jsdelivr.net/gh/lztnb/img@master/15.jpg',
+        'https://cdn.jsdelivr.net/gh/lztnb/img@master/16.jpg',
+        'https://cdn.jsdelivr.net/gh/lztnb/img@master/17.jpg',
+        'https://cdn.jsdelivr.net/gh/lztnb/img@master/18.jpg',
+        'https://cdn.jsdelivr.net/gh/lztnb/img@master/19.jpg',
+        'https://cdn.jsdelivr.net/gh/lztnb/img@master/20.jpg',
+        'https://cdn.jsdelivr.net/gh/lztnb/img@master/22.jpg',
+        'https://cdn.jsdelivr.net/gh/lztnb/img@master/23.jpg',
+        'https://cdn.jsdelivr.net/gh/lztnb/img@master/24.jpg',
+        'https://cdn.jsdelivr.net/gh/lztnb/img@master/25.jpg',
+        'https://cdn.jsdelivr.net/gh/lztnb/img@master/26.jpg',
+        'https://cdn.jsdelivr.net/gh/lztnb/img@master/27.jpg',
+        'https://cdn.jsdelivr.net/gh/lztnb/img@master/28.jpg',
+        'https://cdn.jsdelivr.net/gh/lztnb/img@master/29.jpg',
+        'https://cdn.jsdelivr.net/gh/lztnb/img@master/30.jpg',
+        'https://cdn.jsdelivr.net/gh/lztnb/img@master/31.jpg',
+        'https://cdn.jsdelivr.net/gh/lztnb/img@master/32.jpg',
+        'https://cdn.jsdelivr.net/gh/lztnb/img@master/33.jpg',
+
         'data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20baseProfile%3D%22full%22%20width%3D%22undefined%22%20height%3D%22undefined%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22grey%22%2F%3E%3Ctext%20x%3D%22NaN%22%20y%3D%22NaN%22%20font-size%3D%2220%22%20alignment-baseline%3D%22middle%22%20text-anchor%3D%22middle%22%20fill%3D%22white%22%3Eundefinedxundefined%3C%2Ftext%3E%3C%2Fsvg%3E',
         'http://placeimg.com/640/480/sports',
       ],
@@ -88,17 +79,47 @@ export default {
       }
     },
     returnTop() {
-      //向上滑动、延时模拟动画滑动
-      this.$refs['imgBoxRef'].scrollBy(0, -300)
+      // XXX 方法一
+      this.$refs['imgBoxRef'].scrollBy(0, -600)
       if (this.$refs['imgBoxRef'].scrollTop > 0) {
         setTimeout(() => {
           this.returnTop()
         }, 30)
       }
+
+      // XXX 方法二
+      // const upRoll = setInterval(() => {
+      //   let scrollTop = document.body.scrollTop // 每次获取页面被卷去的部分
+      //     ? document.body.scrollTop
+      //     : document.documentElement.scrollTop
+      //   const speed = scrollTop / 4 // 每次滚动多少 （步长值）
+      //   if (document.documentElement.scrollTop !== 0) {
+      //     document.documentElement.scrollTop -= speed // 不在顶部 每次滚动到的位置
+      //   } else {
+      //     clearInterval(upRoll) // 回到顶部清除定时器
+      //   }
+      // }, 8)
     },
     toTop() {
       this.returnTop()
       // this.$refs['imgBoxRef'].scrollTo(0, 0)
+    },
+    // XXX 动画回到顶部、方法三
+    goToTop() {
+      let timer = null
+      cancelAnimationFrame(timer)
+      timer = requestAnimationFrame(function fn() {
+        var oTop =
+          document.body.scrollTop ||
+          document.documentElement.scrollTop
+        if (oTop > 0) {
+          document.body.scrollTop =
+            document.documentElement.scrollTop = oTop - 50
+          timer = requestAnimationFrame(fn)
+        } else {
+          cancelAnimationFrame(timer)
+        }
+      })
     },
   },
 }
@@ -108,6 +129,7 @@ export default {
 .image {
   width: 100%;
   height: 80vh;
+  object-fit: cover;
 }
 .btn {
   position: fixed;

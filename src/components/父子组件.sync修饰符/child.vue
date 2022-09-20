@@ -40,9 +40,6 @@ export default {
     },
   },
   // props: ['money'],
-  data() {
-    return {}
-  },
   // 子组件生命周期不能拿到props值的问题：
   // http://t.zoukankan.com/taohuaya-p-11413178.html
   // https://blog.csdn.net/weixin_44242181/article/details/124447062

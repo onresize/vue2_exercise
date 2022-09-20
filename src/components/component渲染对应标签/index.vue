@@ -8,7 +8,7 @@
       :is="`img`"
       v-bind="
         goToWhere(
-          'https://gitee.com/typora-picture/typoraimges/raw/master/empty.webp'
+          'https://developer.apple.com/home/images/tile-watchos-9/watchos-9-large.png'
         )
       "
     >
@@ -22,10 +22,6 @@ export default {
   data() {
     return {}
   },
-  watch: {},
-  computed: {},
-  mounted() {},
-  created() {},
   methods: {
     goToWhere(path) {
       return {

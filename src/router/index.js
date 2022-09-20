@@ -3,6 +3,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 const Home = () => import('@/home.vue')
+const errNone = () => import('@/views//404.vue')
 const Tablesolt = () => import('@/components/antd-table/table-solt.vue')
 const Atable = () => import('@/components/antd-table/a-table.vue')
 const Record = () => import('@/components/antd-table/record.vue')
@@ -95,21 +96,26 @@ const npmTest = () => import('@/components/发布npm包组件测试/index.vue')
 const componentTest = () => import('@/components/插件测试/index.vue')
 const awaitError = () => import('@/components/anyc_await处理异常/index.vue')
 const ipHere = () => import('@/components/获取ip属地/index.vue')
+const waterfall = () => import('@/components/瀑布流/index.vue')
+const waterfall1 = () => import('@/components/瀑布流/index1.vue')
+const childModelProps = () => import('@/components/子组件双向绑定props/index.vue')
+const vMyModel = () => import('@/components/自定义指令/index.vue')
 
 Vue.use(VueRouter)
 
 const router = new VueRouter({
     mode: 'history',
-    scrollBehavior: () => ({ y: 0 }),
+    // scrollBehavior: () => ({ y: 0 }),
     routes: [
         { path: '/', redirect: '/map' },
+        { path: '*', redirect: { path: '/404' } },
         { path: '/echartTest', component: EchartTest },
         { path: '/vr', component: VrTest },
         { path: '/vrThreeJs', component: VrThreeJS },
         { path: '/threeJsExample', component: ThreeJsExample },
         {
             mode: 'history',
-            scrollBehavior: () => ({ y: 0 }),
+            // scrollBehavior: () => ({ y: 0 }),
             path: '/home',
             component: Home,
             children: [
@@ -201,6 +207,11 @@ const router = new VueRouter({
                 { path: '/componentTest', component: componentTest },
                 { path: '/awaitError', component: awaitError },
                 { path: '/ipHere', component: ipHere },
+                { path: '/404', component: errNone },
+                { path: '/waterfall', component: waterfall },
+                { path: '/waterfall1', component: waterfall1 },
+                { path: '/childModelProps', component: childModelProps },
+                { path: '/vMyModel', component: vMyModel },
             ]
         },
     ]

@@ -7,19 +7,23 @@
     <el-button @click="$listeners.changeMe"> $listeners</el-button>
   </div>
 </template>
- 
+
 <script>
 export default {
   components: {
     GrandChild1: () => import('./grandchild1.vue'),
   },
+  inject: ['name'],
   data() {
     return {
       num1: 0,
       age: 18,
     }
   },
-  created() {},
+  created() {
+    // console.log('子组拿到父组件的num:',this.$parent.num)
+    console.log('子组件inject接收父组件nam：', this.name)
+  },
   methods: {
     emitMethod() {
       this.num1 += 1
@@ -31,6 +35,5 @@ export default {
   },
 }
 </script>
- 
-<style scoped >
-</style>
+
+<style scoped></style>
