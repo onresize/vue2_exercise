@@ -106,8 +106,6 @@ Vue.directive('hljs', el => {
   Array.prototype.forEach.call(blocks, hljs.highlightBlock);
 });
 
-Vue.config.productionTip = false
-
 //创建eventBus实例、用来兄弟组件通信
 Vue.prototype.$bus = new Vue()
 window.AAA = '全局变量AAA'

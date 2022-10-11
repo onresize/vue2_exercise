@@ -14,6 +14,7 @@ export default {
     return {
       // url: 'rtsp://admin:DSMY666666@192.168.3.42:5545/Streaming/Channels/102',
       url: 'webrtc://47.108.76.168/live/livestream',
+      // url: 'https://ping.mfyke.com/data/video/1.webm',
     }
   },
   mounted() {

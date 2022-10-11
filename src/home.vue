@@ -153,6 +153,7 @@ export default {
         'waterfall1',
         'childModelProps',
         'vMyModel',
+        'numberAnimation',
       ],
     }
   },
