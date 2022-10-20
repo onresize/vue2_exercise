@@ -104,7 +104,7 @@ export default {
       this.returnTop()
       // this.$refs['imgBoxRef'].scrollTo(0, 0)
     },
-    // XXX 动画回到顶部、方法三
+    // XXX 动画回到顶部、方法三(RAF)
     goToTop() {
       let timer = null
       cancelAnimationFrame(timer)
