@@ -42,7 +42,7 @@ export default {
     getPlayerHls() {
       let player = new HlsPlayer({
         id: 'mse_hls',
-        url: 'http://39.108.213.89:1986/hls/c84415000d68.m3u8',
+        // url: 'http://39.108.213.89:1986/hls/c84415000d68.m3u8',
         autoplay: true, // 自动播放
         autoplayMuted: true,
         fluid: true, // 流体
