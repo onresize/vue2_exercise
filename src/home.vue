@@ -154,6 +154,7 @@ export default {
         'childModelProps',
         'vMyModel',
         'numberAnimation',
+        'chartTest',
       ],
     }
   },

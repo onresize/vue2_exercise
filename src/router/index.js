@@ -101,6 +101,7 @@ const waterfall1 = () => import('@/components/瀑布流/index1.vue')
 const childModelProps = () => import('@/components/子组件双向绑定props/index.vue')
 const vMyModel = () => import('@/components/自定义指令/index.vue')
 const numberAnimation = () => import('@/components/数字动画/index.vue')
+const chartTest = () => import('@/components/封装chart测试/chart.vue')
 
 Vue.use(VueRouter)
 
@@ -214,6 +215,7 @@ const router = new VueRouter({
                 { path: '/childModelProps', component: childModelProps },
                 { path: '/vMyModel', component: vMyModel },
                 { path: '/numberAnimation', component: numberAnimation },
+                { path: '/chartTest', component: chartTest },
             ]
         },
     ]
