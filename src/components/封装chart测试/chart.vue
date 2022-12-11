@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="background: black;">
     <Chart :personHouse="personHouse" ref="chart111"></Chart>
   </div>
 </template>

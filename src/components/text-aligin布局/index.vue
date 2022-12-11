@@ -25,8 +25,8 @@ export default {
 <style scoped lang="less">
 span {
   display: inline-block;
-  width: 120px;
-  text-align: justify;
+  width: 90px;
+  // text-align: justify;
   text-align-last: justify;
 }
 </style>

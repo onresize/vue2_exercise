@@ -17,7 +17,8 @@ instance.interceptors.request.use(config => {
     //XXX 设置 CancelToken对象
     config.cancelToken = new axios.CancelToken(function (c) {
         console.log('执行了请求拦截')
-        Store.dispatch('setCancelAxios', c)
+        // Store.dispatch('setCancelAxios', c)
+        Store.commit('setCancelAxios', c)
     })
 
     return config

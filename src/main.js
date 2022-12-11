@@ -85,6 +85,12 @@ import { borderBox8, decoration9 } from '@jiaminghi/data-view'
 Vue.use(borderBox8)
 Vue.use(decoration9)
 
+// 自定义封装loading
+import myLoading from '@/components/loading/index.js'
+Vue.use(myLoading)
+
+import './routerTools' // 路由钩子、这部用到了自定义loading、必须放在引入之后
+
 // 全局注册过滤器
 Vue.filter('upname', value => {
   return value.charAt(0).toUpperCase() + value.slice(1)

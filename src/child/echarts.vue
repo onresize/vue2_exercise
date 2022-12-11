@@ -7,13 +7,18 @@
         style="width: 100%; height: 380px"
       ></div>
     </dv-border-box-8>
+    <dv-scroll-board
+      :config="config"
+      style="width: 500px; height: 220px"
+    />
   </div>
 </template>
- 
+
 <script>
 export default {
   data() {
     return {
+      config: { data: ['foo', 'foo'] },
       option: {
         legend: {
           orient: 'horizontal',
@@ -103,6 +108,5 @@ export default {
   },
 }
 </script>
- 
-<style scoped >
-</style>
+
+<style scoped></style>
