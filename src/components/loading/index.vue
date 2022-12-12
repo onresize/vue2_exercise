@@ -23,15 +23,16 @@
 </template>
 
 <script>
+//博文参考 https://blog.csdn.net/qq_48085286/article/details/123414248
 export default {
-  name: "loading001",
+  name: 'loading001',
   props: {
     show: Boolean,
   },
   data() {
-    return {};
+    return {}
   },
-};
+}
 </script>
 
 <style scoped>
@@ -54,7 +55,8 @@ export default {
 }
 
 .loader-line-wrap {
-  animation: spin 2000ms cubic-bezier(0.175, 0.885, 0.32, 1.275) infinite;
+  animation: spin 2000ms cubic-bezier(0.175, 0.885, 0.32, 1.275)
+    infinite;
   box-sizing: border-box;
   height: 50px;
   left: 0;
