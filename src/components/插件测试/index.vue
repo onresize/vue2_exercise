@@ -28,6 +28,7 @@
         scrolling="no"
       ></iframe>
     </div>
+    <div class="other_btn">xyz</div>
   </div>
 </template>
 
@@ -43,6 +44,26 @@ export default {
 
 //XXX 微软logo样式
 <style scoped lang="less">
+.other_btn {
+  text-align: center;
+  line-height: 24px;
+  width: 46px;
+  height: 36px;
+  border-radius: 10px;
+  border: 3px solid red;
+  background: #fff;
+  font-weight: bold;
+}
+.other_btn:hover {
+  border: 3px solid green;
+}
+.other_btn:active {
+  background: red;
+}
+.active {
+  background: yellow;
+}
+
 .btn {
   width: 38px;
   height: 38px;

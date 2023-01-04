@@ -155,6 +155,7 @@ export default {
         'vMyModel',
         'numberAnimation',
         'chartTest',
+        'videoPlay',
       ],
     }
   },

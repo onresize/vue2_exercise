@@ -102,6 +102,7 @@ const childModelProps = () => import('@/components/子组件双向绑定props/in
 const vMyModel = () => import('@/components/自定义指令/index.vue')
 const numberAnimation = () => import('@/components/数字动画/index.vue')
 const chartTest = () => import('@/components/封装chart测试/chart.vue')
+const videoPlay = () => import('@/components/videoPlay/index.vue')
 
 Vue.use(VueRouter)
 
@@ -216,6 +217,7 @@ const router = new VueRouter({
                 { path: '/vMyModel', component: vMyModel },
                 { path: '/numberAnimation', component: numberAnimation },
                 { path: '/chartTest', component: chartTest },
+                { path: '/videoPlay', component: videoPlay },
             ]
         },
     ]
