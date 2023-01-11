@@ -13,7 +13,7 @@
       >添加事项</a-button
     >
 
-    <a-list :dataSource="infoList" bordered class="dt_list">
+    <a-list :dataSource="infoList" bordered class="dt_list2">
       <a-list-item slot="renderItem" slot-scope="item">
         <a-checkbox
           :checked="item.done"
@@ -113,7 +113,7 @@ export default {
   margin-right: 10px;
 }
 
-.dt_list {
+.dt_list2 {
   width: 500px;
   margin-top: 10px;
 }

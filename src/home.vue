@@ -156,6 +156,7 @@ export default {
         'numberAnimation',
         'chartTest',
         'videoPlay',
+        'RmbNumber',
       ],
     }
   },

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="box">
     <h2>async/await处理异常</h2>
     <h2>
       除了try..catch处理异常、async/await就是Promise的语法糖、基于这点封装一个to方法来处理async/await异常
@@ -94,6 +94,9 @@ export default {
 </script>
 
 <style scoped>
+.box {
+  width: calc(100vw - 290px);
+}
 .tag {
   color: #fff;
   font-size: 16px;
@@ -101,6 +104,6 @@ export default {
   background: pink;
   border-radius: 20px;
   padding: 15px 0 0 0;
-  user-select: none;
+  /* user-select: none; */
 }
 </style>

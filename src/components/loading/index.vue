@@ -42,6 +42,10 @@ export default {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 9999;
+  width: 100vw;
+  height: 105vh;
+  background: rgba(0, 0, 0, 0.7);
+  transition: all 0.6s ease-out;
 }
 .loader-inner {
   bottom: 0;

@@ -13,5 +13,5 @@ router.afterEach((to, from) => {
   document.title = to.path.substr(1, to.path.length) + '页'
   setTimeout(() => {
     Vue.$showLoading.hide();
-  }, 1000)
+  }, 600)
 })
