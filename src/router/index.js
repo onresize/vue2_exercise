@@ -116,6 +116,7 @@ const router = new VueRouter({
         { path: '/vr', component: VrTest },
         { path: '/vrThreeJs', component: VrThreeJS },
         { path: '/threeJsExample', component: ThreeJsExample },
+        { path: '/waterfall1', component: waterfall1 },
         {
             mode: 'history',
             // scrollBehavior: () => ({ y: 0 }),
@@ -212,7 +213,6 @@ const router = new VueRouter({
                 { path: '/ipHere', component: ipHere },
                 { path: '/404', component: errNone },
                 { path: '/waterfall', component: waterfall },
-                { path: '/waterfall1', component: waterfall1 },
                 { path: '/childModelProps', component: childModelProps },
                 { path: '/vMyModel', component: vMyModel },
                 { path: '/numberAnimation', component: numberAnimation },

@@ -1,25 +1,57 @@
 <template>
   <div class="video_box">
-    <video
-      class="videoBox"
-      ref="mediaStartPageRef"
-      src="@/assets/video/startPage.mp4"
-      muted
-      preload="auto"
-      loop
-    ></video>
+    <h3>
+      <mark>npm install --save-dev video.js</mark
+      ><a href="https://videojs.com/getting-started/" target="_bank">
+        videojs.com</a
+      >
+    </h3>
+    <div class="topBox">
+      <video
+        ref="videoRef"
+        class="video-js vjs-default-skin vjs-big-play-centered"
+        controls
+        preload="auto"
+        poster="//vjs.zencdn.net/v/oceans.png"
+        width="856"
+        height="470"
+        data-setup="{}"
+      >
+        <source src="@/assets/video/startPage.mp4" type="video/mp4" />
+      </video>
+      <div style="margin-top: 10px">
+        <el-button @click="startPlay">开始视频</el-button>
+        <el-button @click="stopPlay">暂停视频</el-button>
+        <el-button @click="reload">重新加载</el-button>
+        <el-button @click="quickVideo">视频快进</el-button>
+        <el-button @click="backVideo">视频后退</el-button>
+        <el-button @click="addVolume">增大音量</el-button>
+        <el-button @click="reduceVolume">降低音量</el-button>
+        <el-button @click="FullScreen">开启全屏</el-button>
+        <!-- 
+        1、play()控制视频的播放
+        2、pause()控制视频的停止
+        3、currentTime控制视频的当前时间
+        4、muted控制视频是否静音(赋值true or false)
+        5、volume控制音量的大小(赋值0-1)
+        6、duration视频的总时间
+        7、ontimeupdate事件(当前播放位置改变时执行，使用时要绑定addEventListener)
+        8、requestFullscreen全屏
+       -->
+      </div>
+    </div>
     <!-- 进度条 -->
-    <div class="bottom_box">
+    <div class="bottom_box" v-if="show">
       <div class="one">
-        {{ timeDisplay - 0 }}
+        {{ videoPlayer.currentTime().toFixed(0) }}
       </div>
       <div class="process">
         <div
           class="percent-item"
-          :style="{ width: `${2.5 * timeDisplay}%` }"
+          :style="{ width: `${2.56 * videoPlayer.currentTime()}%` }"
         ></div>
       </div>
-      <div class="two">{{ duration - 0 }}</div>
+      <div class="two">{{ videoPlayer.duration().toFixed(0) }}</div>
     </div>
   </div>
 </template>
@@ -30,43 +62,50 @@ export default {
     return {
       timeDisplay: 0,
       duration: 0,
+      videoPlayer: null,
+      videoVolume: null,
+      show: false,
     }
   },
   mounted() {
-    let that = this
-    let video = this.$refs[`mediaStartPageRef`]
-    that.$nextTick(() => {
-      video.play() //播放视频
-      setTimeout(() => {
-        //使用事件监听方式捕捉事件
-        video.addEventListener(
-          'timeupdate',
-          function (e) {
-            //用秒数来显示当前播放进度
-            that.timeDisplay = (e.timeStamp / 1000).toFixed(0)
-            that.duration = e.target.duration.toFixed(0)
-            if (that.timeDisplay == 40) {
-              that.$refs[`mediaStartPageRef`].pause()
-              that.timeDisplay = 0
-              that.duration = 0
-              that.$refs[`mediaStartPageRef`].currentTime = 0
-              that.$refs[`mediaStartPageRef`].play()
-            }
-            console.log('当前播放的时长', that.timeDisplay)
-            console.log('总时长', that.duration)
-          },
-          false
-        )
-      }, 100)
+    this.videoPlayer = this.$video(this.$refs.videoRef, {}, () => {
+      console.log('当前声音', this.videoPlayer.volume())
+      this.videoVolume = this.videoPlayer.volume()
+      this.show = true
     })
   },
-  beforeDestroy() {
-    this.$refs[`mediaStartPageRef`].removeEventListener(
-      'timeupdate',
-      () => {}
-    )
+  methods: {
+    startPlay() {
+      this.videoPlayer.play()
+    },
+    stopPlay() {
+      this.videoPlayer.pause()
+    },
+    reload() {
+      this.videoPlayer.pause()
+      this.videoPlayer.load({})
+      this.videoPlayer.play()
+    },
+    quickVideo() {
+      const currentTime = this.videoPlayer.currentTime()
+      this.videoPlayer.currentTime(currentTime + 3)
+    },
+    backVideo() {
+      const currentTime = this.videoPlayer.currentTime()
+      this.videoPlayer.currentTime(currentTime - 3)
+    },
+    addVolume() {
+      this.videoPlayer.volume((this.videoVolume += 0.1))
+      console.log('当前声音', this.videoPlayer.volume())
+    },
+    reduceVolume() {
+      this.videoPlayer.volume((this.videoVolume -= 0.1))
+      console.log('当前声音', this.videoPlayer.volume())
+    },
+    FullScreen() {
+      this.videoPlayer.requestFullscreen()
+    },
   },
-  methods: {},
 }
 </script>
 
@@ -75,12 +114,14 @@ export default {
   width: 100%;
   height: 100%;
   // border: 3px solid red;
-
-  .videoBox {
-    width: 100%;
-    height: 90%;
-    object-fit: fill;
-    border-radius: 30px;
+  .topBox {
+    min-width: 870px;
+    width: calc(100vw - 300px);
+    height: 540px;
+    // border: 3px solid red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   .bottom_box {
     width: 100%;
@@ -91,7 +132,7 @@ export default {
     .one {
       width: 5%;
       height: 100%;
-      border: 3px solid red;
+      border: 3px solid black;
       border-radius: 30px;
       text-align: center;
       font-weight: bold;
@@ -141,7 +182,7 @@ export default {
     .two {
       width: 5%;
       height: 100%;
-      border: 3px solid red;
+      border: 3px solid black;
       border-radius: 30px;
       text-align: center;
       font-weight: bold;

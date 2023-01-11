@@ -85,6 +85,11 @@ import { borderBox8, decoration9 } from '@jiaminghi/data-view'
 Vue.use(borderBox8)
 Vue.use(decoration9)
 
+// 引入videoJs
+import videoJs from 'video.js'
+import "video.js/dist/video-js.css"
+Vue.prototype.$video = videoJs
+
 // 自定义封装loading
 import myLoading from '@/components/loading/index.js'
 Vue.use(myLoading)

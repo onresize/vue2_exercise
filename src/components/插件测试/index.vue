@@ -5,7 +5,7 @@
       <img
         class="logo"
         src="https://wasm.blazor.zone/_content/BootstrapBlazor.Shared/images/m.svg"
-        alt
+        alt="#"
       />
       <div class="btn-box"></div>
     </div>

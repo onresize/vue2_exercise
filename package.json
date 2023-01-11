@@ -67,6 +67,7 @@
     "svg-sprite-loader": "5.1.1",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat",
     "to-fast-lt": "^1.1.1",
+    "video.js": "^7.20.3",
     "vue-count-to": "^1.0.13",
     "vue-template-compiler": "^2.6.11",
     "vue-wxlogin": "^1.0.4"
