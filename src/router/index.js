@@ -104,6 +104,7 @@ const numberAnimation = () => import('@/components/数字动画/index.vue')
 const chartTest = () => import('@/components/封装chart测试/chart.vue')
 const videoPlay = () => import('@/components/videoPlay/index.vue')
 const RmbNumber = () => import('@/components/数字转人民币格式/index.vue')
+const guide = () => import('@/components/新手指引/index.vue')
 
 Vue.use(VueRouter)
 
@@ -220,6 +221,7 @@ const router = new VueRouter({
                 { path: '/chartTest', component: chartTest },
                 { path: '/videoPlay', component: videoPlay },
                 { path: '/RmbNumber', component: RmbNumber },
+                { path: '/guide', component: guide },
 
             ]
         },

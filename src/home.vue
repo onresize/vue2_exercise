@@ -20,7 +20,11 @@
     <el-container class="container">
       <!-- 侧边栏 -->
       <el-card>
-        <el-aside class="home_container_aside" :width="'220px'">
+        <el-aside
+          class="home_container_aside"
+          id="sideDom"
+          :width="'220px'"
+        >
           <div
             v-for="(item, index) in RouterList"
             :key="index"
@@ -157,8 +161,13 @@ export default {
         'chartTest',
         'videoPlay',
         'RmbNumber',
+        'guide',
       ],
     }
+  },
+  mounted() {
+    document.getElementById('sideDom').scrollTop =
+      this.RouterList.length * 50 - sideDom.offsetHeight
   },
   methods: {
     openWindow() {

@@ -16,6 +16,7 @@
     "axios": "^0.21.4",
     "core-js": "^3.6.5",
     "dexie": "^3.0.3",
+    "driver.js": "^0.9.8",
     "echarts": "^5.2.1",
     "element-ui": "^2.15.6",
     "file-saver": "^2.0.5",
