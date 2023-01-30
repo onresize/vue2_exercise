@@ -120,8 +120,6 @@ const router = new VueRouter({
         { path: '/threeJsExample', component: ThreeJsExample },
         { path: '/waterfall1', component: waterfall1 },
         {
-            mode: 'history',
-            // scrollBehavior: () => ({ y: 0 }),
             path: '/home',
             component: Home,
             children: [
@@ -222,7 +220,6 @@ const router = new VueRouter({
                 { path: '/videoPlay', component: videoPlay },
                 { path: '/RmbNumber', component: RmbNumber },
                 { path: '/guide', component: guide },
-
             ]
         },
     ]
