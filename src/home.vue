@@ -162,6 +162,7 @@ export default {
         'videoPlay',
         'RmbNumber',
         'guide',
+        'list',
       ],
     }
   },
