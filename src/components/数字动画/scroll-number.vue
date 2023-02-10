@@ -68,13 +68,16 @@ export default {
 
 <style scoped lang="less">
 .number {
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
   overflow: hidden;
+  // border: 2px solid red;
   > span {
     writing-mode: vertical-rl;
     text-orientation: upright;
     transform: translateY(0%);
+    font-size: 30px;
+    font-family: 'LT';
   }
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <scroll-number :value="'412,789,123,41.00'"></scroll-number>
+    <scroll-number :value="num"></scroll-number>
   </div>
 </template>
 
@@ -11,13 +11,21 @@ export default {
     ScrollNumber,
   },
   data() {
-    return {}
+    return {
+      num: 69,
+    }
   },
-  watch: {},
-  computed: {},
-  mounted() {},
-  created() {},
-  methods: {},
+  mounted() {
+    this.LoopMethod()
+  },
+  methods: {
+    LoopMethod() {
+      setTimeout(() => {
+        this.num--
+        this.LoopMethod()
+      }, 1000)
+    },
+  },
 }
 </script>
 
