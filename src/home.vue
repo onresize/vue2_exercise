@@ -163,6 +163,8 @@ export default {
         'RmbNumber',
         'guide',
         'list',
+        'svga',
+        'svg',
       ],
     }
   },
