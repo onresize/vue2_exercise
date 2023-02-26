@@ -1,14 +1,14 @@
 <template>
-  <div class="box">
-    <input class="ipt" type="text" v-model="iptVal" />
-    <div class="flex-box">
-      <div
-        class="label"
-        v-for="(item, i) in holderList"
-        :key="i"
-        :style="{ transform: `translateY(-${lateY}px)` }"
-      >
-        {{ item }}
+  <div>
+    <h2>仿输入框placeholder垂直切换动画</h2>
+    <div class="box">
+      <input class="ipt" type="text" v-model="iptVal" />
+      <div class="flex-box">
+        <div :class="[animation ? 'animationTop' : '']">
+          <div class="label" v-for="(item, i) in holderList" :key="i">
+            {{ item }}
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -23,11 +23,12 @@ export default {
       iptVal: '',
       num: 0,
       lateY: 0,
+      animation: false,
     }
   },
   mounted() {
     this.changePlaceHolder()
-    this.changeLateY()
+    setInterval(this.changeLateY, 4000)
   },
   methods: {
     changePlaceHolder() {
@@ -41,16 +42,12 @@ export default {
       }, 2000)
     },
     changeLateY() {
-      let r = setInterval(() => {
-        this.lateY += 25
-        if (this.lateY > 100) {
-          // this.lateY = 0
-          clearInterval(r)
-          this.holderList.push(this.holderList[0])
-          this.holderList.shift()
-          this.changeLateY()
-        }
-      }, 2000)
+      this.animation = true
+      setTimeout(() => {
+        this.holderList.push(this.holderList[0])
+        this.holderList.shift()
+        this.animation = false
+      }, 500)
     },
   },
 }
@@ -58,8 +55,8 @@ export default {
 
 <style scoped lang="less">
 .box {
-  width: 700px;
-  height: 700px;
+  width: 600px;
+  height: 600px;
   border: 3px solid red;
   display: flex;
   justify-content: center;
@@ -72,12 +69,16 @@ export default {
     border: 3px solid red;
     position: absolute;
     height: 31px;
+    overflow: hidden;
 
     .label {
-      transition: all 1s;
       width: fit-content;
       padding: 2px;
     }
+  }
+  .animationTop {
+    transition: all 0.5s ease-out;
+    transform: translateY(-25px);
   }
 }
 </style>

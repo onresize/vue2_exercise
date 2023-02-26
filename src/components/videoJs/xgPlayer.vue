@@ -3,7 +3,11 @@
     <h2>西瓜视频播放器测试flv、hls流地址播放</h2>
     <div style="display: flex">
       <h3 style="background:pink;padding:5px;border-radius:5px">
-        cnpm i xgplayer --save
+        cnpm i xgplaye --save
+      </h3>
+      &nbsp;&nbsp;
+      <h3 style="background:pink;padding:5px;border-radius:5px">
+        cnpm i xgplaye-hls --save
       </h3>
       &nbsp;&nbsp;
       <h3 style="background:pink;padding:5px;border-radius:5px">
@@ -11,7 +15,7 @@
       </h3>
       &nbsp;&nbsp;
       <h3 style="background:pink;padding:5px;border-radius:5px">
-        cnpm i xgplayer --save
+        cnpm i xgplayer-flv --save
       </h3>
       &nbsp;&nbsp;
       <h3 style="background:pink;padding:5px;border-radius:5px">
