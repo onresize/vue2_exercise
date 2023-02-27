@@ -24,7 +24,8 @@ export default {
   },
   mounted() {
     // flv和rtmp用不了
-    this.videoUrl = 'http://39.108.213.89:1986/hls/c84415000d2d.m3u8'
+    // this.videoUrl = 'http://39.108.213.89:1986/hls/c84415000d2d.m3u8'
+    this.videoUrl = 'http://47.38.11.206:83/openUrl/E6SGXYY/live.m3u8'
   },
   created() {},
   methods: {},
