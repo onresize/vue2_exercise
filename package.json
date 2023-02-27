@@ -12,6 +12,7 @@
     "@jiaminghi/data-view": "^2.10.0",
     "@smallwei/avue": "^2.8.23",
     "animated-number-vue": "^1.0.0",
+    "animejs": "^3.2.1",
     "ant-design-vue": "^1.7.8",
     "axios": "^0.21.4",
     "core-js": "^3.6.5",

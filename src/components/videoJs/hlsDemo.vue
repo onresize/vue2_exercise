@@ -26,20 +26,20 @@ export default {
           // }
           // src: 'http://devimages.apple.com.edgekey.net/streaming/examples/bipbop_4x3/gear2/prog_index.m3u8',
           // src: 'https://open.ys7.com/v3/openlive/J18981272_1_1.m3u8?expire=1692844973&id=484311975430455296&t=c8dd9ce076a6763fff9a9bbce54fe534485dae7b2ea0f74d9c09fa4bd812e0c7&ev=100',
-          src: 'http://139.9.207.185:1986/hls/c84415000d97.m3u8',
+          src: 'http://47.38.11.206:83/openUrl/qbGwpMY/live.m3u8'
         },
-        // {
-        //   id: 4,
-        //   src: 'http://218.89.77.46:1986/hls/c81515000031.m3u8'
-        // },
-        // {
-        //   id: 5,
-        //   src: 'http://218.89.77.46:1986/hls/c84415000d2d.m3u8'
-        // },
-        // {
-        //   id: 31,
-        //   src: 'http://39.108.213.89:1986/hls/c84415000d68.m3u8'
-        // },
+        {
+          id: 4,
+          src: 'http://47.38.11.206:83/openUrl/ucybUhW/live.m3u8'
+        },
+        {
+          id: 5,
+          src: 'http://47.38.11.206:83/openUrl/E6SGXYY/live.m3u8'
+        },
+        {
+          id: 31,
+          src: 'http://139.9.207.185:1986/hls/c84415000d97.m3u8'
+        },
         // {
         //   id: 41,
         //   src: 'http://218.89.77.46:1986/hls/c815050001de.m3u8'

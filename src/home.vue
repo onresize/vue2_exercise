@@ -165,6 +165,8 @@ export default {
         'list',
         'svga',
         'svg',
+        'animate1',
+        'animate2',
       ],
     }
   },

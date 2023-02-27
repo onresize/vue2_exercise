@@ -106,8 +106,10 @@ const videoPlay = () => import('@/components/videoPlay/index.vue')
 const RmbNumber = () => import('@/components/数字转人民币格式/index.vue')
 const guide = () => import('@/components/新手指引/index.vue')
 const list = () => import('@/components/list轮播/index.vue')
-const svga = () => import('@/components/svga/index.vue')
+const svga = () => import('@/components/svga/svga.vue')
 const svg = () => import('@/components/svga/Svg.vue')
+const animate1 = () => import('@/components/动画/animate1.vue')
+const animate2 = () => import('@/components/动画/animate2.vue')
 
 Vue.use(VueRouter)
 
@@ -226,6 +228,8 @@ const router = new VueRouter({
                 { path: '/list', component: list },
                 { path: '/svga', component: svga },
                 { path: '/svg', component: svg },
+                { path: '/animate1', component: animate1 },
+                { path: '/animate2', component: animate2 },
             ]
         },
     ]
