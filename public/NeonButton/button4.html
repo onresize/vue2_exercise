@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flaming Button HTML CSS</title>
+  <style>
+    *{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #121212;
+}
+#svg{
+  position: absolute;
+  display: block;
+}
+
+.btn{
+  position: relative;
+  padding: 20px 30px;
+  font-size: 32px;
+  border: none;
+  outline: none;
+  color: #0c1016;
+  filter: url('#gooey');
+  background-color: #00e1ff;
+  cursor: pointer;
+}
+
+.btn-title{
+  position: relative;
+  z-index: 2;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.bubbles{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+.bubble{
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  top: 0;
+  left:0;
+  display: block;
+  background-color: #00e1ff;
+  border-radius: 100%;
+}
+.bubble:nth-child(1){
+  left: 80%;
+  animation: move1 3s infinite;
+  animation-delay: 0.2s;
+}
+.bubble:nth-child(2){
+  left: 35%;
+  animation: move2 3.04s infinite;
+  animation-delay: 0.4s;
+}
+.bubble:nth-child(3){
+  left: 45%;
+  animation: move3 3.06s infinite;
+  animation-delay: 0.6s;
+}
+.bubble:nth-child(4){
+  left: 20%;
+  animation: move4 3.08s infinite;
+  animation-delay: 0.8s;
+}
+.bubble:nth-child(5){
+  left: 15%;
+  animation: move5 3.1s infinite;
+  animation-delay: 1s;
+}
+.bubble:nth-child(6){
+  left: 25%;
+  animation: move6 3.12s infinite;
+  animation-delay: 1.2s;
+}
+.bubble:nth-child(7){
+  left: 70%;
+  animation: move7 3.14s infinite;
+  animation-delay: 1.4s;
+}
+.bubble:nth-child(8){
+  left: 60%;
+  animation: move8 3.16s infinite;
+  animation-delay: 1.6s;
+}
+.bubble:nth-child(9){
+  left: 5%;
+  animation: move9 3.8s infinite;
+  animation-delay: 1.8s;
+}
+.bubble:nth-child(10){
+  left: 55%;
+  animation: move10 3.2s infinite;
+  animation-delay: 2s;
+}
+@keyframes move1 {
+  0%{
+    transform: translate(0, 0);
+  }
+  99%{
+    transform: translate(0, -105px);
+  }
+  100%{
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+}
+@keyframes move2 {
+  0%{
+    transform: translate(0, 0);
+  }
+  99%{
+    transform: translate(0, -95px);
+  }
+  100%{
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+}
+@keyframes move3 {
+  0%{
+    transform: translate(0, 0);
+  }
+  99%{
+    transform: translate(0, -60px);
+  }
+  100%{
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+}
+@keyframes move4 {
+  0%{
+    transform: translate(0, 0);
+  }
+  99%{
+    transform: translate(0, -90px);
+  }
+  100%{
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+}
+@keyframes move5 {
+  0%{
+    transform: translate(0, 0);
+  }
+  99%{
+    transform: translate(0, -95px);
+  }
+  100%{
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+}
+@keyframes move6 {
+  0%{
+    transform: translate(0, 0);
+  }
+  99%{
+    transform: translate(0, -65px);
+  }
+  100%{
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+}
+@keyframes move7 {
+  0%{
+    transform: translate(0, 0);
+  }
+  99%{
+    transform: translate(0, -110px);
+  }
+  100%{
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+}
+@keyframes move8 {
+  0%{
+    transform: translate(0, 0);
+  }
+  99%{
+    transform: translate(0, -85px);
+  }
+  100%{
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+}
+@keyframes move9 {
+  0%{
+    transform: translate(0, 0);
+  }
+  99%{
+    transform: translate(0, -80px);
+  }
+  100%{
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+}
+@keyframes move10 {
+  0%{
+    transform: translate(0, 0);
+  }
+  99%{
+    transform: translate(0, -125px);
+  }
+  100%{
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <svg id="svg" xmlns="http://www.w3.org/2000/svg" version="1.1">
+      <defs>
+        <filter id="gooey">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur" />
+          <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0 0 0 0 19 -9" result="highContrastGraphic"/>
+          <feComposite in="SourceGraphic" in2="highContrastGraphic" operator="atop"/>
+        </filter>
+      </defs>
+    </svg>
+    <button class="btn">
+      <p class="btn-title">Button</p>
+      <span class="bubbles">
+        <span class="bubble"></span>
+        <span class="bubble"></span>
+        <span class="bubble"></span>
+        <span class="bubble"></span>
+        <span class="bubble"></span>
+        <span class="bubble"></span>
+        <span class="bubble"></span>
+        <span class="bubble"></span>
+        <span class="bubble"></span>
+        <span class="bubble"></span>
+      </span>
+    </button>
+  </div>
+</body>
+</html>

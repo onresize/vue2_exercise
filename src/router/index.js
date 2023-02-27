@@ -31,6 +31,7 @@ const Dragmodal = () => import('@/components/modal/dragmodalTest.vue')
 const Set1 = () => import('@/components/$set测试/set.vue')
 const Uploadimg = () => import('@/components/upImgTest/uploadImg.vue')
 const Hls = () => import('@/components/videoJs/hlsDemo.vue')
+const HKVideo = () => import('@/components/videoJs/hk_player.vue')
 const XgPlayer = () => import('@/components/videoJs/xgPlayer.vue')
 const WebRtcDemo = () => import('@/components/videoJs/webRtcDemo.vue')
 const FlvDemo = () => import('@/components/videoJs/flvDemo.vue')
@@ -155,6 +156,7 @@ const router = new VueRouter({
                 { path: '/$set', component: Set1 },
                 { path: '/uploadImg', component: Uploadimg },
                 { path: '/hls', component: Hls },
+                { path: '/HKVideo', component: HKVideo },
                 { path: '/flvDemo', component: FlvDemo },
                 { path: '/webRtcDemo', component: WebRtcDemo },
                 { path: '/xgPlayer', component: XgPlayer },

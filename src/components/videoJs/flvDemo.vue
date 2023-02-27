@@ -18,14 +18,15 @@ export default {
   data() {
     return {
       videoSrc: [
-        {
-          id: 1,
-          src: 'http://47.103.76.152:8091/live/livestream.flv',
-        },
         // {
-        //   id: 2,
-        //   src: 'https://flvopen.ys7.com:9188/openlive/6e31c12fe0f340339aafb065841e8dc5.flv',
+        //   id: 1,
+        //   src: 'http://47.103.76.152:8091/live/livestream.flv',
         // },
+        {
+          id: 2,
+          // src: 'https://flvopen.ys7.com:9188/openlive/6e31c12fe0f340339aafb065841e8dc5.flv',
+          src: 'http://localhost:8000/livemydesktop2/mydesktop2.flv',
+        },
         // {
         //   id: 3,
         //   src: 'https://flvopen.ys7.com:9188/openlive/6e31c12fe0f340339aafb065841e8dc5.flv',

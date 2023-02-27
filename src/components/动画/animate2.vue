@@ -17,6 +17,24 @@
 
     <iframe
       class="iframe_box"
+      src="/NeonButton/button5.html"
+      frameborder="0"
+      scrolling="no"
+    ></iframe>
+    <iframe
+      class="iframe_box"
+      src="/NeonButton/button4.html"
+      frameborder="0"
+      scrolling="no"
+    ></iframe>
+    <iframe
+      class="iframe_box"
+      src="/NeonButton/button3.html"
+      frameborder="0"
+      scrolling="no"
+    ></iframe>
+    <iframe
+      class="iframe_box"
       src="/NeonButton/button2.html"
       frameborder="0"
       scrolling="no"
@@ -24,12 +42,6 @@
     <iframe
       class="iframe_box"
       src="/NeonButton/button1.html"
-      frameborder="0"
-      scrolling="no"
-    ></iframe>
-    <iframe
-      class="iframe_box"
-      src="/NeonButton/button0.html"
       frameborder="0"
       scrolling="no"
     ></iframe>
@@ -60,8 +72,9 @@ export default {
 
 <style scoped lang="less">
 .iframe_box {
-  width: 500px;
-  height: 500px;
+  width: 300px;
+  height: 300px;
+  margin-right: 5px;
 }
 .animationBox {
   box-sizing: content-box;
