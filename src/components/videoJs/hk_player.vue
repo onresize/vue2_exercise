@@ -6,6 +6,15 @@
 </template>
 
 <script>
+// 参考： https://blog.csdn.net/qq_42266293/article/details/119413968
+/* 
+  PS：
+  1、H5版本只能与海康的两个应用平台对接，分别是"iSecure Center 综合安防管理平台"和"Infovision IoT智能应用平台"，且需要iSecure Center V1.4.100以上版本或是Infovision IOT V1.6.1以上版本，以上两个平台都是海康的软件产品，需付费购买的，若只是单独的海康摄像头，不支持H5版本的demo访问
+  2、H5版本只支持获取H.264编码格式的视频流
+  3、H5版本只支持高版本的（windows chrome80+、Android browser、ios safari）浏览器
+  4、H5版本需要使用“高级模式”（使用步骤中有说明）
+  5、H5版本目前只能使用Websocket协议获取视频流数据
+*/
 var player
 export default {
   data() {
@@ -65,10 +74,7 @@ export default {
       })
     },
     getPlayerUrl() {
-      // let playUrl = 'http://139.9.207.185:1986/hls/c84415000d97.m3u8'
-      // let playUrl =
-      //   'https://flvopen.ys7.com:9188/openlive/6e31c12fe0f340339aafb065841e8dc5.flv'
-      let playUrl = 'ws://121.40.165.18:8800'
+      let playUrl = 'ws://192.168.31.91:8888/rtsp://192.168.31.91/test' //XXX 这个地址是本地笔记本摄像头音视频推流、不能播放
       if (playUrl) {
         let mode = 0
         player.JS_Play(playUrl, { playUrl, mode }, 0).then(

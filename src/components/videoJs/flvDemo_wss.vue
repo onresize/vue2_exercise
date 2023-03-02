@@ -29,8 +29,10 @@ export default {
         this.player = null
         // 准备监控设备流地址
         const url = 'rtsp://192.168.31.91/test'
+        // 使用FFmpeg获取本地摄像头设备： ffmpeg -list_devices true -f dshow -i dummy
+
+        // 使用FFmpeg本地摄像头推流终端命令：
         // ffmpeg -f dshow -i video="HD Camera":audio="麦克风阵列 (Realtek(R) Audio)" -vcodec libx264 -preset:v ultrafast -tune:v zerolatency -rtsp_transport tcp -f rtsp rtsp://127.0.0.1/test
-        // 创建一个flvjs实例
 
         // 下面的ws://localhost:8888换成你搭建的websocket服务地址，后面加上设备流地址
         this.player = flvjs.createPlayer({
