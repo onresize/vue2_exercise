@@ -1,4 +1,5 @@
 <template>
+  <!-- FLV能播放rtsp流、也能播放rtmp流 -->
   <div class="container">
     <div class="row">
       <videoFlv
@@ -22,19 +23,18 @@ export default {
         //   id: 1,
         //   src: 'http://47.103.76.152:8091/live/livestream.flv',
         // },
+        // {
+        //   id: 2,
+        //   src: 'http://localhost:8000/livemydesktop2/mydesktop2.flv',
+        // },
         {
-          id: 2,
-          // src: 'https://flvopen.ys7.com:9188/openlive/6e31c12fe0f340339aafb065841e8dc5.flv',
-          src: 'http://localhost:8000/livemydesktop2/mydesktop2.flv',
+          id: 3,
+          src: 'https://flvopen.ys7.com:9188/openlive/6e31c12fe0f340339aafb065841e8dc5.flv',
         },
-        // {
-        //   id: 3,
-        //   src: 'https://flvopen.ys7.com:9188/openlive/6e31c12fe0f340339aafb065841e8dc5.flv',
-        // },
-        // {
-        //   id: 4,
-        //   src: 'https://flvopen.ys7.com:9188/openlive/6e31c12fe0f340339aafb065841e8dc5.flv',
-        // },
+        {
+          id: 4,
+          src: 'ws://192.168.31.91:8888/rtsp://127.0.0.1/test',
+        },
         // {
         //   id: 5,
         //   src: 'https://flvopen.ys7.com:9188/openlive/6e31c12fe0f340339aafb065841e8dc5.flv',

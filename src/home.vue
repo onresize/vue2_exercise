@@ -66,6 +66,7 @@ export default {
         'hls',
         'HKVideo',
         'flvDemo',
+        'flvDemo_wss',
         'easyPlay',
         'xgPlayer',
         'moreVideoDemo',

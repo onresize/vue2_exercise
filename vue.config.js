@@ -7,7 +7,7 @@ module.exports = {
   // },
   devServer: {
     host: '0.0.0.0',
-    port: 80,
+    port: 8787,
     open: false,
     proxy: {
       '/apiSohu': {
