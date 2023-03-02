@@ -1,5 +1,5 @@
 <template>
-  <!-- FLV能播放rtsp流、也能播放rtmp流 -->
+  <!-- FLV能播放rtsp流、也能播放rtmp流、rtmp依赖flash、谷歌浏览器已禁止、最好的方案rtsp转成http或者ws协议的方式 -->
   <div class="container">
     <div class="row">
       <videoFlv
