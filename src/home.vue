@@ -169,6 +169,7 @@ export default {
         'svg',
         'animate1',
         'animate2',
+        'rotateAnimate',
       ],
     }
   },
