@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .box {
+      width: 100vw;
+      height: 100vh;
+      background: lightblue;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .btn {
+      width: 200px;
+      height: 50px;
+      background-color: rgba(128, 128, 128, .3);
+      border-radius: 20px;
+    }
+
+    .txt {
+      user-select: none;
+      box-sizing: content-box;
+      width: 200px;
+      line-height: 50px;
+      font-size: 20px;
+      font-weight: blood;
+      text-align: center;
+
+      -webkit-background-clip: text;
+      /*按文字裁剪*/
+      -webkit-text-fill-color: transparent;
+      /*文字的颜色使用背景色*/
+
+      background-color: #19385c;
+      /*设置一个背景色*/
+      background-image: -webkit-linear-gradient(-45deg, rgba(0, 0, 0, 0.2) 30%, #fff 50%, rgba(0, 0, 0, 0.2) 70%);
+      /*设置渐变的背景，按对角线渐变*/
+
+      background-blend-mode: hard-light;
+      /*设置背景为混合模式下的强光模式*/
+      background-size: 200%;
+
+      -webkit-animation: shine 2s infinite;
+      /*给背景添加动画改变位置*/
+    }
+
+    @-webkit-keyframes shine {
+      from {
+        background-position: 100%;
+      }
+
+      to {
+        background-position: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <div class="btn">
+      <div class="txt">Slide To Unlock</div>
+    </div>
+  </div>
+
+</body>
+
+</html>

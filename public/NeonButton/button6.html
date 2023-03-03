@@ -23,7 +23,6 @@
 
     .button {
       font-size: 20px;
-      z-index: 1;
       width: 200px;
       height: 50px;
       position: absolute;
@@ -35,6 +34,15 @@
       border-radius: 30px;
       cursor: pointer;
     }
+    .button::before {
+      content:"按钮按钮按钮";
+      color: rgba(52, 50, 50, 0.612);
+      position: absolute;
+      z-index: 9;
+      width: 200px;
+      line-height: 50px;
+      text-align: center;
+    }
 
     .left-light {
       width: 100%;
@@ -45,16 +53,17 @@
       left: 0;
       top: 0;
     }
-
+    
     .left-light::before {
       content: "";
-      width: 30px;
+      width: 10px;
       height: 300px;
       background: #fff;
       transform: rotate(30deg);
       margin-top: -150px;
-      animation: lightMove 1.2s linear infinite;
-      animation-delay: 2s;
+      animation: lightMove 1.2s linear .2s infinite;
+      /* transition-delay: 2s; */
+      /* animation-delay: 10s; */
       position: absolute;
       z-index: 90;
       top: 50%;
@@ -63,7 +72,7 @@
 
     @keyframes lightMove {
       0% {
-        left: -75px
+        left: -375px
       }
 
       100% {
