@@ -3,21 +3,28 @@
     <el-card>
       <h2>el-table嵌入echarts</h2>
       <el-table :data="tableData" v-loading="loading">
-        <el-table-column prop="date" label="日期" width="180"> </el-table-column>
-        <el-table-column prop="name" label="姓名" width="180"> </el-table-column>
+        <el-table-column prop="date" label="日期" width="180">
+        </el-table-column>
+        <el-table-column prop="name" label="姓名" width="180">
+        </el-table-column>
         <el-table-column>
           <template slot-scope="scope">
             <el-button
               :type="rid == scope.row.id ? 'warning' : 'primary'"
               size="small"
               @click="ClickToTop(scope.row)"
-              >{{ rid == scope.row.id ? '已置顶' : '未置顶' }}</el-button
+              >{{
+                rid == scope.row.id ? '已置顶' : '未置顶'
+              }}</el-button
             >
           </template>
         </el-table-column>
         <el-table-column prop="num">
           <template slot-scope="scope">
-            <div style="height: 40px; width: 100px" :ref="'echarts' + scope.row.id"></div>
+            <div
+              style="height: 40px; width: 100px"
+              :ref="'echarts' + scope.row.id"
+            ></div>
           </template>
         </el-table-column>
       </el-table>
@@ -70,7 +77,9 @@ export default {
     getEcharts() {
       setTimeout((_) => {
         this.tableData.forEach((e) => {
-          let myChart = this.$echarts.init(this.$refs['echarts' + e.id])
+          let myChart = this.$echarts.init(
+            this.$refs['echarts' + e.id]
+          )
           myChart.setOption({
             grid: {
               left: '0',
@@ -118,11 +127,7 @@ export default {
       let row1 = row // 暂存当前行数据
       // 遍历合并数据并重新渲染
       setTimeout(() => {
-        let res = [row].concat(
-          val.filter((item) => {
-            return item != row1
-          })
-        )
+        let res = [row].concat(val.filter((item) => item != row1))
         this.loading = false
         this.tableData = res
       }, 500)

@@ -3,12 +3,12 @@
     <!-- 拖拽博客参考：https://blog.csdn.net/vvv3171071/article/details/122705408 -->
     <div
       class="div-box"
-      @dblclick="openWindow"
+      @click="openWindow"
       draggable="true"
       @dragstart="dragstart"
       @dragend="dragend"
       @wheel="handWheel"
-      :style="`right:${elRight}px;bottom:${elBottom}px;width:${elWidth}px;height:${elHeight}px`"
+      :style="`cursor:pointer;right:${elRight}px;bottom:${elBottom}px;width:${elWidth}px;height:${elHeight}px`"
     >
       <img class="home_image" src="./assets/svg/gitee.svg" />
       <div
@@ -58,8 +58,8 @@ export default {
       elRight: 15,
       elBottom: 15,
       zoom: 1,
-      elWidth: 40,
-      elHeight: 40,
+      elWidth: 60,
+      elHeight: 60,
       RouterList: [
         'map',
         'webRtcDemo',
@@ -71,11 +71,11 @@ export default {
         'xgPlayer',
         'moreVideoDemo',
         // 'earth_map',
-        'a-table-slot',
-        'a-table',
-        'el-table-test',
+        // 'a-table-slot',
+        // 'a-table',
+        // 'el-table-test',
         'drag-table',
-        'el-tree',
+        // 'el-tree',
         'el-tree-test',
         'record',
         'export-test',
@@ -84,7 +84,7 @@ export default {
         'print-nb',
         'vuex-test',
         'computed-test',
-        'chart',
+        // 'chart',
         // 'echartTest',
         'dexie',
         'axiosfenz',
@@ -95,9 +95,9 @@ export default {
         'element',
         'dragmodal',
         '$set',
-        'uploadImg',
+        // 'uploadImg',
         'img',
-        'v-for_flex',
+        // 'v-for_flex',
         'kebiao',
         'kebiao1',
         'kebiao2',
@@ -160,7 +160,7 @@ export default {
         'childModelProps',
         'vMyModel',
         'numberAnimation',
-        'chartTest',
+        // 'chartTest',
         'videoPlay',
         'RmbNumber',
         'guide',
@@ -170,6 +170,7 @@ export default {
         'animate1',
         'animate2',
         'rotateAnimate',
+        'css1',
       ],
     }
   },
@@ -178,8 +179,23 @@ export default {
       this.RouterList.length * 50 - sideDom.offsetHeight
   },
   methods: {
-    openWindow() {
-      window.open('https://gitee.com/onresize/vue2_exercise')
+    openWindow(h = 400, w = 600) {
+      // window.open('https://gitee.com/onresize/vue2_exercise')
+      var left = Math.round((window.screen.availWidth - w) / 2)
+      var top = Math.round((window.screen.availHeight - 100 - h) / 2)
+      var MyWin = window.open(
+        'https://www.bilibili.com/',
+        '',
+        'height=' +
+          h +
+          ', width=' +
+          w +
+          ',top=' +
+          top +
+          ',left=' +
+          left +
+          ', toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no'
+      )
     },
     // 开始拖拽
     dragstart({ x, y }) {
@@ -253,6 +269,15 @@ a {
 .home_container {
   overflow-y: hidden;
 }
+
+// light & dark
+@media (prefers-color-scheme: light) {
+  .home_container {
+    // filter: invert(100%); // 颜色反转
+    background-color: rgba(29, 32, 31) !important;
+  }
+}
+
 .home_container_aside {
   height: calc(100vh - 44px);
   overflow-x: hidden;

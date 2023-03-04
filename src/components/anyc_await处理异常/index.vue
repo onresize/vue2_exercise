@@ -37,6 +37,11 @@
             return [err, null]
           }
         }
+
+        // Promise抛出异常、不catch的情况会被unhandledrejection捕获
+        window.addEventListener('unhandledrejection', (event) => {
+          console.log('捕获到没有catch的Promise返回的reject错误：', event)
+        })
     </pre>
     <h2>
       测试自己的js库to-fast-lt中isEmptyObject方法、<el-tag>
@@ -65,6 +70,10 @@ export default {
     this.getList()
     console.log('是否为空对象：', toFast.isEmptyObject(this.obj))
     this.isObj = toFast.isEmptyObject(this.obj)
+    window.addEventListener('unhandledrejection', (event) => {
+      console.log('捕获到没有catch的Promise返回的reject错误：', event)
+    })
+    this.fetchReject()
   },
   methods: {
     // 模仿一个Promise
@@ -74,6 +83,15 @@ export default {
           // resolve('成功')
           reject('Promise抛出异常')
         }, 1000)
+      })
+    },
+    fetchReject() {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          reject(
+            'Promise抛出异常、不catch的情况会被unhandledrejection捕获'
+          )
+        }, 2000)
       })
     },
     // 两种封装捕获 await异常

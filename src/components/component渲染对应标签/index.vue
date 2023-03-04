@@ -12,7 +12,6 @@
         )
       "
     >
-      www.baidu.com
     </component>
   </div>
 </template>

@@ -113,6 +113,7 @@ const svg = () => import('@/components/svga/Svg.vue')
 const animate1 = () => import('@/components/动画/animate1.vue')
 const animate2 = () => import('@/components/动画/animate2.vue')
 const rotateAnimate = () => import('@/components/动画/rotateAnimate.vue')
+const css1 = () => import('@/components/样式/css1.vue')
 
 Vue.use(VueRouter)
 
@@ -236,6 +237,7 @@ const router = new VueRouter({
                 { path: '/animate1', component: animate1 },
                 { path: '/animate2', component: animate2 },
                 { path: '/rotateAnimate', component: rotateAnimate },
+                { path: '/css1', component: css1 },
             ]
         },
     ]

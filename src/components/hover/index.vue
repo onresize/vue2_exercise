@@ -16,7 +16,7 @@
         placement="right"
         :visible-arrow="true"
       >
-        <el-button size="mini">分享</el-button>
+        <el-button size="mini">分享1</el-button>
         <div slot="content">
           <div class="content">
             <div>微信</div>
@@ -28,14 +28,6 @@
           </div>
         </div>
       </el-tooltip>
-      <div class="box_btn">分享</div>
-      <div class="box_div">
-        <ul>
-          <li>微信</li>
-          <li>QQ</li>
-          <li>抖音</li>
-        </ul>
-      </div>
     </div>
   </div>
 </template>
