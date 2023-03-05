@@ -63,7 +63,7 @@ export default {
       RouterList: [
         'map',
         'webRtcDemo',
-        'hls',
+        'hlsDemo',
         'HKVideo',
         'flvDemo',
         'flvDemo_wss',

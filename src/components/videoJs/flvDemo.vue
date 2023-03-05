@@ -1,5 +1,6 @@
 <template>
-  <!-- FLV能播放rtsp流、也能播放rtmp流、rtmp依赖flash、谷歌浏览器已禁止、最好的方案rtsp转成http或者ws协议的方式 -->
+  <!-- rtmp依赖flash、谷歌浏览器已禁止、最好的方案rtsp转成http或者ws协议的 flv流 或 m3u8流 -->
+  <!-- VLC可以直接播放rtsp、rtmp流 -->
   <div class="container">
     <div class="row">
       <videoFlv
@@ -19,42 +20,15 @@ export default {
   data() {
     return {
       videoSrc: [
-        // {
-        //   id: 1,
-        //   src: 'http://47.103.76.152:8091/live/livestream.flv',
-        // },
-        // {
-        //   id: 2,
-        //   src: 'http://localhost:8000/livemydesktop2/mydesktop2.flv',
-        // },
+        {
+          id: 2,
+          src: 'http://localhost:8000/live/mp4.flv',
+          //XXX node服务端代码： https://www.aliyundrive.com/s/TgDMfqosdyM
+        },
         {
           id: 3,
           src: 'https://flvopen.ys7.com:9188/openlive/6e31c12fe0f340339aafb065841e8dc5.flv',
         },
-        {
-          id: 4,
-          src: 'ws://192.168.31.91:8888/rtsp://127.0.0.1/test',
-        },
-        // {
-        //   id: 5,
-        //   src: 'https://flvopen.ys7.com:9188/openlive/6e31c12fe0f340339aafb065841e8dc5.flv',
-        // },
-        // {
-        //   id: 6,
-        //   src: 'https://flvopen.ys7.com:9188/openlive/6e31c12fe0f340339aafb065841e8dc5.flv',
-        // },
-        // {
-        //   id: 7,
-        //   src: 'https://flvopen.ys7.com:9188/openlive/6e31c12fe0f340339aafb065841e8dc5.flv',
-        // },
-        // {
-        //   id: 8,
-        //   src: 'https://flvopen.ys7.com:9188/openlive/6e31c12fe0f340339aafb065841e8dc5.flv',
-        // },
-        // {
-        //   id: 9,
-        //   src: 'https://flvopen.ys7.com:9188/openlive/6e31c12fe0f340339aafb065841e8dc5.flv',
-        // },
       ],
     }
   },

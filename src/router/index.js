@@ -30,7 +30,7 @@ const EarthMap = () => import('@/components/baiduMap/earth.vue')
 const Dragmodal = () => import('@/components/modal/dragmodalTest.vue')
 const Set1 = () => import('@/components/$set测试/set.vue')
 const Uploadimg = () => import('@/components/upImgTest/uploadImg.vue')
-const Hls = () => import('@/components/videoJs/hlsDemo.vue')
+const HlsDemo = () => import('@/components/videoJs/hlsDemo.vue')
 const HKVideo = () => import('@/components/videoJs/hk_player.vue')
 const XgPlayer = () => import('@/components/videoJs/xgPlayer.vue')
 const WebRtcDemo = () => import('@/components/videoJs/webRtcDemo.vue')
@@ -158,7 +158,7 @@ const router = new VueRouter({
                 { path: '/dragmodal', component: Dragmodal },
                 { path: '/$set', component: Set1 },
                 { path: '/uploadImg', component: Uploadimg },
-                { path: '/hls', component: Hls },
+                { path: '/hlsDemo', component: HlsDemo },
                 { path: '/HKVideo', component: HKVideo },
                 { path: '/flvDemo', component: FlvDemo },
                 { path: '/flvDemo_wss', component: FlvDemo_wss },

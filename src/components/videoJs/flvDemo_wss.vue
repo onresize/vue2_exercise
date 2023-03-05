@@ -40,6 +40,7 @@ export default {
           isLive: true,
           hasVideo: true,
           url: 'ws://192.168.31.91:8888/' + url,
+          //XXX node服务端代码： https://www.aliyundrive.com/s/BNyiYXKdrW2
         })
         this.player.on('error', () => {
           //报错重置player，不重置卡着不动。
