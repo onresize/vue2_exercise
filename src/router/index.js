@@ -114,6 +114,8 @@ const animate1 = () => import('@/components/动画/animate1.vue')
 const animate2 = () => import('@/components/动画/animate2.vue')
 const rotateAnimate = () => import('@/components/动画/rotateAnimate.vue')
 const css1 = () => import('@/components/样式/css1.vue')
+const css2 = () => import('@/components/样式/css2.vue')
+const v_cloak = () => import('@/components/v_cloak_html_text/v-cloak.vue')
 
 Vue.use(VueRouter)
 
@@ -238,6 +240,8 @@ const router = new VueRouter({
                 { path: '/animate2', component: animate2 },
                 { path: '/rotateAnimate', component: rotateAnimate },
                 { path: '/css1', component: css1 },
+                { path: '/css2', component: css2 },
+                { path: '/v_cloak', component: v_cloak },
             ]
         },
     ]

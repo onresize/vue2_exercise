@@ -171,6 +171,8 @@ export default {
         'animate2',
         'rotateAnimate',
         'css1',
+        'css2',
+        'v_cloak',
       ],
     }
   },
