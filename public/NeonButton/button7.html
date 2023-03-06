@@ -25,13 +25,15 @@
     }
 
     .txt {
+      cursor: pointer;
       user-select: none;
       box-sizing: content-box;
       width: 200px;
       line-height: 50px;
       font-size: 20px;
-      font-weight: blood;
+      font-weight: bold;
       text-align: center;
+      overflow: hidden;
 
       -webkit-background-clip: text;
       /*按文字裁剪*/
@@ -47,17 +49,17 @@
       /*设置背景为混合模式下的强光模式*/
       background-size: 200%;
 
-      -webkit-animation: shine 2s infinite;
+      -webkit-animation: shine linear 7s infinite;
       /*给背景添加动画改变位置*/
     }
 
     @-webkit-keyframes shine {
       from {
-        background-position: 100%;
+        background-position: -500px 0;
       }
 
       to {
-        background-position: 0;
+        background-position: 500px 0;
       }
     }
   </style>

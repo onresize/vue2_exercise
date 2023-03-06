@@ -27,6 +27,10 @@ export default {
           src: 'http://127.0.0.1:8080/index.m3u8', // live-server开启服务访问本地m3u8
           //XXX node服务端代码： https://www.aliyundrive.com/s/poWuVfSnuDr
         },
+        {
+          id: 321,
+          src: 'http://1257120875.vod2.myqcloud.com/0ef121cdvodtransgzp1257120875/3055695e5285890780828799271/v.f230.m3u8',
+        },
       ],
     }
   },

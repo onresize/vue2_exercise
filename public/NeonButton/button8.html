@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="show">take here</div>
+</body>
+
+</html>
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    background: rgb(0, 0, 0, 0.8);
+  }
+
+  div {
+    cursor: pointer;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+  }
+
+  .show {
+    user-select: none;
+    font-size: 14px;
+    font-weight: bold;
+    -webkit-font-smoothing: antialiased;
+    color: #FFF;
+    background-color: #1c93e3;
+    border-radius: 22px;
+    overflow: hidden;
+    display: inline-block;
+    padding: 13px 24px;
+    text-align: center;
+    width: 120px;
+    height: 20px;
+    line-height: 20px;
+    /* 仅大写 */
+    text-transform: uppercase; 
+    background-image: linear-gradient(270deg, rgba(100, 181, 239, 0) 48.44%, #64b5ef 75.52%, rgba(100, 181, 239, 0) 100%);
+    background-repeat: no-repeat;
+    animation: bg-move linear 5s infinite;
+  }
+  .show:hover {
+    background-color: #1a8ad5
+  }
+
+  @keyframes bg-move {
+   from {
+      background-position: -200px 0;
+    }
+
+    to {
+      background-position: 1000px 0;
+    }
+  }
+</style>

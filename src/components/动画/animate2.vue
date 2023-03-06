@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="contentBox">
     <el-button type="primary" size="small" @click="start"
       >开启</el-button
     >
@@ -15,6 +15,12 @@
       ></div>
     </div>
 
+    <iframe
+      class="iframe_box"
+      src="/NeonButton/button8.html"
+      frameborder="0"
+      scrolling="no"
+    ></iframe>
     <iframe
       class="iframe_box"
       src="/NeonButton/button7.html"
@@ -83,6 +89,10 @@ export default {
 </script>
 
 <style scoped lang="less">
+.contentBox {
+  width: 1260px;
+  height: 100vh;
+}
 .iframe_box {
   width: 300px;
   height: 300px;
