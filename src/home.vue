@@ -172,6 +172,7 @@ export default {
         'rotateAnimate',
         'css1',
         'css2',
+        'css3',
         'v_cloak',
       ],
     }
@@ -241,6 +242,7 @@ export default {
   margin: 10px;
   width: 100%;
   display: inline-flex;
+  user-select: none;
 }
 .bb {
   width: 190px;
