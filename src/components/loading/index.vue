@@ -2,7 +2,15 @@
   <div v-if="show">
     <div class="loader-rainbow">
       <div class="loader-inner">
-        <div class="loader-line-wrap">
+        <h2 class="hh2" style="--i: 1">稍</h2>
+        <h2 class="hh2" style="--i: 2">等</h2>
+        <h2 class="hh2" style="--i: 3">片</h2>
+        <h2 class="hh2" style="--i: 4">刻</h2>
+        <h2 style="--i: 5">
+          (..<span class="eye">•</span>˘_˘<span class="eye">•</span
+          >..)
+        </h2>
+        <!-- <div class="loader-line-wrap">
           <div class="loader-line"></div>
         </div>
         <div class="loader-line-wrap">
@@ -16,7 +24,7 @@
         </div>
         <div class="loader-line-wrap">
           <div class="loader-line"></div>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
@@ -35,7 +43,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="less">
 .loader-rainbow {
   position: fixed;
   top: 50%;
@@ -44,18 +52,45 @@ export default {
   z-index: 9999;
   width: 100vw;
   height: 105vh;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.8);
   transition: all 0.6s ease-out;
 }
+@keyframes transformTop {
+  0% {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(-20px);
+  }
+  40%,
+  100% {
+    transform: translateY(0);
+  }
+}
 .loader-inner {
-  bottom: 0;
-  height: 100px;
-  left: 0;
-  margin: auto;
   position: absolute;
-  right: 0;
-  top: 0;
+  inset: 0;
+  height: 100px;
   width: 100px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  h2 {
+    color: #fff;
+    font-weight: bold;
+    animation: transformTop 1s ease-in-out infinite;
+    animation-delay: calc(0.1s * var(--i)); // 动画延迟
+    // 倒影效果
+    -webkit-box-reflect: below 5px -webkit-linear-gradient(transparent, transparent
+          20%, rgba(255, 255, 255, 0.3));
+  }
+  .hh2 {
+    letter-spacing: 8px;
+  }
+  .eye {
+    color: greenyellow;
+  }
 }
 
 .loader-line-wrap {

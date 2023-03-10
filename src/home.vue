@@ -174,6 +174,7 @@ export default {
         'css2',
         'css3',
         'v_cloak',
+        'selectChart',
       ],
     }
   },

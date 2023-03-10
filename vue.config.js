@@ -1,7 +1,8 @@
 module.exports = {
+  productionSourceMap: false, // 去除vue打包后js目录下生成的.map文件、用于加速生产环境构建
   runtimeCompiler: true,
-  //TODO 上面这一句相当于下面这样写、这里不写不会出界面效果、智慧显示代码
-  // chainWebpack: (config) => { 
+  //TODO 上面这一句相当于下面这样写、这里不写不会出界面效果、只会显示代码
+  // chainWebpack: (config) => {
   //   config.resolve.alias
   //     .set("vue$", "vue/dist/vue.esm.js");
   // },

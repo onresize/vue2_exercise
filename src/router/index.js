@@ -117,6 +117,7 @@ const css1 = () => import('@/components/样式/css1.vue')
 const css2 = () => import('@/components/样式/css2.vue')
 const css3 = () => import('@/components/样式/css3.vue')
 const v_cloak = () => import('@/components/v_cloak_html_text/v-cloak.vue')
+const selectChart = () => import('@/components/selectChart/index.vue')
 
 Vue.use(VueRouter)
 
@@ -244,6 +245,7 @@ const router = new VueRouter({
                 { path: '/css2', component: css2 },
                 { path: '/css3', component: css3 },
                 { path: '/v_cloak', component: v_cloak },
+                { path: '/selectChart', component: selectChart },
             ]
         },
     ]
