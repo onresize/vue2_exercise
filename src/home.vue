@@ -137,6 +137,7 @@ export default {
         'weChatLogin',
         'pdfToImg',
         'canvas',
+        'canvas1',
         'codeBlock',
         'textAlign',
         'superCenter',

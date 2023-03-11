@@ -81,7 +81,8 @@ const StoneScroll = () => import('@/components/骨架屏/index.vue')
 const isArray = () => import('@/components/引号包裹数组转真正数组/index.vue')
 const weChatLogin = () => import('@/components/微信扫码登入/index.vue')
 const PdfToImg = () => import('@/components/pdf转图片/index.vue')
-const Canvas = () => import('@/components/cavas基本使用/index.vue')
+const canvas = () => import('@/components/cavas基本使用/index.vue')
+const canvas1 = () => import('@/components/cavas基本使用/canvas1.vue')
 const CodeBlock = () => import('@/components/实现code block代码块/index.vue')
 const textAlign = () => import('@/components/text-aligin布局/index.vue')
 const superCenter = () => import('@/components/superCenter/index.vue')
@@ -212,7 +213,8 @@ const router = new VueRouter({
                 { path: '/is_array', component: isArray },
                 { path: '/weChatLogin', component: weChatLogin },
                 { path: '/pdfToImg', component: PdfToImg },
-                { path: '/canvas', component: Canvas },
+                { path: '/canvas', component: canvas },
+                { path: '/canvas1', component: canvas1 },
                 { path: '/codeBlock', component: CodeBlock },
                 { path: '/textAlign', component: textAlign },
                 { path: '/superCenter', component: superCenter },

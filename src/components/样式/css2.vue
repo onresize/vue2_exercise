@@ -1,5 +1,12 @@
 <template>
   <div>
+    <h2>鼠标框选文字改变背景色</h2>
+    <pre>
+    ::selection {
+      background: rgb(255, 145, 0);
+      color: #fff;
+    }
+    </pre>
     <h2>css、less、sass/scss自定义属性和用法</h2>
     <p class="red">css自定义变量</p>
     <pre>
@@ -48,6 +55,15 @@ export default {
 </script>
  
  <style>
+/* 鼠标框选文字改变背景色 */
+::selection {
+  background: rgb(255, 145, 0);
+  color: #fff;
+}
+::-moz-selection {
+  background: rgb(255, 145, 0);
+  color: #fff;
+}
 * {
   --colRed: red;
 }
