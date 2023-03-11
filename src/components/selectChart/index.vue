@@ -1474,7 +1474,6 @@ export default {
         document.onmouseup = (e) => {
           document.onmousemove = null
           document.onmouseup = null
-          Chart.style.cursor = 'move'
         }
       }
     },
@@ -1505,10 +1504,10 @@ export default {
 }
 #chartBox {
   position: relative;
-  width: 400px;
-  height: 400px;
   border: 3px solid aqua;
   border-radius: 20px;
+  width: 400px;
+  height: 400px;
   #Chart {
     position: absolute;
     z-index: 8;

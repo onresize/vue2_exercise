@@ -4,7 +4,7 @@
       图片懒加载、监听滚动时间触发按钮返回顶部(大于100显示按钮)
       PS：注意查看NetWork
     </h2>
-    <div v-show="show" class="btn" @click="toTop">回到顶部</div>
+    <div v-show="show" class="btn" @click="toTop"></div>
     <div class="imgFrame" ref="imgBoxRef">
       <el-image
         class="image"
@@ -125,27 +125,37 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="less">
 .image {
-  width: 100%;
-  height: 80vh;
+  width: 500px;
   object-fit: cover;
+  user-select: none;
 }
 .btn {
   position: fixed;
-  right: 50px;
+  left: 750px;
   bottom: 50px;
-  width: 70px;
-  height: 70px;
+  width: 50px;
+  height: 50px;
+  box-sizing: border-box;
   background: pink;
   border-radius: 50%;
   display: grid;
   place-items: center;
   cursor: pointer;
+  transition: all 0.5s;
+  &::after {
+    content: url('../../assets/img/arrow-up.svg');
+    font-size: 12px;
+    font-weight: bold;
+  }
+  &:hover {
+    background: rgba(204, 204, 204, 0.5);
+  }
 }
 .imgFrame {
   margin-top: 20px;
-  width: calc(100vw - 310px);
+  width: 524px;
   height: 80vh;
   overflow: auto;
   border: 6px solid pink;

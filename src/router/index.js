@@ -116,8 +116,11 @@ const rotateAnimate = () => import('@/components/动画/rotateAnimate.vue')
 const css1 = () => import('@/components/样式/css1.vue')
 const css2 = () => import('@/components/样式/css2.vue')
 const css3 = () => import('@/components/样式/css3.vue')
+const css4 = () => import('@/components/样式/css4.vue')
 const v_cloak = () => import('@/components/v_cloak_html_text/v-cloak.vue')
 const selectChart = () => import('@/components/selectChart/index.vue')
+const dragCharts = () => import('@/components/selectChart/dragCharts.vue')
+const numberPeople = () => import('@/components/numberPeople/index.vue')
 
 Vue.use(VueRouter)
 
@@ -244,8 +247,11 @@ const router = new VueRouter({
                 { path: '/css1', component: css1 },
                 { path: '/css2', component: css2 },
                 { path: '/css3', component: css3 },
+                { path: '/css4', component: css4 },
                 { path: '/v_cloak', component: v_cloak },
                 { path: '/selectChart', component: selectChart },
+                { path: '/dragCharts', component: dragCharts },
+                { path: '/numberPeople', component: numberPeople },
             ]
         },
     ]

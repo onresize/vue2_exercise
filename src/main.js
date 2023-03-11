@@ -15,6 +15,31 @@ import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css';
 Vue.use(ElementUI)
 
+// 引入音频文件
+import NumberPeopleAudio from '.././public/vr/audio/bgm_1.mp3'
+
+// 注册播放音频事件到Vue实例上
+Vue.prototype.playAudio = () => {
+  let buttonAudio = document.getElementById('eventAudio');
+  buttonAudio.setAttribute('src', NumberPeopleAudio)
+  buttonAudio.play()
+}
+// 注册暂停音频事件到Vue实例上
+Vue.prototype.stopAudio = () => {
+  let buttonAudio = document.getElementById('eventAudio');
+  buttonAudio.pause()
+  buttonAudio.setAttribute('src', '')
+}
+
+
+
+import {
+  HandPointer,
+  BodyPointer
+} from '@/utils/cursor.js'
+// 自定义鼠标样式
+Vue.prototype.HandPointer = HandPointer
+Vue.prototype.BodyPointer = BodyPointer
 
 // 按需引入element
 // import 'element-ui/lib/theme-chalk/index.css';

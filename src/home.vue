@@ -173,8 +173,11 @@ export default {
         'css1',
         'css2',
         'css3',
+        'css4',
         'v_cloak',
         'selectChart',
+        'dragCharts',
+        'numberPeople',
       ],
     }
   },
