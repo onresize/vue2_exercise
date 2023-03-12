@@ -3,10 +3,39 @@
     <div>
       <h2>鼠标框选文字改变背景色</h2>
       <pre>
-    ::selection {
-      background: rgb(255, 145, 0);
-      color: #fff;
-    }
+      ::selection {
+        background: rgb(255, 145, 0);
+        color: #fff;
+      }
+    </pre
+      >
+    </div>
+    <div>
+      <h2
+        data-text="伪元素"
+        data-endText="的多种写法"
+        class="dataText"
+      >
+        content
+      </h2>
+      <pre>
+      a::after {
+        content: '';  // 为空
+        content: url('');  // 为图片
+        content: attr(data-text);  // 为自定义标签属性值
+      }
+
+      [data-text]::before {
+        content: attr(data-text)'-';
+        color: red;
+      }
+      
+      .dataText {
+        &::after {
+          content: '-'attr(data-endText);
+          color: pink;
+        }
+      }
     </pre
       >
     </div>
@@ -79,6 +108,16 @@ export default {
 </script>
  
  <style lang="less" scoped>
+[data-text]::before {
+  content: attr(data-text) '-';
+  color: red;
+}
+.dataText {
+  &::after {
+    content: '-' attr(data-endText);
+    color: pink;
+  }
+}
 .flex {
   display: flex;
   justify-content: space-around;

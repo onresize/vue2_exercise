@@ -17,45 +17,57 @@
       ></div>
     </div>
     <!-- <VScaleScreen> -->
-      <!-- 内容主体区 -->
-      <el-container class="container">
-        <!-- 侧边栏 -->
-        <el-card>
-          <el-autocomplete
-            v-model="value"
-            :fetch-suggestions="querySearchAsync"
-            :trigger-on-focus="true"
-            size="mini"
-            style="width: 220px; margin-left: -5px"
-            placeholder="路由模糊查询"
-            @select="handleSelect"
-          />
-          <el-aside
-            class="home_container_aside"
-            id="sideDom"
-            :width="'220px'"
+    <!-- 内容主体区 -->
+    <el-container class="container">
+      <!-- 侧边栏 -->
+      <el-card
+        :style="{ background: mode == 'light' ? '#fff' : '#000' }"
+      >
+        <el-autocomplete
+          v-model="value"
+          :fetch-suggestions="querySearchAsync"
+          :trigger-on-focus="true"
+          size="mini"
+          style="width: 220px; margin-left: -5px"
+          placeholder="路由模糊查询"
+          @select="handleSelect"
+        />
+        <el-aside
+          class="home_container_aside App"
+          :color-mode="mode"
+          id="sideDom"
+          :width="'220px'"
+        >
+          <div
+            v-for="({ value }, index) in RouterList"
+            :key="index"
+            class="aa"
           >
-            <div
-              v-for="({ value }, index) in RouterList"
-              :key="index"
-              class="aa"
-            >
-              <div class="cc">
-                <router-link :to="value" active-class="bb"
-                  >{{ value }}测试</router-link
-                >
-              </div>
+            <div class="cc">
+              <router-link :to="value" active-class="bb"
+                >{{ value }}测试</router-link
+              >
             </div>
-          </el-aside>
-        </el-card>
-        <!-- 右侧内容 -->
-        <el-main class="home_container_main">
-          <!-- home改用嵌套路由 占位符 -->
-          <router-view>
-            <!-- <keep-alive> </keep-alive> -->
-          </router-view>
-        </el-main>
-      </el-container>
+          </div>
+        </el-aside>
+        <!-- 主题切换开关 -->
+        <el-switch
+          class="switch"
+          v-model="modeVal"
+          active-text="白色"
+          inactive-text="黑色"
+          @change="changeSwitch"
+        >
+        </el-switch>
+      </el-card>
+      <!-- 右侧内容 -->
+      <el-main class="home_container_main App" :color-mode="mode">
+        <!-- home改用嵌套路由 占位符 -->
+        <router-view>
+          <!-- <keep-alive> </keep-alive> -->
+        </router-view>
+      </el-main>
+    </el-container>
     <!-- </VScaleScreen> -->
   </div>
 </template>
@@ -68,6 +80,8 @@ export default {
   },
   data() {
     return {
+      modeVal: true,
+      mode: 'light',
       timeout: null,
       options: [],
       value: null,
@@ -159,6 +173,15 @@ export default {
       console.log('下拉点击', item)
       this.$router.push(`/${item.value}`)
     },
+    changeSwitch(val) {
+      if (val == false) {
+        // 黑色
+        this.mode = 'dark'
+      } else {
+        // 白色
+        this.mode = 'light'
+      }
+    },
   },
   created() {
     this.getRouterList()
@@ -170,12 +193,43 @@ export default {
 }
 </script>
 
+<style lang="less">
+// 白色主题
+.App[color-mode='light'] {
+  --surface1: #fff;
+  --surface2: #000000;
+  --surface3: #000;
+  h2,
+  h3 {
+    color: var(--surface2);
+  }
+}
+// 黑色主题
+.App[color-mode='dark'] {
+  --surface1: #000000;
+  --surface2: #fff;
+  --surface3: grey;
+  h2,
+  h3 {
+    color: var(--surface2);
+  }
+}
+// light & dark
+// @media (prefers-color-scheme: light) {
+//   .home_container {
+//     // filter: invert(100%); // 颜色反转
+//     background-color: rgba(29, 32, 31) !important;
+//   }
+// }
+</style>
+
 <style scoped lang="less">
 .aa {
   margin: 10px;
   width: 100%;
   display: inline-flex;
   user-select: none;
+  color: var(--surface2);
 }
 .bb {
   width: 190px;
@@ -184,6 +238,7 @@ export default {
   background: #ccffff;
   border-radius: 10px;
   text-align: center;
+  color: var(--surface3);
 }
 .cc {
   width: 190px;
@@ -193,35 +248,34 @@ export default {
   border-radius: 10px;
   text-align: center;
   cursor: pointer;
+  color: var(--surface3);
 }
 a {
   display: inline-block;
   width: 190px;
   height: 30px;
-  color: black;
+  color: var(--surface2);
 }
 .container {
   overflow-y: hidden;
+  .aside_card {
+    background: #000;
+  }
 }
 .home_container {
   overflow-y: hidden;
 }
 
-// light & dark
-@media (prefers-color-scheme: light) {
-  .home_container {
-    // filter: invert(100%); // 颜色反转
-    background-color: rgba(29, 32, 31) !important;
-  }
-}
-
 .home_container_aside {
-  height: calc(100vh - 88px);
+  height: calc(100vh - 110px);
   overflow-x: hidden;
+  background: var(--surface1);
 }
 .home_container_main {
   height: 100vh;
   overflow-y: scroll;
+  background: var(--surface1);
+  color: var(--surface3);
 }
 .home_container_main::-webkit-scrollbar {
   width: 8px;
@@ -238,6 +292,10 @@ a {
 }
 .el-aside::-webkit-scrollbar {
   display: none;
+}
+.switch {
+  margin-left: 37px;
+  margin-top: 10px;
 }
 .div-box {
   position: fixed;
