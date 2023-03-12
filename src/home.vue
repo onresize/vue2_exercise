@@ -62,10 +62,11 @@
       </el-card>
       <!-- 右侧内容 -->
       <el-main class="home_container_main App" :color-mode="mode">
-        <!-- home改用嵌套路由 占位符 -->
-        <router-view>
-          <!-- <keep-alive> </keep-alive> -->
-        </router-view>
+        <!-- include 只缓存组件名字为 numberPeople的组件，其他组件不会缓存，而exclude恰好相反 -->
+        <keep-alive include="dragCharts">
+          <router-view v-if="$route.meta.keepAlive" />
+        </keep-alive>
+        <router-view v-if="!$route.meta.keepAlive" />
       </el-main>
     </el-container>
     <!-- </VScaleScreen> -->
@@ -75,6 +76,7 @@
 <script>
 import VScaleScreen from './package/index.js'
 export default {
+  name: 'home',
   components: {
     VScaleScreen,
   },

@@ -137,6 +137,7 @@ const router = new VueRouter({
         { path: '/waterfall1', component: waterfall1 },
         {
             path: '/home',
+            name: 'home',
             component: Home,
             children: [
                 { path: '/VrTest', component: VrTest },
@@ -252,8 +253,9 @@ const router = new VueRouter({
                 { path: '/css4', component: css4 },
                 { path: '/v_cloak', component: v_cloak },
                 { path: '/selectChart', component: selectChart },
-                { path: '/dragCharts', component: dragCharts },
                 { path: '/numberPeople', component: numberPeople },
+                // keepAlive为true、为组件做缓存  
+                { path: '/dragCharts', name: 'dragCharts', meta: { keepAlive: true }, component: dragCharts },
             ]
         },
     ]

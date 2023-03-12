@@ -24,7 +24,8 @@ export default {
   computed: {},
   methods: {},
   watch: {},
-  created() {},
+  created() {
+  },
   mounted() {
     setTimeout(() => {
       this.playAudio() // 开启数字人音频

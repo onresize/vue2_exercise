@@ -27,8 +27,8 @@ Vue.prototype.playAudio = () => {
 // 注册暂停音频事件到Vue实例上
 Vue.prototype.stopAudio = () => {
   let buttonAudio = document.getElementById('eventAudio');
-  buttonAudio.pause()
   buttonAudio.setAttribute('src', '')
+  buttonAudio.pause()
 }
 
 

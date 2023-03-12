@@ -1,18 +1,21 @@
 <template>
   <div>
     <h2>
-      图片懒加载、监听滚动时间触发按钮返回顶部(大于100显示按钮)
+      el-image自带的图片懒加载、监听滚动时间触发按钮返回顶部(大于100显示按钮)
+      <br />
       PS：注意查看NetWork
     </h2>
     <div v-show="show" class="btn" @click="toTop"></div>
-    <div class="imgFrame" ref="imgBoxRef">
-      <el-image
-        class="image"
-        v-for="url in imgData"
-        :key="url"
-        :src="url"
-        lazy
-      ></el-image>
+    <div style="display: flex">
+      <div class="imgFrame" ref="imgBoxRef">
+        <el-image
+          class="image"
+          v-for="url in imgData"
+          :key="url"
+          :src="url"
+          lazy
+        ></el-image>
+      </div>
     </div>
   </div>
 </template>
@@ -131,12 +134,13 @@ export default {
   object-fit: cover;
   user-select: none;
 }
+
 .btn {
   position: fixed;
-  left: 750px;
-  bottom: 50px;
-  width: 50px;
-  height: 50px;
+  left: 820px;
+  bottom: 30px;
+  width: 40px;
+  height: 40px;
   box-sizing: border-box;
   background: pink;
   border-radius: 50%;
@@ -153,6 +157,7 @@ export default {
     background: rgba(204, 204, 204, 0.5);
   }
 }
+
 .imgFrame {
   margin-top: 20px;
   width: 524px;
@@ -172,10 +177,5 @@ export default {
 .imgFrame::-webkit-scrollbar-thumb {
   border-radius: 10px;
   background-color: #cccccc;
-}
-img {
-  height: 100%;
-  width: 100%;
-  object-fit: contain;
 }
 </style>
