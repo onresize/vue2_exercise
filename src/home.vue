@@ -16,177 +16,79 @@
         title="双击查看源码、滚轮缩放图标、左键长按拖拽图标"
       ></div>
     </div>
-    <!-- 内容主体区 -->
-    <el-container class="container">
-      <!-- 侧边栏 -->
-      <el-card>
-        <el-aside
-          class="home_container_aside"
-          id="sideDom"
-          :width="'220px'"
-        >
-          <div
-            v-for="(item, index) in RouterList"
-            :key="index"
-            class="aa"
+    <!-- <VScaleScreen> -->
+      <!-- 内容主体区 -->
+      <el-container class="container">
+        <!-- 侧边栏 -->
+        <el-card>
+          <el-autocomplete
+            v-model="value"
+            :fetch-suggestions="querySearchAsync"
+            :trigger-on-focus="true"
+            size="mini"
+            style="width: 220px; margin-left: -5px"
+            placeholder="路由模糊查询"
+            @select="handleSelect"
+          />
+          <el-aside
+            class="home_container_aside"
+            id="sideDom"
+            :width="'220px'"
           >
-            <div class="cc">
-              <router-link :to="item" active-class="bb"
-                >{{ item }}测试</router-link
-              >
+            <div
+              v-for="({ value }, index) in RouterList"
+              :key="index"
+              class="aa"
+            >
+              <div class="cc">
+                <router-link :to="value" active-class="bb"
+                  >{{ value }}测试</router-link
+                >
+              </div>
             </div>
-          </div>
-        </el-aside>
-      </el-card>
-      <!-- 右侧内容 -->
-      <el-main class="home_container_main">
-        <!-- home改用嵌套路由 占位符 -->
-        <router-view>
-          <!-- <keep-alive> </keep-alive> -->
-        </router-view>
-      </el-main>
-    </el-container>
+          </el-aside>
+        </el-card>
+        <!-- 右侧内容 -->
+        <el-main class="home_container_main">
+          <!-- home改用嵌套路由 占位符 -->
+          <router-view>
+            <!-- <keep-alive> </keep-alive> -->
+          </router-view>
+        </el-main>
+      </el-container>
+    <!-- </VScaleScreen> -->
   </div>
 </template>
 
 <script>
+import VScaleScreen from './package/index.js'
 export default {
+  components: {
+    VScaleScreen,
+  },
   data() {
     return {
+      timeout: null,
+      options: [],
+      value: null,
+      searchVal: '',
       startX: 0, // 记录开始x位置
       startY: 0, // 记录开始y位置
-      elRight: 15,
-      elBottom: 15,
+      elRight: 35,
+      elBottom: 25,
       zoom: 1,
-      elWidth: 60,
-      elHeight: 60,
-      RouterList: [
-        'map',
-        'webRtcDemo',
-        'hlsDemo',
-        'HKVideo',
-        'flvDemo',
-        'flvDemo_wss',
-        'easyPlay',
-        'xgPlayer',
-        'moreVideoDemo',
-        // 'earth_map',
-        // 'a-table-slot',
-        // 'a-table',
-        // 'el-table-test',
-        'drag-table',
-        // 'el-tree',
-        'el-tree-test',
-        'record',
-        'export-test',
-        'export-test1',
-        'excel-export',
-        'print-nb',
-        'vuex-test',
-        'computed-test',
-        // 'chart',
-        // 'echartTest',
-        'dexie',
-        'axiosfenz',
-        'myPromise',
-        'nextTick',
-        'filter',
-        'test',
-        'element',
-        'dragmodal',
-        '$set',
-        // 'uploadImg',
-        'img',
-        // 'v-for_flex',
-        'kebiao',
-        'kebiao1',
-        'kebiao2',
-        'kebiao3',
-        'imgpreview',
-        'table_echarts',
-        'quill-text',
-        'emjo',
-        'imagesku',
-        'drag_dialog',
-        'dataTest',
-        'dataList',
-        'vForObj',
-        'inputSearch',
-        'flat_toTree',
-        'outils',
-        'animateNum',
-        'dataPicker',
-        'vueqrcode',
-        'vr',
-        'vrThreeJs',
-        'threeJsExample',
-        'grid',
-        'flex',
-        'transform',
-        'box_sizing',
-        'fatherComponent',
-        'NewMap',
-        'isComponent',
-        'iframe',
-        'camera',
-        'myAudio',
-        'readtxt',
-        'storage',
-        'stoneScroll',
-        'is_array',
-        'weChatLogin',
-        'pdfToImg',
-        'canvas',
-        'canvas1',
-        'codeBlock',
-        'textAlign',
-        'superCenter',
-        'tryCatch',
-        'windCss',
-        'hover',
-        'fatherSync',
-        'vmodel',
-        'v2model',
-        'imgPreLoad',
-        'imgLazy',
-        'for_await_of',
-        'changeTheme',
-        'emitFather',
-        'npmTest',
-        'componentTest',
-        'awaitError',
-        'ipHere',
-        'waterfall',
-        'waterfall1',
-        'childModelProps',
-        'vMyModel',
-        'numberAnimation',
-        // 'chartTest',
-        'videoPlay',
-        'RmbNumber',
-        'guide',
-        'list',
-        'svga',
-        'svg',
-        'animate1',
-        'animate2',
-        'rotateAnimate',
-        'css1',
-        'css2',
-        'css3',
-        'css4',
-        'v_cloak',
-        'selectChart',
-        'dragCharts',
-        'numberPeople',
-      ],
+      elWidth: 40,
+      elHeight: 40,
+      RouterList: [],
     }
   },
-  mounted() {
-    document.getElementById('sideDom').scrollTop =
-      this.RouterList.length * 50 - sideDom.offsetHeight
-  },
   methods: {
+    async getRouterList() {
+      let res = await fetch('/router.json')
+      let { data: options } = await res.json()
+      this.RouterList = options
+      console.log('路由数组：', options)
+    },
     openWindow(h = 400, w = 600) {
       // window.open('https://gitee.com/onresize/vue2_exercise')
       var left = Math.round((window.screen.availWidth - w) / 2)
@@ -238,6 +140,32 @@ export default {
       this.elWidth = 40 * this.zoom
       this.elHeight = 40 * this.zoom
     },
+    querySearchAsync(queryString, cb) {
+      var options = this.RouterList
+      var results = queryString
+        ? options.filter(this.createStateFilter(queryString))
+        : options
+
+      clearTimeout(this.timeout)
+      this.timeout = setTimeout(() => {
+        cb(results)
+      }, 3000 * Math.random())
+    },
+    createStateFilter(queryString) {
+      return (item) =>
+        item.value.toLowerCase().includes(queryString.toLowerCase())
+    },
+    handleSelect(item) {
+      console.log('下拉点击', item)
+      this.$router.push(`/${item.value}`)
+    },
+  },
+  created() {
+    this.getRouterList()
+  },
+  mounted() {
+    document.getElementById('sideDom').scrollTop =
+      this.RouterList.length * 50 - sideDom.offsetHeight
   },
 }
 </script>
@@ -288,7 +216,7 @@ a {
 }
 
 .home_container_aside {
-  height: calc(100vh - 44px);
+  height: calc(100vh - 88px);
   overflow-x: hidden;
 }
 .home_container_main {

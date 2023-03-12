@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="width: 80vw">
     <h2>
       Promise测试 (宏任务,微任务都属于异步、执行顺序：<span
         class="prom"
@@ -7,7 +7,7 @@
       >
       > <span class="prom">微任务</span> >
       <span class="prom">dom渲染</span> >
-       <span class="prom">nextTick(第一个宏任务前执行)</span> >
+      <span class="prom">nextTick(第一个宏任务前执行)</span> >
       <span class="prom">宏任务</span>)
     </h2>
     <h2>
@@ -35,7 +35,7 @@
     <div class="div_box">
       <div class="div_flex">
         <div style="width: 50%">
-          <h3 style="width: 100%">
+          <h3 style="width: 100%; height: 50px">
             1.当三个异步方法、没有被new
             Promise包裹、执行顺序根据请求事件返回数据的快慢决定
           </h3>
@@ -48,7 +48,7 @@
           </el-image>
         </div>
         <div style="width: 50%">
-          <h3 style="width: 100%">
+          <h3 style="width: 100%; height: 50px">
             2.当封装的请求方法被new
             Promise包裹、多个异步方法调用请求的顺序就是写好的顺序、写在前面的先执行完才会继续执行后面的请求
           </h3>

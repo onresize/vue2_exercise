@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="width: 500px">
     <!-- TODO -->
     <h2>引号包裹数组转正在的数组并遍历dom结构</h2>
     <h3>

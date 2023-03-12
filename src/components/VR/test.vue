@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="width: calc(100vw - 260px)">
     <!-- <h2>npm install photo-sphere-viewer</h2> -->
     <div id="viewer" ref="viewer"></div>
   </div>
@@ -22,7 +22,7 @@ export default {
       panorama: this.imgUrl,
       size: {
         width: '100vw',
-        height: '100vh',
+        height: '96vh',
       },
     })
   },

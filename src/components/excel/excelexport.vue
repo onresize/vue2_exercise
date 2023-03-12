@@ -1,5 +1,5 @@
 <template>
-  <el-card>
+  <el-card style="width: 70vw">
     <h2>测试excel导入(待完善)</h2>
     <a
       href="https://xrkffgg.js.cool/Knotes/blog/3.html#_1-%E5%89%8D%E8%A8%80"

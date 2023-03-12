@@ -147,7 +147,7 @@ export default {
   opacity: 0;
   position: absolute;
   z-index: 1;
-  transition: all .5s linear;
+  // transition: all .5s linear;
 }
 
 .diagram-hover {

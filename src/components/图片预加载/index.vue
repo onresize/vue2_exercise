@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="width: 500px">
     <h2>
       渐进式JPEG（图片由模糊到清晰一层层加载）和普通JPEG区别（图片一行一行加载）
       <el-link

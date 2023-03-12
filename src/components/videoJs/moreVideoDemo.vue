@@ -89,7 +89,7 @@ export default {
  
 <style scoped lang="less">
 #videoBox {
-  width: calc(100vw - 265px);
+  width: calc(100vw - 365px);
   height: calc(100vh - 150px);
   border: 10px solid transparent;
   display: grid;

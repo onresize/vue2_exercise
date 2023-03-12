@@ -5,7 +5,7 @@
       target="_blank"
       >参考：</el-link
     >
-    <el-button @click="sound">点击播放</el-button>
+    <el-button @click="sound" size="mini">点击播放</el-button>
     <video class="video" volume="0.5" controls ref="player"></video>
   </div>
 </template>

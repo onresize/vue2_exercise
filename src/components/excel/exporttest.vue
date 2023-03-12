@@ -1,5 +1,5 @@
 <template>
-  <el-card>
+  <el-card style="width: 70vw">
     <!-- 借鉴 vue-element-admin组件二次封装的excel -->
     <!-- 导出excel -->
     <a-button icon="upload" @click="handleDownload">导出</a-button>

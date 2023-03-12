@@ -7,7 +7,9 @@
     >
       <mark>参考：</mark>
     </el-link>
-    <h2>微信开放平台参考：https://open.weixin.qq.com/cgi-bin/showdocument?action=dir_list&t=resource/res_list&verify=1&id=open1419316505&token=&lang=zh_CN</h2>
+    <h2 style="width: 500px">
+      微信开放平台参考：https://open.weixin.qq.com/cgi-bin/showdocument?action=dir_list&t=resource/res_list&verify=1&id=open1419316505&token=&lang=zh_CN
+    </h2>
     <div class="wxLogin">
       <span class="title">微信扫一扫登录</span>
       <div class="main_wx">

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="width: 500px">
     <h2>try..catch...</h2>
     <h2>try..catch...finally</h2>
     <el-button>

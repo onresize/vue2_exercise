@@ -1,7 +1,7 @@
 <template>
   <!-- canvas模板参考：https://techbrood.com/ -->
   <div class="bg">
-    <canvas id="canvas" width="100%" height="100%"></canvas>
+    <canvas id="canvasID" width="100%" height="100%"></canvas>
   </div>
 </template>
  
@@ -15,7 +15,7 @@ export default {
   watch: {},
   created() {},
   mounted() {
-    var maxParticles = 200000,
+    var maxParticles = 20000,
       particleSize = 3,
       emissionRate = 1,
       startTime,
@@ -25,7 +25,7 @@ export default {
       collisionDamper = 0.1,
       lastPos,
       objectSize = 3 // drawSize of emitter/field
-    var canvas = document.querySelector('canvas')
+    var canvas = document.getElementById('canvasID')
     var ctx = canvas.getContext('2d')
     canvas.width = window.innerWidth
     canvas.height = window.innerHeight
@@ -206,19 +206,18 @@ export default {
     function queue() {
       window.requestAnimationFrame(loop)
     }
-    window.onload = function () {
-      setTimeout(function () {
-        startTime = new Date().getTime()
-        loop()
-      }, 100)
-    }
+
+    setTimeout(function () {
+      startTime = new Date().getTime()
+      loop()
+    }, 100)
   },
 }
 </script>
  
 <style scoped lang="less">
 .bg {
-  width: 100%;
+  width: 80vw;
   height: 100%;
   background: url('../../assets/img/wallhaven-yml8wd.webp') no-repeat
     center;

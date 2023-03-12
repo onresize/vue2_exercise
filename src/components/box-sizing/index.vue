@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>
+    <h2 style="width: 500px;">
       box-sizing基本属性、设置box-sizing:
       border-box;表示元素总宽度和总高度包含了padding 和
       border、默认为content-box

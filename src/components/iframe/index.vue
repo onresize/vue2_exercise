@@ -91,14 +91,15 @@ export default {
       console.log('1111111111')
       await this.$router.push('/camera')
       console.log('2222222222')
-    }
-  }
+    },
+  },
 }
 </script>
 
 <style scoped>
 /* 隐藏滚动条 */
 .container {
+  width: 80vw;
   scrollbar-width: none !important;
 }
 .container::-webkit-scrollbar {

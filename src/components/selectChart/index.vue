@@ -5,7 +5,7 @@
       第二个参数表示多个charts切换的参数不合并、默认为false
     </h2>
     <el-select
-      class="select"
+      class="selectBox"
       v-model="value"
       clearable
       placeholder="请选择chart"
@@ -1499,7 +1499,7 @@ export default {
 .vue-grid-item .static {
   background: #cce;
 }
-.select {
+.selectBox {
   margin: 10px 0;
 }
 #chartBox {

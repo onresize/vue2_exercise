@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div  style="width: 80vw">
     <a href="https://www.cnblogs.com/zouwangblog/p/11141125.html">
       参考
     </a>

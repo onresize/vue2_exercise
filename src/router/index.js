@@ -132,7 +132,6 @@ const router = new VueRouter({
         { path: '/', redirect: '/map' },
         { path: '*', redirect: { path: '/404' } },
         { path: '/echartTest', component: EchartTest },
-        { path: '/vr', component: VrTest },
         { path: '/vrThreeJs', component: VrThreeJS },
         { path: '/threeJsExample', component: ThreeJsExample },
         { path: '/waterfall1', component: waterfall1 },
@@ -140,6 +139,7 @@ const router = new VueRouter({
             path: '/home',
             component: Home,
             children: [
+                { path: '/VrTest', component: VrTest },
                 { path: '/a-table-slot', component: Tablesolt },
                 { path: '/a-table', component: Atable },
                 { path: '/record', component: Record },

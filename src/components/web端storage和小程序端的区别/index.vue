@@ -1,7 +1,7 @@
 <template>
   <div>
     <h2>探究web端storage和小程序端的区别</h2>
-    <h2>
+    <h2 style="width: 500px;">
       web端： window.localStorage 和 window.sessionStorage
       必须用JSON.stringify()转化才能被正常存储、用的时候用JSON.parse()转成对象
     </h2>

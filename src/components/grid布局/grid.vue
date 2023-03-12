@@ -5,7 +5,7 @@
       target="_blank"
       >参考</a
     >
-    <h2>
+    <h2 style="width: 600px;">
       grid布局基本使用、grid-template-columns: repeat(auto-fill,
       100px);父级设置每一列100px宽度、由外部盒子自动填充、高度自适应变化
     </h2>
