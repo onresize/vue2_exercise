@@ -3,7 +3,6 @@
     <h2>
       <span v-text="'{{}}'"></span>和v-text的区别:
       <span v-text="'{{}}'"></span>会闪烁、用v-cloak解决闪烁问题
-      <hr />
       <p v-html="htmlText" style="width: 1000px"></p>
       <p v-text="htmlText" style="width: 1000px"></p>
       <p v-cloak style="width: 1000px">{{ htmlText }}</p>

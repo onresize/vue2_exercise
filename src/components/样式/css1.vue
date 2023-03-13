@@ -22,7 +22,7 @@ export default {
 <style scoped lang="less">
 .pic {
   width: 100%;
-  height: 100%;
+  height: 90vh;
   border: 3px solid aqua;
   border-radius: 20px;
   background: url('../../assets/img/5.jpg') no-repeat center;

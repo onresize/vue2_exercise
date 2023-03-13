@@ -1,5 +1,5 @@
 <template>
-  <div style="width: 100%; height: 90%">
+  <div style="width: 100%; height: 80vh">
     <h2>npm install @easydarwin/easyplayer --save</h2>
     <EasyPlayer
       :videoUrl="videoUrl"

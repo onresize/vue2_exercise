@@ -100,7 +100,10 @@ export default {
 /* 隐藏滚动条 */
 .container {
   width: 80vw;
+  height: 90vh;
   scrollbar-width: none !important;
+  padding: 20px;
+  overflow: scroll;
 }
 .container::-webkit-scrollbar {
   width: 8px;
@@ -114,10 +117,5 @@ export default {
 .container::-webkit-scrollbar-thumb {
   border-radius: 10px;
   background-color: #ffffff;
-}
-.container {
-  height: 100vh;
-  padding: 20px;
-  overflow: scroll;
 }
 </style>

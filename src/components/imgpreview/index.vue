@@ -1,5 +1,5 @@
 <template>
-  <div id="index">
+  <div id="index" style=" position:absolute;">
     <h2>使用viewjs图片预览插件 npm install viewerjs</h2>
     <ul id="img">
       <li v-for="(item, index) of imgArr" :key="index">

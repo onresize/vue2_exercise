@@ -1,6 +1,6 @@
 <template>
-  <div style="height: 100vh">
-    <router-view></router-view>
+  <div style="height: 100%">
+      <router-view></router-view>
   </div>
 </template>
 
@@ -25,4 +25,5 @@ export default {
 }
 </script>
 
-<style></style>
+<style>
+</style>

@@ -96,8 +96,9 @@ export default {
 
 <style scoped lang="less">
 .contentBox {
-  width: 1260px;
-  height: 100vh;
+  width: 1280px;
+  height: 90vh;
+  overflow: auto;
 }
 .iframe_box {
   width: 300px;

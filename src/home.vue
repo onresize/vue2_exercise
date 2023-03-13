@@ -20,8 +20,16 @@
     <!-- 内容主体区 -->
     <el-container class="container">
       <!-- 侧边栏 -->
-      <el-card
-        :style="{ background: mode == 'light' ? '#fff' : '#000' }"
+      <div
+        :style="{
+          background: mode == 'light' ? '#fff' : '#000',
+          border: none,
+          height: '100vh',
+          padding: '20px',
+          'border-right': '1px solid #e4e7ed',
+          'box-sizing': 'border-box',
+          'box-shadow': '0px 0px 12px rgba(0, 0, 0, 0.12)',
+        }"
       >
         <el-autocomplete
           v-model="value"
@@ -59,14 +67,16 @@
           @change="changeSwitch"
         >
         </el-switch>
-      </el-card>
+      </div>
       <!-- 右侧内容 -->
       <el-main class="home_container_main App" :color-mode="mode">
-        <!-- include 只缓存组件名字为 numberPeople的组件，其他组件不会缓存，而exclude恰好相反 -->
-        <keep-alive include="dragCharts">
-          <router-view v-if="$route.meta.keepAlive" />
-        </keep-alive>
-        <router-view v-if="!$route.meta.keepAlive" />
+        <el-card style="height: 100%">
+          <!-- include 只缓存组件名字为 numberPeople的组件，其他组件不会缓存，而exclude恰好相反 -->
+          <keep-alive include="dragCharts">
+            <router-view v-if="$route.meta.keepAlive" />
+          </keep-alive>
+          <router-view v-if="!$route.meta.keepAlive" />
+        </el-card>
       </el-main>
     </el-container>
     <!-- </VScaleScreen> -->
@@ -259,6 +269,7 @@ a {
   color: var(--surface2);
 }
 .container {
+  height: 100vh;
   overflow-y: hidden;
   .aside_card {
     background: #000;
@@ -270,11 +281,12 @@ a {
 
 .home_container_aside {
   height: calc(100vh - 110px);
+  // border: 3px solid red;
   overflow-x: hidden;
   background: var(--surface1);
 }
 .home_container_main {
-  height: 100vh;
+  height: 100%;
   overflow-y: scroll;
   background: var(--surface1);
   color: var(--surface3);
@@ -296,7 +308,7 @@ a {
   display: none;
 }
 .switch {
-  margin-left: 37px;
+  margin-left: 47px;
   margin-top: 10px;
 }
 .div-box {

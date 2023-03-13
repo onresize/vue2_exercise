@@ -126,7 +126,8 @@ export default {
 <style scoped lang="less">
 .container {
   width: 100%;
-  height: 100%;
+  height: 90vh;
+  overflow: auto;
   background: #000;
 }
 .diagram {

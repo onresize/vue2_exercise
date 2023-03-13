@@ -1,64 +1,85 @@
 <template>
   <div>
-    <el-card>
-      <!-- 114.758709  26.472829 -->
-      <!-- 地图类型 mapType="BMAP_SATELLITE_MAP" -->
-      <baidu-map
-        class="bm-view"
-        center="万安县"
-        :zoom="zoom"
-        :scroll-wheel-zoom="true"
-        @click="handMap"
-        @ready="handler"
-      >
-        <!-- 行政区域范围 -->
-        <bm-boundary name="万安县" :strokeWeight="2" strokeColor="blue" @click="alertContent"></bm-boundary>
-        <!-- 略缩图 -->
-        <bm-overview-map anchor="BMAP_ANCHOR_BOTTOM_RIGHT" :isOpen="false"></bm-overview-map>
-        <bm-local-search class="local_search" :keyword="keyword" :auto-viewport="true" location="万安县"></bm-local-search>
-        <div class="search_input">
-          <a-input-search v-model.trim="searchValue" placeholder="请输入搜索内容" enter-button @search="onSearch" />
-        </div>
-        <!-- 定位按钮 -->
-        <bm-geolocation
-          anchor="BMAP_ANCHOR_BOTTOM_RIGHT"
-          :offset="{ width: '10px', height: '10px' }"
-          :showAddressBar="true"
-          :autoLocation="true"
-        ></bm-geolocation>
+    <!-- 114.758709  26.472829 -->
+    <!-- 地图类型 mapType="BMAP_SATELLITE_MAP" -->
+    <baidu-map
+      class="bm-view"
+      center="万安县"
+      :zoom="zoom"
+      :scroll-wheel-zoom="true"
+      @click="handMap"
+      @ready="handler"
+    >
+      <!-- 行政区域范围 -->
+      <bm-boundary
+        name="万安县"
+        :strokeWeight="2"
+        strokeColor="blue"
+        @click="alertContent"
+      ></bm-boundary>
+      <!-- 略缩图 -->
+      <bm-overview-map
+        anchor="BMAP_ANCHOR_BOTTOM_RIGHT"
+        :isOpen="false"
+      ></bm-overview-map>
+      <bm-local-search
+        class="local_search"
+        :keyword="keyword"
+        :auto-viewport="true"
+        location="万安县"
+      ></bm-local-search>
+      <div class="search_input">
+        <a-input-search
+          v-model.trim="searchValue"
+          placeholder="请输入搜索内容"
+          enter-button
+          @search="onSearch"
+        />
+      </div>
+      <!-- 定位按钮 -->
+      <bm-geolocation
+        anchor="BMAP_ANCHOR_BOTTOM_RIGHT"
+        :offset="{ width: '10px', height: '10px' }"
+        :showAddressBar="true"
+        :autoLocation="true"
+      ></bm-geolocation>
 
-        <!-- 全景图 -->
-        <bm-panorama></bm-panorama>
+      <!-- 全景图 -->
+      <bm-panorama></bm-panorama>
 
-        <!-- 标点 -->
-        <!-- 
+      <!-- 标点 -->
+      <!-- 
           animation="BMAP_ANIMATION_BOUNCE" 
           :position="{ lng: 114.758709, lat: 26.472829 }"
         -->
-        <bm-marker :position="centerMap" animation="BMAP_ANIMATION_BOUNCE" :dragging="true" @click="infoWindowOpen">
-          <!-- <bm-label
+      <bm-marker
+        :position="centerMap"
+        animation="BMAP_ANIMATION_BOUNCE"
+        :dragging="true"
+        @click="infoWindowOpen"
+      >
+        <!-- <bm-label
             content="万安县"
             :labelStyle="{ color: 'red', fontSize: '24px', borderRadius: '10px' }"
             :offset="{ width: -35, height: 30 }"
           /> -->
-          <!-- 标点弹出框 -->
-          <bm-info-window
-            :show="show"
-            @close="
-              () => {
-                this.show = false
-              }
-            "
-            @open="infoWindowOpen"
-          >
-            {{
-              `经度: ${this.lng} 
+        <!-- 标点弹出框 -->
+        <bm-info-window
+          :show="show"
+          @close="
+            () => {
+              this.show = false
+            }
+          "
+          @open="infoWindowOpen"
+        >
+          {{
+            `经度: ${this.lng} 
                 纬度: ${this.lat}`
-            }}
-          </bm-info-window>
-        </bm-marker>
-      </baidu-map>
-    </el-card>
+          }}
+        </bm-info-window>
+      </bm-marker>
+    </baidu-map>
   </div>
 </template>
  
@@ -130,13 +151,13 @@ export default {
 }
 .local_search {
   position: absolute;
-  top: 73px;
-  left: 276px;
+  top: 71px;
+  left: 273px;
   width: 228px;
 }
 .search_input {
   position: absolute;
-  top: 42px;
-  left: 306px;
+  top: 40px;
+  left: 300px;
 }
 </style>
