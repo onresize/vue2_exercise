@@ -7,7 +7,7 @@
       <el-tag color="pink" v-show="x">{{ x }}</el-tag>
     </h2>
     <hr />
-    <child @childEmit="childEmit" ref="onRef"></child>
+    <child @childEmit="childEmit" :title="title" ref="onRef"></child>
   </div>
 </template>
 
@@ -19,6 +19,7 @@ export default {
     return {
       e: null,
       x: null,
+      title: '这是父组件的参数',
     }
   },
   mounted() {
