@@ -23,7 +23,7 @@
       <div
         :style="{
           background: mode == 'light' ? '#fff' : '#000',
-          border: none,
+          border: 'none',
           height: '100vh',
           padding: '20px',
           'border-right': '1px solid #e4e7ed',
@@ -223,7 +223,7 @@ export default {
   --surface3: grey;
   h2,
   h3 {
-    color: var(--surface2);
+    color: var(--surface1);
   }
 }
 // light & dark
