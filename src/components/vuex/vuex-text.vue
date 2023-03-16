@@ -49,6 +49,16 @@
         <a @click="cleanFinish">清除已完成</a>
       </div>
     </a-list>
+
+    <h2>浏览器刷新、缓存状态数据不丢失</h2>
+    <a-button-group>
+      <a-button type="primary" @click="TTArr">{{
+        this.arr
+      }}</a-button>
+      <el-tag type="success" v-for="(row, i) in Arr" :key="i">{{
+        row
+      }}</el-tag>
+    </a-button-group>
   </div>
 </template>
 
@@ -57,18 +67,24 @@ import { mapState, mapGetters } from 'vuex'
 
 export default {
   data() {
-    return {}
+    return {
+      obj: { a: 2 },
+      arr: [1, 2, 3],
+    }
   },
   created() {
     this.$store.dispatch('getList')
   },
   computed: {
     // 将state中的数据映射到这个计算属性中
-    ...mapState(['inputValue', 'viewKey']),
+    ...mapState(['inputValue', 'viewKey', 'Arr']),
     // 将getters包装中的数据映射到这里
     ...mapGetters(['unDoneLength', 'infoList']),
   },
   methods: {
+    TTArr() {
+      this.$store.commit('changeArr', this.arr)
+    },
     handleInoutChange(e) {
       console.log(e.target.value)
       // 调用mutations中的方法、同步inputValue的值

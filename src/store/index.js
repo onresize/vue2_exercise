@@ -12,9 +12,17 @@ export default new Vuex.Store({
         list: [],
         nextId: 4,
         viewKey: 'all',
-        cancelAxios: null // 终止axios请求
+        cancelAxios: null, // 终止axios请求
+        OBj: { a: 1 },
+        Arr: [9, 8, 7]
     },
     mutations: {
+        changeObj(state, key) {
+            state.OBj = key
+        },
+        changeArr(state, key) {
+            state.Arr = key
+        },
         setCancelAxios(state, n) {
             console.log('执行了vueX同步setCancelAxios')
             state.cancelAxios = n
@@ -90,13 +98,15 @@ export default new Vuex.Store({
         }
     },
     // 使用持久化插件、默认使用保存在 localStorage、这里保存在sessionStorage
-    plugins: [VueXState({
-        storage: window.sessionStorage,
-        // 默认持久化所有state、这里写指定需要持久化的状态
-        reducer(val) {
-            return {
-                viewKey: val.viewKey
+    plugins: [
+        VueXState({
+            // XXX自定义缓存、默认localStorage
+            storage: window.sessionStorage,
+            reducer(val) {
+                return {
+                    Arr: val.Arr,
+                    viewKey: val.viewKey,
+                }
             }
-        }
-    })]
+        })]
 })
