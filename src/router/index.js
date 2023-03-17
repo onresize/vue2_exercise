@@ -118,6 +118,8 @@ const css1 = () => import('@/components/样式/css1.vue')
 const css2 = () => import('@/components/样式/css2.vue')
 const css3 = () => import('@/components/样式/css3.vue')
 const css4 = () => import('@/components/样式/css4.vue')
+const css5 = () => import('@/components/样式/css5.vue')
+const css6 = () => import('@/components/样式/css6.vue')
 const v_cloak = () => import('@/components/v_cloak_html_text/v-cloak.vue')
 const selectChart = () => import('@/components/selectChart/index.vue')
 const dragCharts = () => import('@/components/selectChart/dragCharts.vue')
@@ -251,6 +253,8 @@ const router = new VueRouter({
                 { path: '/css2', component: css2 },
                 { path: '/css3', component: css3 },
                 { path: '/css4', component: css4 },
+                { path: '/css5', component: css5 },
+                { path: '/css6', component: css6 },
                 { path: '/v_cloak', component: v_cloak },
                 { path: '/selectChart', component: selectChart },
                 { path: '/numberPeople', component: numberPeople },

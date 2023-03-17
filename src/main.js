@@ -116,8 +116,15 @@ import "video.js/dist/video-js.css"
 Vue.prototype.$video = videoJs
 
 // 自定义封装loading
-import myLoading from '@/components/loading/index.js'
+import myLoading from '@/myCom/loading/index.js'
 Vue.use(myLoading)
+
+// 自定义封装dialog
+import myDialog from '@/myCom/dialog/index.js'
+Vue.use(myDialog)
+Vue.prototype.$myDialogClose = function () {
+  return Vue.$showDialog.hide()
+}
 
 import './routerTools' // 路由钩子、这部用到了自定义loading、必须放在引入之后
 

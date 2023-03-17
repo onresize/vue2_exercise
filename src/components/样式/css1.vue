@@ -3,6 +3,7 @@
     <div class="mask">
       <div class="text">图片上面的字体模糊背景</div>
     </div>
+    <div class="blur"></div>
   </div>
 </template>
  
@@ -40,6 +41,26 @@ export default {
       font-size: 50px;
       font-weight: bold;
       color: #fff;
+    }
+  }
+  .blur {
+    text-align: center;
+    line-height: 100px;
+    width: 240px;
+    height: 100px;
+    position: absolute;
+    left: 30%;
+    top: 60%;
+    background: inherit;
+    background: rgba(0, 0, 0, .35);
+    border-radius: 20px;
+    filter: blur(3px); // 背景模糊
+    // filter: brightness(50%); // 变暗
+    &::before {
+      content: '高斯模糊';
+      color: #fff;
+      font-size: 40px;
+      font-weight: bold;
     }
   }
 }

@@ -101,6 +101,8 @@
     { "value": "css2" },
     { "value": "css3" },
     { "value": "css4" },
+    { "value": "css5" },
+    { "value": "css6" },
     { "value": "v_cloak" },
     { "value": "selectChart" },
     { "value": "dragCharts" },
