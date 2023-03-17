@@ -1,7 +1,8 @@
 <template>
   <div v-if="showDialog">
     <div class="dialog_view">
-      <div class="box">
+      <!-- 弹窗盒子 -->
+      <div class="box" v-clickOutSide="close">
         <div class="close" @click="close">
           <svg
             t="1679024581302"
@@ -28,7 +29,10 @@
 </template>
  
 <script>
+// element隐藏的指令、点击其他的区域触发绑定的方法
+import clickOutSide from 'element-ui/lib/utils/clickoutside'
 export default {
+  directives: { clickOutSide },
   props: {
     showDialog: Boolean,
     title: String,

@@ -4,8 +4,8 @@ import Store from '@/store'
 
 // 创建一个实例、默认url、超时
 const instance = axios.create({
-    baseURL: 'http://47.104.64.44:8889/api/private/v1/',
-    timeout: 4000
+    baseURL: 'https://v2.api-m.com',
+    timeout: 10000
 })
 
 // 拦截器 --请求拦截

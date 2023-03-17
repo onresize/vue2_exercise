@@ -20,9 +20,18 @@
       >
       </el-option>
     </el-select>
+    <pre>
+      resize: both; // 除了textarea元素之外、其他元素想要缩放、必须搭配overflow使用
+      overflow: hidden;
+    </pre>
     <div id="chartBox">
       <div id="Chart" ref="ChartRef"></div>
       <div class="dot" @mousedown="mousedown"></div>
+    </div>
+    <div class="resizeBox">
+      <div class="box1">0</div>
+      <div class="box1">1</div>
+      <div class="box1">2</div>
     </div>
   </div>
 </template>
@@ -1504,6 +1513,7 @@ export default {
 }
 #chartBox {
   position: relative;
+  top: -90px;
   border: 3px solid aqua;
   border-radius: 20px;
   width: 400px;
@@ -1527,6 +1537,44 @@ export default {
     z-index: 10;
     right: 0;
     bottom: 0;
+  }
+}
+pre {
+  border: 2px solid red;
+  width: 620px;
+  padding: 15px 0 0 0;
+  position: relative;
+  left: 550px;
+}
+.resizeBox {
+  resize: both;
+  overflow: hidden;
+  position: relative;
+  left: 650px;
+  top: -400px;
+  height: 300px;
+  width: 300px;
+  z-index: 2;
+  box-shadow: 0 0 20px -10px hsl(187, 97%, 24%);
+  background: white;
+  // display: grid;
+  // align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  .box1 {
+    --green: hsl(100, 64%, 86%);
+    --green--b: hsl(100, 41%, 76%);
+    font-size: 2rem;
+    padding: 1rem;
+    flex: 0 1 150px;
+    margin: 5px;
+    display: grid;
+    place-items: center;
+    border-radius: 1rem;
+    border-style: dashed;
+    background-color: var(--green);
+    border: 1px solid var(--green--b);
   }
 }
 </style>

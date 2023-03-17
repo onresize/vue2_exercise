@@ -3,6 +3,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 const Home = () => import('@/home.vue')
+const Welcome = () => import('@/Welcome.vue')
 const errNone = () => import('@/views//404.vue')
 const Tablesolt = () => import('@/components/antd-table/table-solt.vue')
 const Atable = () => import('@/components/antd-table/a-table.vue')
@@ -131,7 +132,7 @@ const router = new VueRouter({
     mode: 'history',
     // scrollBehavior: () => ({ y: 0 }),
     routes: [
-        { path: '/', redirect: '/map' },
+        { path: '/', redirect: '/Welcome' },
         { path: '*', redirect: { path: '/404' } },
         { path: '/echartTest', component: EchartTest },
         { path: '/vrThreeJs', component: VrThreeJS },
@@ -142,6 +143,7 @@ const router = new VueRouter({
             name: 'home',
             component: Home,
             children: [
+                { path: '/Welcome', component: Welcome },
                 { path: '/VrTest', component: VrTest },
                 { path: '/a-table-slot', component: Tablesolt },
                 { path: '/a-table', component: Atable },
