@@ -1494,6 +1494,12 @@ export default {
     this.parentBorder = 3
     this.childBorder = 3
   },
+  activated() {
+    console.log('执行当前组件111的-------activated')
+  },
+  deactivated() {
+    console.log('执行当前组件111的-------deactivated')
+  },
 }
 </script>
  

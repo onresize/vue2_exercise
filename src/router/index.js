@@ -260,8 +260,8 @@ const router = new VueRouter({
                 { path: '/v_cloak', component: v_cloak },
                 { path: '/selectChart', component: selectChart },
                 { path: '/numberPeople', component: numberPeople },
-                // keepAlive为true、为组件做缓存  
-                { path: '/dragCharts', name: 'dragCharts', meta: { keepAlive: true }, component: dragCharts },
+                //为组件做缓存  
+                { path: '/dragCharts', name: 'dragCharts', component: dragCharts },
             ]
         },
     ]

@@ -37,6 +37,12 @@ export default {
       this.text3 = 'text3'
     }, 2000)
   },
+  activated() {
+    console.log('执行当前组件222的-------activated')
+  },
+  deactivated() {
+    console.log('执行当前组件222的-------deactivated')
+  },
 }
 </script>
  

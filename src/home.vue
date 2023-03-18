@@ -73,9 +73,8 @@
         <el-card style="height: 100%">
           <!-- include 只缓存组件名字为 numberPeople的组件，其他组件不会缓存，而exclude恰好相反 -->
           <keep-alive include="dragCharts">
-            <router-view v-if="$route.meta.keepAlive" />
+            <router-view />
           </keep-alive>
-          <router-view v-if="!$route.meta.keepAlive" />
         </el-card>
       </el-main>
     </el-container>
