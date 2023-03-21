@@ -27,3 +27,13 @@ export const getKnownSaying = (params) => {
     })
   )
 }
+// 文案门
+export const getWenAnMen = (url,data) => {
+  return awaitJS(
+    server({
+      url,
+      method: 'POST',
+      data,
+    })
+  )
+}
