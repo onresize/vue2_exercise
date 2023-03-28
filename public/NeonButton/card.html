@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      background-color: hsla(0, 0%, 100%, .3);
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+    }
+    
+    .card {
+      width: 200px;
+      height: 150px;
+      border: none;
+      border-radius: 25px;
+      position: relative;
+      transform: translate(-50%, -50%);
+      inset: 50vh 50%;
+      border: 2px solid gray;
+      box-sizing: border-box;
+      background: url('https://www4.bing.com//th?id=OHR.LionessesNap_ZH-CN9240393299_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp&w=288&h=162') no-repeat center;
+      background-size: 100% 100%;
+      cursor: pointer;
+    }
+
+    .card:before {
+      transition: .75s;
+      position: absolute;
+      top: 0;
+      left: -75%;
+      z-index: 2;
+      display: none;
+      content: "";
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(90deg, hsla(0, 0%, 100%, 0), hsla(0, 0%, 100%, .3));
+      transform: skewX(-25deg);
+    }
+    
+    .card:hover:before {
+      display: block;
+      animation: shine-data-v-612361dd .75s
+    }
+
+    @keyframes shine-data-v-612361dd {
+      to {
+        left: 125%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card"></div>
+</body>
+
+</html>
