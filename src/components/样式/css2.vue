@@ -91,6 +91,35 @@
     </pre
       >
     </div>
+    <div>
+      <span class="sp">鼠标悬浮展示效果</span>
+    </div>
+    <div class="ruby">
+      <ruby>写<rp>(</rp><rt>xiě</rt><rp>)</rp></ruby>
+      <ruby>代<rp>(</rp><rt>dài</rt><rp>)</rp></ruby>
+      <ruby>码<rp>(</rp><rt>mǎ</rt><rp>)</rp></ruby>
+    </div>
+    <div class="pDiv">
+      <h2>段落首行样式</h2>
+      <p>
+        11111111111111111111111
+        <br />
+        222222222222222222222222
+        <br />
+        333333333333333333333333
+      </p>
+    </div>
+    <div>
+      <h2>一些特别的css写法</h2>
+      <a href="##" class="columnNews">我的背景想变成红色</a>
+      <a href="##" class="columnVideo">我的背景想变成红色</a>
+      <a href="##" class="columnAboutUs">我的背景想变成红色</a><br />
+      <a href="1.doc">我的背景想变成绿色</a>
+      <a href="2.doc">我的背景想变成绿色</a><br />
+      <a href="##" title="this is a box">我的背景想变成蓝色</a>
+      <a href="##" title="box1">我的背景想变成蓝色</a>
+      <a href="##" title="there is two boxs">我的背景想变成蓝色</a>
+    </div>
   </div>
 </template>
  
@@ -108,7 +137,21 @@ export default {
 </script>
  
  <style lang="less" scoped>
-[data-text]::before {
+/*或者a[class*=column]{color: red}*/
+a[class^='column'] {
+  color: red;
+}
+
+/*或者a[href*=doc]{color: green}*/
+a[href$='doc'] {
+  color: green;
+}
+
+a[title*='box'] {
+  color: blue;
+}
+
+xie [data-text]::before {
   content: attr(data-text) '-';
   color: red;
 }
@@ -120,11 +163,16 @@ export default {
 }
 .flex {
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
+  align-content: flex-start;
   flex-wrap: wrap;
-  width: 80vw;
+  width: 82vw;
   height: 90vh;
   overflow: auto;
+}
+div {
+  height: fit-content;
+  margin: 10px;
 }
 pre {
   width: fit-content;
@@ -142,7 +190,7 @@ pre {
   color: #fff;
 }
 
-.letter::first-letter {
+.letter:first-letter {
   font-size: 30px;
   font-weight: bold;
   color: red;
@@ -175,5 +223,41 @@ p {
 $colBlue: blue;
 .blue {
   color: $colBlue;
+}
+
+.sp {
+  font-size: 20px;
+  background: linear-gradient(90deg, red, blue) no-repeat right bottom;
+  background-size: 0 3px;
+  transition: background-size 1s;
+  &:hover {
+    background-size: 100% 3px;
+    background-position-x: left;
+  }
+}
+
+.ruby {
+  font-size: 24px;
+  font-weight: bold;
+  rt {
+    letter-spacing: 1px;
+    font-size: 20px;
+    margin-left: 5px;
+    font-weight: 600 !important;
+    &:first-letter {
+      margin-left: 6px;
+      color: red;
+    }
+  }
+}
+
+.pDiv {
+  p {
+    border: none !important;
+    text-indent: 10px;
+    &:first-line {
+      color: red;
+    }
+  }
 }
 </style>
