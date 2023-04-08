@@ -2,7 +2,10 @@
   <div v-if="showDialog">
     <div class="dialog_view">
       <!-- 弹窗盒子 -->
-      <div class="box" v-clickOutSide="close">
+      <div
+        :class="['box', myAnimation ? 'applyShake' : '']"
+        v-clickOutSide="showAnimation"
+      >
         <div class="close" @click="close">
           <svg
             t="1679024581302"
@@ -39,13 +42,22 @@ export default {
     content: String,
   },
   data() {
-    return {}
+    return {
+      myAnimation: false,
+    }
   },
   computed: {},
   methods: {
     close() {
       console.log('关闭弹窗', this)
       this.$myDialogClose()
+    },
+    showAnimation() {
+      console.log('显示关闭左右闪动动画')
+      this.myAnimation = true
+      setTimeout(() => {
+        this.myAnimation = false
+      }, 820)
     },
   },
   watch: {},
@@ -99,6 +111,31 @@ export default {
       font-size: 15px;
       overflow-y: auto;
     }
+  }
+}
+.applyShake {
+  animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite;
+}
+@keyframes shake {
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%,
+  60% {
+    transform: translate3d(4px, 0, 0);
   }
 }
 </style>
