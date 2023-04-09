@@ -34,6 +34,7 @@
     "swiper-vue2": "^1.0.6",
     "three": "^0.115.0",
     "timetables": "^1.1.0",
+    "phaser": "^3.55.2",
     "viewerjs": "^1.10.2",
     "vue": "^2.6.11",
     "vue-baidu-map": "^0.21.22",

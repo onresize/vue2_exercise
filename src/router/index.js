@@ -126,6 +126,7 @@ const v_cloak = () => import('@/components/v_cloak_html_text/v-cloak.vue')
 const selectChart = () => import('@/components/selectChart/index.vue')
 const dragCharts = () => import('@/components/selectChart/dragCharts.vue')
 const numberPeople = () => import('@/components/numberPeople/index.vue')
+const landscape = () => import('@/components/强制横屏/index.vue')
 
 Vue.use(VueRouter)
 
@@ -262,6 +263,7 @@ const router = new VueRouter({
                 { path: '/v_cloak', component: v_cloak },
                 { path: '/selectChart', component: selectChart },
                 { path: '/numberPeople', component: numberPeople },
+                { path: '/landscape', component: landscape },
                 //为组件做缓存  
                 { path: '/dragCharts', name: 'dragCharts', component: dragCharts },
             ]
