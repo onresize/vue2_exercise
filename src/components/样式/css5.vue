@@ -11,11 +11,16 @@
       <h2>鼠标悬浮卡片旋转动效</h2>
       <div id="element"></div>
     </div>
+
+    <div class="item">
+      <SvgIcon icon-class="loudou" style="color: red; border: 2px solid red;" />项目集成svg
+    </div>
   </div>
 </template>
  
 <script>
 export default {
+  components: { SvgIcon: () => import('@/myCom/SvgIcon/index.vue') },
   data() {
     return {}
   },
@@ -95,7 +100,8 @@ export default {
   #element {
     width: 338px;
     height: 418px;
-    background: url('https://cdn.sanity.io/images/ornj730p/production/55609fcfa11813317c4fd6bf62c6d4f5c6123055-3440x4248.jpg?w=680&fit=max&auto=format&dpr=2') no-repeat center;
+    background: url('https://cdn.sanity.io/images/ornj730p/production/55609fcfa11813317c4fd6bf62c6d4f5c6123055-3440x4248.jpg?w=680&fit=max&auto=format&dpr=2')
+      no-repeat center;
     background-size: 100% 100%;
     transform-style: preserve-3d;
     transform: perspective(600px); // 距离屏幕600px

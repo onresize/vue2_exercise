@@ -52,9 +52,10 @@
             class="aa"
           >
             <div class="cc">
-              <router-link :to="value" active-class="bb"
-                >{{ value }}测试</router-link
-              >
+              <router-link :to="value" active-class="bb" class="link">
+                <!-- <svg-icon icon-class="bug" style="color: red" /> -->
+                {{ value }}测试
+              </router-link>
             </div>
           </div>
         </el-aside>
@@ -71,7 +72,7 @@
       <!-- 右侧内容 -->
       <el-main class="home_container_main App" :color-mode="mode">
         <el-card style="height: 100%">
-          <!-- include 只缓存组件名字为 numberPeople的组件，其他组件不会缓存，而exclude恰好相反 -->
+          <!-- include 只缓存组件名字为 dragCharts的组件，其他组件不会缓存，而exclude恰好相反 -->
           <keep-alive include="dragCharts">
             <router-view />
           </keep-alive>
@@ -88,6 +89,7 @@ export default {
   name: 'home',
   components: {
     VScaleScreen,
+    svgIcon: () => import('@/myCom/SvgIcon'),
   },
   data() {
     return {
@@ -251,6 +253,11 @@ export default {
   text-align: center;
   color: var(--surface3);
 }
+.link {
+  &:hover {
+    color: var(--surface1) !important;
+  }
+}
 .cc {
   width: 190px;
   height: 30px;
@@ -259,7 +266,6 @@ export default {
   border-radius: 10px;
   text-align: center;
   cursor: pointer;
-  color: var(--surface3);
 }
 a {
   display: inline-block;

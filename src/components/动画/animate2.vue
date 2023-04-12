@@ -8,6 +8,7 @@
     >
     <div class="view">
       <div
+        v-if="isShow"
         :class="[
           'animationBox',
           isAnimate ? 'animationLeftToRight' : 'animationRightToLeft',
@@ -83,15 +84,20 @@ export default {
   data() {
     return {
       isAnimate: false,
+      isShow: false,
     }
   },
   computed: {},
   methods: {
     start() {
       this.isAnimate = true
+      this.isShow = true
     },
     stop() {
       this.isAnimate = false
+      setTimeout(() => {
+        this.isShow = false
+      }, 1000)
     },
   },
   watch: {},
@@ -120,11 +126,29 @@ export default {
   border-right: 5px solid aqua;
 }
 .animationLeftToRight {
-  transform: translateX(20vw);
-  transition: all 1s ease-in-out;
+  // transform: translateX(20vw);
+  // transition: all 1s ease-in-out;
+  animation: animationName 1s ease;
 }
 .animationRightToLeft {
-  transform: translateX(0);
-  transition: all 1s ease-in-out;
+  // transform: translateX(0);
+  // transition: all 1s ease-in-out;
+  animation: animationName1 1s ease;
+}
+@keyframes animationName {
+  0% {
+    transform: scaleY(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes animationName1 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scaleY(0);
+  }
 }
 </style>

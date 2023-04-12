@@ -1,7 +1,7 @@
 <template>
   <div class="flex">
     <div class="item">
-      <h2>景深效果</h2>
+      <h2>景深效果: f12看css图层</h2>
       <div class="wrapper">
         <div class="z1"></div>
         <div class="z2"></div>
