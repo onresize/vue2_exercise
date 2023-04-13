@@ -37,6 +37,7 @@ const XgPlayer = () => import('@/components/videoJs/xgPlayer.vue')
 const WebRtcDemo = () => import('@/components/videoJs/webRtcDemo.vue')
 const FlvDemo = () => import('@/components/videoJs/flvDemo.vue')
 const FlvDemo_wss = () => import('@/components/videoJs/flvDemo_wss.vue')
+const SkeyeWebPlayer = () => import('@/components/videoJs/SkeyeWebPlayer.vue')
 const EasyPlay = () => import('@/components/videoJs/easyPlay.vue')
 const MoreVideoDemo = () => import('@/components/videoJs/moreVideoDemo.vue')
 const Img = () => import('@/components/importance属性优先级/img.vue')
@@ -179,6 +180,7 @@ const router = new VueRouter({
                 { path: '/HKVideo', component: HKVideo },
                 { path: '/flvDemo', component: FlvDemo },
                 { path: '/flvDemo_wss', component: FlvDemo_wss },
+                { path: '/SkeyeWebPlayer', component: SkeyeWebPlayer },
                 { path: '/webRtcDemo', component: WebRtcDemo },
                 { path: '/xgPlayer', component: XgPlayer },
                 { path: '/easyPlay', component: EasyPlay },
