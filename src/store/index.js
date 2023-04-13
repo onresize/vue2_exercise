@@ -14,7 +14,8 @@ export default new Vuex.Store({
         viewKey: 'all',
         cancelAxios: null, // 终止axios请求
         OBj: { a: 1 },
-        Arr: [9, 8, 7]
+        Arr: [9, 8, 7],
+        iconList: []
     },
     mutations: {
         changeObj(state, key) {
@@ -22,6 +23,9 @@ export default new Vuex.Store({
         },
         changeArr(state, key) {
             state.Arr = key
+        },
+        changeIconList(state, key) {
+            state.iconList = key
         },
         setCancelAxios(state, n) {
             console.log('执行了vueX同步setCancelAxios')

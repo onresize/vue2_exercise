@@ -47,14 +47,18 @@
           :width="'220px'"
         >
           <div
-            v-for="({ value }, index) in RouterList"
+            v-for="({ value, ICON }, index) in RouterList"
             :key="index"
             class="aa"
           >
-            <div class="cc">
-              <router-link :to="value" active-class="bb" class="link">
-                <!-- <svg-icon icon-class="bug" style="color: red" /> -->
-                {{ value }}测试
+            <div class="cc color1">
+              <router-link
+                :to="value"
+                active-class="bb color2"
+                class="link"
+              >
+                <svg-icon :icon-class="ICON" />
+                {{ value }}页
               </router-link>
             </div>
           </div>
@@ -84,6 +88,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import VScaleScreen from './package/index.js'
 export default {
   name: 'home',
@@ -109,10 +114,22 @@ export default {
       RouterList: [],
     }
   },
+  computed: {
+    ...mapState(['iconList']),
+  },
   methods: {
+    // 取随机颜色
+    randomColor() {
+      return this.iconList
+        .sort(() => Math.random() - Math.random())
+        .at(0)
+    },
     async getRouterList() {
       let res = await fetch('/router.json')
       let { data: options } = await res.json()
+      options.forEach((v) => {
+        v.ICON = this.randomColor() || 'bug'
+      })
       this.RouterList = options
       console.log('路由数组：', options)
     },
@@ -248,9 +265,9 @@ export default {
   width: 190px;
   height: 30px;
   line-height: 30px;
-  background: #ccffff;
   border-radius: 10px;
-  text-align: center;
+  margin-left: -20px;
+  padding-left: 20px;
   color: var(--surface3);
 }
 .link {
@@ -258,13 +275,20 @@ export default {
     color: var(--surface1) !important;
   }
 }
+.color1 {
+  background: #ffcc99;
+}
+.color2 {
+  background: #ccffff;
+}
 .cc {
   width: 190px;
   height: 30px;
   line-height: 30px;
-  background: #ffcc99;
   border-radius: 10px;
-  text-align: center;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 20px;
   cursor: pointer;
 }
 a {

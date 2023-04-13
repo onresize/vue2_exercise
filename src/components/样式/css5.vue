@@ -8,19 +8,35 @@
     </div>
 
     <div class="item">
-      <h2>鼠标悬浮卡片旋转动效</h2>
+      <h2>鼠标悬浮卡片旋转动效（手写实现）</h2>
       <div id="element"></div>
     </div>
 
     <div class="item">
-      <SvgIcon icon-class="loudou" style="color: red; border: 2px solid red;" />项目集成svg
+      <h2>
+        鼠标悬浮卡片旋转动效<el-link
+          href="https://github.com/micku7zu/vanilla-tilt.js"
+          target="_bank"
+          >（vanilla-tilt.js库实现）</el-link
+        >
+      </h2>
+      <div id="js-tilt"></div>
+    </div>
+
+    <div class="item">
+      <div class="svgBox">
+        <svg-icon
+          icon-class="loudou"
+        />项目集成svg、颜色和字体统一修改
+      </div>
     </div>
   </div>
 </template>
  
 <script>
+import VanillaTilt from 'vanilla-tilt'
+
 export default {
-  components: { SvgIcon: () => import('@/myCom/SvgIcon/index.vue') },
   data() {
     return {}
   },
@@ -29,10 +45,9 @@ export default {
   watch: {},
   created() {},
   mounted() {
-    const multiple = 10
-    // const mouseOverContainer =
-    //   document.getElementsByTagName('body')[0]
-    const element = document.getElementById('element')
+    // 手写实现
+    var multiple = 10
+    var element = document.getElementById('element')
 
     function transformElement(x, y) {
       let box = element.getBoundingClientRect()
@@ -54,6 +69,10 @@ export default {
         element.style.transform = 'rotateX(0) rotateY(0)'
       })
     })
+
+    // 库实现
+    var VanillaTiltDOM = document.querySelector('#js-tilt')
+    VanillaTilt.init(VanillaTiltDOM)
   },
 }
 </script>
@@ -62,8 +81,14 @@ export default {
 .container {
   display: flex;
   justify-content: flex-start;
+  flex-wrap: wrap;
   .item {
     margin: 10px;
+    .svgBox {
+      &:hover {
+        color: rgb(47, 92, 255);
+      }
+    }
   }
   .box {
     width: 600px;
@@ -77,7 +102,6 @@ export default {
       content: '';
       width: 50px;
       height: 50px;
-      border: 2px solid red;
       background: rgba(0, 0, 0, 0.4);
       position: absolute;
       left: 300px;
@@ -98,6 +122,18 @@ export default {
     }
   }
   #element {
+    width: 338px;
+    height: 418px;
+    background: url('https://cdn.sanity.io/images/ornj730p/production/55609fcfa11813317c4fd6bf62c6d4f5c6123055-3440x4248.jpg?w=680&fit=max&auto=format&dpr=2')
+      no-repeat center;
+    background-size: 100% 100%;
+    transform-style: preserve-3d;
+    transform: perspective(600px); // 距离屏幕600px
+    transition: all 0.1s;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+  #js-tilt {
     width: 338px;
     height: 418px;
     background: url('https://cdn.sanity.io/images/ornj730p/production/55609fcfa11813317c4fd6bf62c6d4f5c6123055-3440x4248.jpg?w=680&fit=max&auto=format&dpr=2')

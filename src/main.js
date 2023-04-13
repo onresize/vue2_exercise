@@ -4,6 +4,8 @@ import router from './router'
 import './css/index.css'
 import "@/assets/font/font.css";
 
+import './assets/icons' // 引入注册svgIcon
+
 Vue.config.productionTip = false // 阻止显示生产模式信息
 
 // 瀑布流插件
