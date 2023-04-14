@@ -84,6 +84,7 @@ export default {
     position: absolute;
     z-index: 10;
     border: 3px solid aqua;
+    user-select: none;
     box-sizing: content-box;
     img {
       cursor: pointer;

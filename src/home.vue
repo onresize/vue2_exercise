@@ -339,6 +339,7 @@ a {
 .switch {
   margin-left: 47px;
   margin-top: 10px;
+  user-select: none;
 }
 .div-box {
   position: fixed;
