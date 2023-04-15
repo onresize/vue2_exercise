@@ -36,6 +36,7 @@
     "swiper-vue2": "^1.0.6",
     "three": "^0.115.0",
     "timetables": "^1.1.0",
+    "uglifyjs-webpack-plugin": "^2.2.0",
     "vanilla-tilt": "^1.8.0",
     "viewerjs": "^1.10.2",
     "vue": "^2.6.11",

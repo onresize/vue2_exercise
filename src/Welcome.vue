@@ -1,14 +1,33 @@
 <template>
   <div>
-    <el-input v-model="val" clearable @close="close" placeholder="请输入文本">
+    <el-input
+      v-model="val"
+      clearable
+      @close="close"
+      placeholder="请输入文本"
+    >
       <el-button slot="append" @click="textToSpeed">转语音</el-button>
     </el-input>
-    <el-link :href="hrefUrl" target="_bank" v-if="hrefUrl">语音链接</el-link>
-    <el-input class="textarea" type="textarea" :autosize="{ minRows: 2, maxRows: 5 }" v-model="sayingText" resize="none"
-      readOnly>
+    <el-link :href="hrefUrl" target="_bank" v-if="hrefUrl"
+      >语音链接</el-link
+    >
+    <el-input
+      class="textarea"
+      type="textarea"
+      :autosize="{ minRows: 2, maxRows: 5 }"
+      v-model="sayingText"
+      resize="none"
+      readOnly
+    >
     </el-input>
-    <el-input class="textarea" type="textarea" :autosize="{ minRows: 2, maxRows: 5 }" v-model="wenAnMenText" resize="none"
-      readOnly>
+    <el-input
+      class="textarea"
+      type="textarea"
+      :autosize="{ minRows: 2, maxRows: 5 }"
+      v-model="wenAnMenText"
+      resize="none"
+      readOnly
+    >
     </el-input>
   </div>
 </template>
@@ -43,10 +62,13 @@ export default {
       }
     },
     async WenAnMen() {
-      const [err, data] = await getWenAnMen('https://w.wenanmen.com/api/admin/common/func', {
-        url: 'wenan/rank',
-        data: {},
-      })
+      const [err, data] = await getWenAnMen(
+        'https://w.wenanmen.com/api/admin/common/func',
+        {
+          url: 'wenan/rank',
+          data: {},
+        }
+      )
       if (data) {
         this.wenAnMenText = data.data.data.word
       } else {
@@ -62,7 +84,7 @@ export default {
     this.getSaying()
     this.WenAnMen()
   },
-  mounted() { },
+  mounted() {},
 }
 </script>
  

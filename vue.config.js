@@ -1,14 +1,19 @@
 
 const path = require('path')
+const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 
 function resolve(dir) {
   return path.join(__dirname, './', dir)
 }
 
+console.log('当前环境：', process.env)
+
+// webpack配置参考： https://blog.csdn.net/gcyaozuodashen/article/details/128715388
 module.exports = {
-  // 去除vue打包后js目录下生成的.map文件、用于加速生产环境构建、默认打包后线上开启sourcemap
-  productionSourceMap: false, 
-  runtimeCompiler: true,
+  publicPath: process.env.ENV === "production" ? "/" : "/",
+  outputDir: "myDist",
+  // productionSourceMap: true,  // 打包生成map索引文件、默认true开启
+  runtimeCompiler: true, // 是否使用包含运行时编译器的 Vue 构建版本。设置为 true 后你就可以在 Vue 组件中使用 template 选项了
   devServer: {
     host: '0.0.0.0',
     port: 8787,
@@ -41,5 +46,25 @@ module.exports = {
       .options({
         symbolId: 'myicon-[name]'
       });
+  },
+  configureWebpack: config => {
+    if (process.env.ENV === "production") {
+      config.optimization.minimizer = [
+        new UglifyJsPlugin({
+          sourceMap: true, // 这里做了优化也需要开启sourceMap打包才能生成map文件
+          uglifyOptions: {
+            output: {
+              comments: true, // 删除注释
+            },
+            warnings: false,
+            compress: {
+              drop_console: true,  // true为删除console
+              drop_debugger: true,  // true为删除debugger
+              pure_funcs: ["console.log"],
+            }
+          }
+        })
+      ];
+    }
   }
 }; 
