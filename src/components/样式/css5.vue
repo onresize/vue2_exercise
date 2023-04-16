@@ -38,7 +38,9 @@ import VanillaTilt from 'vanilla-tilt'
 
 export default {
   data() {
-    return {}
+    return {
+      ratio: 1,
+    }
   },
   computed: {},
   methods: {},

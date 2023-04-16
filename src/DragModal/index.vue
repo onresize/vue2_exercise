@@ -94,7 +94,6 @@
         this.initialEvent(this.visible)
       })
     },
-    created () {},
     beforeDestroy () {
       this.removeMove()
       window.removeEventListener('mouseup', this.removeUp, false)
