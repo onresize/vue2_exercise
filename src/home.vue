@@ -75,7 +75,7 @@
       </div>
       <!-- 右侧内容 -->
       <el-main class="home_container_main App" :color-mode="mode">
-        <el-card style="height: 100%">
+        <el-card style="height: 100%; overflow: auto;">
           <!-- include 只缓存组件名字为 dragCharts的组件，其他组件不会缓存，而exclude恰好相反 -->
           <keep-alive include="dragCharts">
             <router-view />

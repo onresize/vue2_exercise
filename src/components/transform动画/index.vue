@@ -109,10 +109,6 @@ export default {
 .pic:hover {
   transform: rotate(360deg);
 }
-/* 隐藏滚动条 */
-.container {
-  scrollbar-width: none !important;
-}
 .container::-webkit-scrollbar {
   width: 8px;
   height: 8px;
@@ -127,9 +123,10 @@ export default {
   background-color: #ffffff;
 }
 .container {
-  height: 97vh;
+  height: 100vh;
   padding: 20px;
   overflow: scroll;
+  // scrollbar-width: none !important; // 隐藏滚动条
 }
 .ipt {
   margin: 10px 0;

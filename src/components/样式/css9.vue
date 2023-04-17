@@ -27,7 +27,7 @@
       </div>
     </div>
 
-    <div class="container2">
+    <!-- <div class="container2">
       <h2>b站主页充电效果</h2>
       <div class="bilibil">
         <div
@@ -44,9 +44,20 @@
         <div
           class="box_r_inset"
           :style="{
-            width: active ? '150px' : '0px',
+            width: active ? '146px' : '0px',
           }"
         ></div>
+      </div>
+    </div> -->
+
+    <div class="section elec container2">
+      <div class="elec-action">
+        <div class="new-elec-trigger">为TA充电</div>
+        <div class="elec-map">
+          <div class="elec-status"></div>
+          <div class="elec-status-bg"></div>
+          <div class="elec-status-bg-grey"></div>
+        </div>
       </div>
     </div>
   </div>
@@ -108,6 +119,10 @@ export default {
   pointer-events: none;
 }
 
+@img1: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJwAAABKCAMAAAB5Ac1NAAAAPFBMVEX///////////////////////9HcEz////////////////////////////////////////////////////BTIGUAAAAFHRSTlP/skEMs3sAqQNI5g3nqErjsAuxpwJoLsAAAAD9SURBVHgB7doFjoVQFIPhgxX3/a91lNjYkyJNpv8KvghyKeH+VS5JsyzNQ7ICHxUhWI6tJNjKCvtXN00NpJI2NBEN0OrZNlwHZEHVVzikoRsHIOVtVR/7ltAXBG8jbiW8jWhK5zldBGw34m1lhTNTtkHZhgdsfQUp3Ga77LrAjXgbkbItlG0hYCOyzbadw81YG5GyLZRtoWxzTvCCMM4458TjH/ylAE5QB2UdpHW3WivrrNu1W1fCpTocp+PHYByn4xccXKTjx+C1OlKXEmPwd53AGEzo6DGY0PWV2Bh8W8eXBK+THIM3neQY7Cc/qbsgaR3x24sQjtdROOfcK6H+QuyA+YQEAAAAAElFTkSuQmCC';
+@img2: 'https://s1.hdslb.com/bfs/static/jinkela/space/assets/charging_focus.gif';
+@img3: '//s1.hdslb.com/bfs/static/jinkela/space/assets/charging_hover.gif';
+
 .container2 {
   margin: 40px 0;
   .bilibil {
@@ -152,24 +167,156 @@ export default {
       height: 60px;
       color: #6d757a;
       z-index: 2;
-      // background: #e5e9ef;
-      background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJwAAABKCAMAAAB5Ac1NAAAAPFBMVEX///////////////////////9HcEz////////////////////////////////////////////////////BTIGUAAAAFHRSTlP/skEMs3sAqQNI5g3nqErjsAuxpwJoLsAAAAD9SURBVHgB7doFjoVQFIPhgxX3/a91lNjYkyJNpv8KvghyKeH+VS5JsyzNQ7ICHxUhWI6tJNjKCvtXN00NpJI2NBEN0OrZNlwHZEHVVzikoRsHIOVtVR/7ltAXBG8jbiW8jWhK5zldBGw34m1lhTNTtkHZhgdsfQUp3Ga77LrAjXgbkbItlG0hYCOyzbadw81YG5GyLZRtoWxzTvCCMM4458TjH/ylAE5QB2UdpHW3WivrrNu1W1fCpTocp+PHYByn4xccXKTjx+C1OlKXEmPwd53AGEzo6DGY0PWV2Bh8W8eXBK+THIM3neQY7Cc/qbsgaR3x24sQjtdROOfcK6H+QuyA+YQEAAAAAElFTkSuQmCC);
+      background-image: url(@img1);
       background-size: 100% 100%;
 
       &:hover {
-        background-image: url(https://s1.hdslb.com/bfs/static/jinkela/space/assets/charging_focus.gif);
+        background-image: url(@img2);
       }
     }
     .box_r_inset {
       position: absolute;
-      left: 186px;
+      left: 188px;
       top: 20px;
       z-index: 1;
       width: 0;
       height: 60px;
-      background-image: url(//s1.hdslb.com/bfs/static/jinkela/space/assets/charging_hover.gif);
+      background-image: url(@img3);
       transition: width 0.4s ease;
     }
   }
+}
+
+.elec:hover .elec-status {
+  background-image: url(//s1.hdslb.com/bfs/static/jinkela/space/assets/charging_focus.gif);
+}
+
+.elec .elec-action,
+.elec .old-elec-trigger {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.elec .old-elec-trigger {
+  background: #f25d8e;
+  border-radius: 4px;
+  box-shadow: 0 4px 4px rgba(255, 112, 159, 0.3);
+  color: #fff;
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 50px;
+  padding: 0 24px;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.elec .old-elec-trigger:hover {
+  background: #ff709f;
+}
+
+.elec .old-elec-trigger:hover + .elec-map .elec-status {
+  background-image: url(@img1);
+}
+
+.elec .old-elec-trigger:hover + .elec-map .elec-status-bg {
+  width: 156px;
+}
+
+.elec .old-elec-trigger .elec-trigger-icon {
+  background-position: -278px -918px;
+  width: 20px;
+  height: 24px;
+  vertical-align: middle;
+  margin-right: 12px;
+}
+
+.elec .new-elec-trigger {
+  border-radius: 4px;
+  border: 1px solid #f69;
+  color: #f69;
+  cursor: pointer;
+  font-size: 18px;
+  width: 160px;
+  height: 48px;
+  box-sizing: border-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.elec .new-elec-trigger:hover {
+  background-color: #ffecf1;
+}
+
+.elec .new-elec-trigger:hover + .elec-map .elec-status {
+  background-image: url(@img1);
+}
+
+.elec .new-elec-trigger:hover + .elec-map .elec-status-bg {
+  width: 156px;
+}
+
+.elec .new-elec-trigger .elec-trigger-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 4px;
+}
+
+.elec .new-elec-trigger .elec-trigger-icon img {
+  width: 100%;
+  height: 100%;
+}
+
+.elec #elec-hover-bg-preloader {
+  background-image: url(@img3);
+  display: none;
+}
+
+.elec .elec-map {
+  height: 74px;
+  -ms-flex: 1;
+  flex: 1;
+  position: relative;
+}
+
+.elec .elec-status {
+  background-image: url(@img1);
+  color: #6d757a;
+  font-weight: 700;
+  width: 156px;
+  line-height: 74px;
+  text-align: center;
+  text-indent: 18px;
+  z-index: 2;
+}
+
+.elec .elec-status,
+.elec .elec-status-bg {
+  height: 74px;
+  position: absolute;
+  top: 0;
+  left: 12px;
+}
+
+.elec .elec-status-bg {
+  background-image: url(@img3);
+  width: 0;
+  transition: width 0.4s ease;
+  z-index: 1;
+}
+
+.elec .elec-status-bg-grey {
+  background: #e5e9ef;
+  width: 156px;
+  height: 74px;
+  position: absolute;
+  top: 0;
+  left: 12px;
+  z-index: 0;
 }
 </style>

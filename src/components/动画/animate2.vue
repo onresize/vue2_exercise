@@ -110,7 +110,6 @@ export default {
 .contentBox {
   width: 1280px;
   height: 90vh;
-  overflow: auto;
 }
 .iframe_box {
   width: 300px;

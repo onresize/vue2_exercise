@@ -155,7 +155,6 @@ export default {
   height: 100px;
   margin: 50px auto;
   cursor: pointer;
-  transition: 0.5s all ease-out;
 }
 .pic3 {
   background-image: url(@img1), linear-gradient(#f09, #09f, #f0f);
@@ -163,6 +162,7 @@ export default {
   background-size: cover;
   background-position: 0 0, 0 120px;
   background-repeat: no-repeat;
+  transition: 0.5s all ease-out;
 }
 .pic3:hover {
   background-position: 0 0, 0 0;

@@ -19,11 +19,11 @@ export default {
   props: {
     width: {
       type: [String, Number],
-      default: 1920,
+      default: 1440,
     },
     height: {
       type: [String, Number],
-      default: 950,
+      default: 1050,
     },
     fullScreen: {
       type: Boolean,
