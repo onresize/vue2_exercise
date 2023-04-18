@@ -21,12 +21,12 @@
     <vue-qr
       :logoSrc="imageUrl1"
       :size="200"
-      text="https://wws.lanzouj.com/iVseK0223hwh"
+      text="https://embrance-t.gitee.io/sliding-original-carousel"
     ></vue-qr>
     <vue-qr
       :logoSrc="imageUrl2"
       :size="200"
-      text="https://henji.lanzoui.com/il8aosxdgje"
+      text="https://prod-streaming-video-msn-com.akamaized.net/f9e318a4-7575-4809-b371-7b34a5807857/1f80c234-46af-41a5-8f50-8f0926e29a2c.mp4"
     ></vue-qr>
     <vue-qr
       :logoSrc="imageUrl3"

@@ -121,7 +121,7 @@ export default {
 
 @img1: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJwAAABKCAMAAAB5Ac1NAAAAPFBMVEX///////////////////////9HcEz////////////////////////////////////////////////////BTIGUAAAAFHRSTlP/skEMs3sAqQNI5g3nqErjsAuxpwJoLsAAAAD9SURBVHgB7doFjoVQFIPhgxX3/a91lNjYkyJNpv8KvghyKeH+VS5JsyzNQ7ICHxUhWI6tJNjKCvtXN00NpJI2NBEN0OrZNlwHZEHVVzikoRsHIOVtVR/7ltAXBG8jbiW8jWhK5zldBGw34m1lhTNTtkHZhgdsfQUp3Ga77LrAjXgbkbItlG0hYCOyzbadw81YG5GyLZRtoWxzTvCCMM4458TjH/ylAE5QB2UdpHW3WivrrNu1W1fCpTocp+PHYByn4xccXKTjx+C1OlKXEmPwd53AGEzo6DGY0PWV2Bh8W8eXBK+THIM3neQY7Cc/qbsgaR3x24sQjtdROOfcK6H+QuyA+YQEAAAAAElFTkSuQmCC';
 @img2: 'https://s1.hdslb.com/bfs/static/jinkela/space/assets/charging_focus.gif';
-@img3: '//s1.hdslb.com/bfs/static/jinkela/space/assets/charging_hover.gif';
+@img3: 'https://s1.hdslb.com/bfs/static/jinkela/space/assets/charging_hover.gif';
 
 .container2 {
   margin: 40px 0;
@@ -188,19 +188,16 @@ export default {
 }
 
 .elec:hover .elec-status {
-  background-image: url(//s1.hdslb.com/bfs/static/jinkela/space/assets/charging_focus.gif);
+  background-image: url(@img2);
 }
 
-.elec .elec-action,
-.elec .old-elec-trigger {
-  display: -ms-flexbox;
+.elec-action,
+.new-elec-trigger {
   display: flex;
-  -ms-flex-align: center;
   align-items: center;
 }
 
-.elec .old-elec-trigger {
-  background: #f25d8e;
+.new-elec-trigger {
   border-radius: 4px;
   box-shadow: 0 4px 4px rgba(255, 112, 159, 0.3);
   color: #fff;
@@ -212,24 +209,8 @@ export default {
   justify-content: center;
 }
 
-.elec .old-elec-trigger:hover {
-  background: #ff709f;
-}
-
-.elec .old-elec-trigger:hover + .elec-map .elec-status {
+.new-elec-trigger:hover + .elec-status {
   background-image: url(@img1);
-}
-
-.elec .old-elec-trigger:hover + .elec-map .elec-status-bg {
-  width: 156px;
-}
-
-.elec .old-elec-trigger .elec-trigger-icon {
-  background-position: -278px -918px;
-  width: 20px;
-  height: 24px;
-  vertical-align: middle;
-  margin-right: 12px;
 }
 
 .elec .new-elec-trigger {
@@ -249,7 +230,7 @@ export default {
   align-items: center;
 }
 
-.elec .new-elec-trigger:hover {
+.new-elec-trigger:hover {
   background-color: #ffecf1;
 }
 
