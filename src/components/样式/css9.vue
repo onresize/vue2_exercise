@@ -27,30 +27,8 @@
       </div>
     </div>
 
-    <!-- <div class="container2">
-      <h2>b站主页充电效果</h2>
-      <div class="bilibil">
-        <div
-          class="box_l"
-          @mouseenter="enter"
-          @mouseleave="leave"
-        ></div>
-        <div
-          class="box_r"
-          :style="{
-            backgroundColor: active ? 'transparent' : '#e5e9ef',
-          }"
-        ></div>
-        <div
-          class="box_r_inset"
-          :style="{
-            width: active ? '146px' : '0px',
-          }"
-        ></div>
-      </div>
-    </div> -->
-
     <div class="section elec container2">
+      <h2>b站主页充电效果</h2>
       <div class="elec-action">
         <div class="new-elec-trigger">为TA充电</div>
         <div class="elec-map">
@@ -125,66 +103,7 @@ export default {
 
 .container2 {
   margin: 40px 0;
-  .bilibil {
-    width: 360px;
-    height: 100px;
-    border: 2px solid red;
-    border-radius: 4px;
-    margin: 10px 0;
-    position: relative;
-    .box_l {
-      width: 160px;
-      height: 48px;
-      position: absolute;
-      left: 20px;
-      top: 26px;
-      &::after {
-        content: '为TA充电';
-        border-radius: 4px;
-        border: 1px solid #f69;
-        color: #f69;
-        cursor: pointer;
-        font-size: 18px;
-        width: 160px;
-        height: 48px;
-        box-sizing: border-box;
-        display: -ms-flexbox;
-        display: flex;
-        -ms-flex-pack: center;
-        justify-content: center;
-        -ms-flex-align: center;
-        align-items: center;
-      }
-      &:hover {
-        background-color: #ffecf1;
-      }
-    }
-    .box_r {
-      position: absolute;
-      right: 20px;
-      top: 20px;
-      width: 150px;
-      height: 60px;
-      color: #6d757a;
-      z-index: 2;
-      background-image: url(@img1);
-      background-size: 100% 100%;
-
-      &:hover {
-        background-image: url(@img2);
-      }
-    }
-    .box_r_inset {
-      position: absolute;
-      left: 188px;
-      top: 20px;
-      z-index: 1;
-      width: 0;
-      height: 60px;
-      background-image: url(@img3);
-      transition: width 0.4s ease;
-    }
-  }
+  border-radius: 4px;
 }
 
 .elec:hover .elec-status {

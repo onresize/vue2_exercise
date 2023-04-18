@@ -10,7 +10,7 @@ export default {
   },
   methods: {
     playVoice() {
-      this.handleSpeak('王杰傻逼') // 传入需要播放的文字
+      this.handleSpeak('住在郊区的王杰克') // 传入需要播放的文字
     },
     // 语音播报的函数
     handleSpeak(text) {

@@ -3,7 +3,7 @@
     <!-- 拖拽博客参考：https://blog.csdn.net/vvv3171071/article/details/122705408 -->
     <div
       class="div-box"
-      @click="openWindow"
+      @dblclick="openWindow"
       draggable="true"
       @dragstart="dragstart"
       @dragend="dragend"
@@ -138,7 +138,7 @@ export default {
       var left = Math.round((window.screen.availWidth - w) / 2)
       var top = Math.round((window.screen.availHeight - 100 - h) / 2)
       var MyWin = window.open(
-        'https://www.bilibili.com/',
+        'https://gitee.com/Embrance-T/vue2_exercise',
         '',
         'height=' +
           h +
