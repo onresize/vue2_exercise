@@ -21,7 +21,7 @@
     <vue-qr
       :logoSrc="imageUrl1"
       :size="200"
-      text="https://embrance-t.gitee.io/sliding-original-carousel"
+      text="http://rtbezqg85.bkt.clouddn.com/index.html"
     ></vue-qr>
     <vue-qr
       :logoSrc="imageUrl2"
