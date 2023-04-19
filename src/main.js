@@ -128,6 +128,10 @@ Vue.prototype.$myDialogClose = function () {
   return Vue.$showDialog.hide()
 }
 
+
+import money from '@/myCom/money'
+Vue.component('money', money)
+
 import './routerTools' // 路由钩子、这部用到了自定义loading、必须放在引入之后
 
 // 全局注册过滤器

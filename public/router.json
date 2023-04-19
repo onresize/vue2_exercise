@@ -112,6 +112,7 @@
     { "value": "selectChart" },
     { "value": "dragCharts" },
     { "value": "numberPeople" },
-    { "value": "landscape" }
+    { "value": "landscape" },
+    { "value": "customCom" }
   ]
 }

@@ -131,6 +131,7 @@ const selectChart = () => import('@/components/selectChart/index.vue')
 const dragCharts = () => import('@/components/selectChart/dragCharts.vue')
 const numberPeople = () => import('@/components/numberPeople/index.vue')
 const landscape = () => import('@/components/强制横屏/index.vue')
+const customCom = () => import('@/components/多种自定义组件/index.vue')
 
 Vue.use(VueRouter)
 
@@ -272,6 +273,7 @@ const router = new VueRouter({
                 { path: '/selectChart', component: selectChart },
                 { path: '/numberPeople', component: numberPeople },
                 { path: '/landscape', component: landscape },
+                { path: '/customCom', component: customCom },
                 //为组件做缓存  
                 { path: '/dragCharts', name: 'dragCharts', component: dragCharts },
             ]

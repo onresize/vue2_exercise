@@ -120,6 +120,19 @@
       <a href="##" title="box1">我的背景想变成蓝色</a>
       <a href="##" title="there is two boxs">我的背景想变成蓝色</a>
     </div>
+    <div>
+      <h2>css方式给第一个到最后一个名字后加上、</h2>
+      <span class="sp_item">张0</span>
+      <span class="sp_item">张1</span>
+      <span class="sp_item">张2</span>
+      <span class="sp_item">张3</span>
+      <pre>
+      .sp_item + .sp_item::before {
+        content: '、'
+      }
+    </pre
+      >
+    </div>
   </div>
 </template>
  
@@ -259,5 +272,12 @@ $colBlue: blue;
       color: red;
     }
   }
+}
+
+.sp_item {
+  font-size: 20px;
+}
+.sp_item + .sp_item::before {
+  content: '、';
 }
 </style>

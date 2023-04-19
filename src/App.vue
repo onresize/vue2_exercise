@@ -5,7 +5,9 @@
 </template>
 
 <script>
+import MyImgViewer from '@/mixins/MyImgViewer/index'
 export default {
+  mixins: [MyImgViewer],
   methods: {
     /** 在刷新和关闭之前询问 **/
     beforeRefreshClose() {

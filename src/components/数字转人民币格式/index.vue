@@ -18,11 +18,38 @@
         {{ bigRmb(1000000) }}
       </el-tag>
     </h2>
+
+    <!-- 
+      :symbolCanSelect="false" 货币符号可否被选中
+      :show-symbol="true" 是否显示货币符号
+      :precision="2" 精度
+      :disable-toggle-separator="false" 是否禁用分隔符切换
+      color="red"
+      separator="," 分隔符
+      money-symbol="￥" 货币符号
+      empty-string="-" 空值显示
+      empty-string-color="blue"
+     -->
+    <div class="test">
+      价格(组件)：
+      <money :value="price" />
+    </div>
+
+    <el-input
+      v-model="price"
+      placeholder=""
+      style="width: 200px; margin-top: 20px"
+    />
   </div>
 </template>
 
 <script>
 export default {
+  data() {
+    return {
+      price: '12345.2312',
+    }
+  },
   methods: {
     rmb(str) {
       return String(parseFloat(str).toFixed(2))
@@ -142,5 +169,9 @@ export default {
 <style scoped>
 .ft-20 {
   font-size: 20px;
+}
+.test {
+  font-size: 24px;
+  user-select: none;
 }
 </style>
