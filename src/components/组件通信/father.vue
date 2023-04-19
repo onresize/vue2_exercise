@@ -17,9 +17,12 @@ export default {
       require(['./child2.vue'], resolve)
     },
   },
-  provide: {
-    name: '张三',
-    age: 19,
+  provide() {
+    return {
+      name: '张三',
+      age: 19,
+      fatherMethod: this.fatherMethod,
+    }
   },
   data() {
     return {
@@ -44,6 +47,9 @@ export default {
     },
     clickMe() {
       this.name1 = '老六'
+    },
+    fatherMethod() {
+      console.log('***这是父组件中定义的方法***')
     },
   },
 }

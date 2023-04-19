@@ -13,7 +13,7 @@ export default {
   components: {
     GrandChild1: () => import('./grandchild1.vue'),
   },
-  inject: ['name'],
+  inject: ['name', 'fatherMethod'],
   data() {
     return {
       num1: 0,
@@ -23,6 +23,10 @@ export default {
   created() {
     // console.log('子组拿到父组件的num:',this.$parent.num)
     console.log('子组件inject接收父组件nam：', this.name)
+  },
+  mounted() {
+    console.log('-------1------子组件调用父组件的fatherMethod()方法')
+    this.fatherMethod()
   },
   methods: {
     emitMethod() {

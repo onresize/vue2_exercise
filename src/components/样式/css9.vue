@@ -128,9 +128,6 @@ export default {
   justify-content: center;
 }
 
-.new-elec-trigger:hover + .elec-status {
-  background-image: url(@img1);
-}
 
 .elec .new-elec-trigger {
   border-radius: 4px;

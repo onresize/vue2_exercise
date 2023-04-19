@@ -8,14 +8,18 @@
 
 <script>
 export default {
-  inject: ['age'],
+  inject: ['age', 'fatherMethod'],
   data() {
     return {}
   },
+  methods: {},
   created() {
     console.log('孙组件拿到祖组件的age:', this.age)
   },
-  methods: {},
+  mounted() {
+    console.log('-------2------孙组件调用祖组件的fatherMethod()方法')
+    this.fatherMethod()
+  },
 }
 </script>
 

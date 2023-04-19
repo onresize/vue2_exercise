@@ -10,7 +10,9 @@
       @wheel="handWheel"
       :style="`cursor:pointer;right:${elRight}px;bottom:${elBottom}px;width:${elWidth}px;height:${elHeight}px`"
     >
-      <img class="home_image" src="./assets/svg/gitee.svg" />
+      <img class="home_image" src="./assets/img/favorites.png" />
+      <!-- <img class="home_image" src="./assets/svg/gitee.svg" />
+      <img class="home_image" src="https://csdnimg.cn/release/downloadcmsfe/public/img/favorites-animation.0fba4f56.png" /> -->
       <div
         class="box-border"
         title="双击查看源码、滚轮缩放图标、左键长按拖拽图标"
@@ -348,7 +350,7 @@ a {
   right: 15px;
   width: 30px;
   height: 30px;
-  border: 5px solid #034995;
+  border: 5px solid #0BBFBF;
   border-radius: 50%;
   background-color: #f5f5f5;
   opacity: 0.8;
@@ -365,12 +367,11 @@ a {
     width: 60%;
     height: 60%;
     border-radius: 50%;
-    border: 3px solid red;
+    border: 3px solid pink;
     position: absolute;
     left: calc(50% - 30%);
     top: calc(50% - 30%);
-    animation: waves 1.5s ease-out;
-    animation-iteration-count: infinite;
+    animation: waves 1.5s ease-out infinite;
   }
   @keyframes waves {
     100% {
