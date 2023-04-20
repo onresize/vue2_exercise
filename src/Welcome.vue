@@ -29,11 +29,27 @@
       readOnly
     >
     </el-input>
+    <el-input
+      class="textarea"
+      type="textarea"
+      :autosize="{ minRows: 2, maxRows: 5 }"
+      v-model="iKunText"
+      resize="none"
+      readOnly
+    >
+    </el-input>
   </div>
 </template>
  
 <script>
-import { getSpeed, getKnownSaying, getWenAnMen } from '@/api/api.js'
+import {
+  getSpeed,
+  getKnownSaying,
+  getWenAnMen,
+  getIKun,
+} from '@/api/api.js'
+import axios from 'axios'
+
 export default {
   data() {
     return {
@@ -42,6 +58,7 @@ export default {
       hrefUrl: '',
       sayingText: '',
       wenAnMenText: '',
+      iKunText: '',
     }
   },
   methods: {
@@ -75,16 +92,28 @@ export default {
         this.$message.error('出错啦')
       }
     },
+    async iKun() {
+      const [err, data] = await getIKun('https://v1.hitokoto.cn', {
+        c: 'a',
+        c: 'b',
+        c: 'c',
+        c: 'd',
+      })
+      if (data) {
+        this.iKunText = data.data.hitokoto
+      } else {
+        this.$message.error('出错啦')
+      }
+    },
     close() {
       this.hrefUrl = ''
     },
   },
-  watch: {},
   created() {
     this.getSaying()
     this.WenAnMen()
+    this.iKun()
   },
-  mounted() {},
 }
 </script>
  
