@@ -4,8 +4,11 @@
     <p>姓名：{{ name1 }}</p>
     <p>年龄：{{ age1 }}</p>
     <el-button @click="getChild">改变</el-button>
+    <hr />
     <Child1 :name1="name1" :age1="age1" @changeMe="clickMe"></Child1>
+    <hr />
     <Child2></Child2>
+    <el-link href="https://blog.csdn.net/baiqiangdoudou/article/details/128302601" target="_bank">知识点参考：</el-link>
   </div>
 </template>
 
@@ -19,9 +22,11 @@ export default {
   },
   provide() {
     return {
-      name: '张三',
-      age: 19,
-      fatherMethod: this.fatherMethod,
+      // name: this.name1, // 这样写改变name1值后、子孙组件拿到name值不具有响应式、推荐使用下面写法
+      name: () => this.name1,
+      age: this.age1,
+      fatherMethod: () => this.fatherMethod, // 具有响应式
+      fatherMethod1: this.fatherMethod1,
     }
   },
   data() {
@@ -47,9 +52,13 @@ export default {
     },
     clickMe() {
       this.name1 = '老六'
+      this.age1 = 21
     },
     fatherMethod() {
-      console.log('***这是父组件中定义的方法***')
+      console.log('***这是父组件中定义的fatherMethod方法***')
+    },
+    fatherMethod1() {
+      console.log('***这是父组件中定义的fatherMethod111111方法***')
     },
   },
 }

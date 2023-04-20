@@ -1,7 +1,7 @@
 <template>
   <div>
     <h2>子组件2--{{ num2 }}</h2>
-    <h2>子组件2--{{ name }}</h2>
+    <h2>子组件2--{{ name() }}</h2>
   </div>
 </template>
  

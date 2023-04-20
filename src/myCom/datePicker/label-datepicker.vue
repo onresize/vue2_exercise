@@ -4,38 +4,42 @@
       ref="mypicker"
       :value="pickerValue"
       @input="changeValue"
-      v-bind="$attrs" />
+      v-bind="$attrs"
+    />
     <span class="span-datepicker-label-wrapper" @click="clickLabel">
       <slot />
     </span>
   </span>
 </template>
 <script>
-import { DatePicker } from 'element-ui';
+import { DatePicker } from 'element-ui'
 const MyDatePicker = {
   extends: DatePicker,
   name: 'SpanDatePicker',
   data() {
     return {
-      referenceDom: null
+      referenceDom: null,
     }
   },
   computed: {
     reference() {
-      return this.referenceDom || this.$refs.reference.$el.nextElementSibling;
-    }
+      return (
+        this.referenceDom ||
+        this.$refs.reference.$el.nextElementSibling
+      )
+    },
   },
   mounted() {
-    this.$refs.reference.$el.style.display = 'none';
-  }
+    this.$refs.reference.$el.style.display = 'none'
+  },
 }
 export default {
   components: {
-    MyDatePicker
+    MyDatePicker,
   },
   data() {
     return {
-      pickerValue: this.value
+      pickerValue: this.value,
     }
   },
   mounted() {
@@ -50,7 +54,7 @@ export default {
       this.$nextTick(() => {
         this.$emit('input', this.$refs.mypicker.displayValue)
       })
-    }
-  }
+    },
+  },
 }
 </script>

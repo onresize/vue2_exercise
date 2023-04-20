@@ -2,9 +2,10 @@
   <div>
     <h2>子组件1--{{ num1 }}</h2>
     <el-button @click="emitMethod">增加</el-button>
+    <hr />
     <GrandChild1 v-bind="$attrs" />
     <!-- $listeners操作父组件中标签上的方法 -->
-    <el-button @click="$listeners.changeMe"> $listeners</el-button>
+    <el-button @click="$listeners.changeMe"> $listeners操作父组件中标签上的方法修改父组件name1 和 age1值</el-button>
   </div>
 </template>
 
@@ -26,7 +27,7 @@ export default {
   },
   mounted() {
     console.log('-------1------子组件调用父组件的fatherMethod()方法')
-    this.fatherMethod()
+    this.fatherMethod()()
   },
   methods: {
     emitMethod() {
