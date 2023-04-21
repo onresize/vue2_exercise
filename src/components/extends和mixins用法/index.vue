@@ -12,7 +12,17 @@
     </div>
 
     <el-card>
-      <MyComA ref="myComARef"/>
+      <MyComA ref="myComARef" />
+
+      <div class="flex_box">
+        <h3>v-model绑定computed方法：</h3>
+        <el-input
+          class="ipt"
+          placeholder="请输入数字"
+          type="text"
+          v-model="changeVal"
+        />
+      </div>
     </el-card>
   </div>
 </template>
@@ -64,10 +74,32 @@ export default {
   extends: extends1,
   components: { MyComA }, // 注册 comA组件
   data() {
-    return {}
+    return {
+      iptVal: '0',
+    }
   },
-  computed: {},
-  methods: {},
+  computed: {
+    changeVal: {
+      get() {
+        return this.iptVal ? this.setStr(this.iptVal) : ''
+      },
+      set(val) {
+        console.log('set：', val)
+        if (val == '') {
+          this.iptVal = ''
+          return
+        }
+        this.iptVal = '$' + val
+      },
+    },
+  },
+  methods: {
+    setStr(str) {
+      let arr = str.split('')
+      let arr1 = arr.filter((v) => v != '$')
+      return '$' + arr1.join('')
+    },
+  },
   watch: {},
   created() {
     console.log('组件-----created')
@@ -78,9 +110,24 @@ export default {
 }
 </script>
  
-<style scoped >
+<style scoped lang="less">
 p::selection {
   background: rgb(225, 145, 0);
   color: #fff;
+}
+
+.flex_box {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 450px;
+  height: 50px;
+  h3 {
+    margin-top: 15px;
+  }
+  .ipt {
+    width: 200px;
+    margin: 10px 0 0 0;
+  }
 }
 </style>
