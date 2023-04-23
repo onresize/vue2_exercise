@@ -1,5 +1,5 @@
 <template>
-  <div @click="getElementLeft" class="ttBox">
+  <div @click.stop="touchClick" class="ttBox" id="TouchBox">
     <div
       class="dialogBox"
       :style="{
@@ -30,12 +30,37 @@ export default {
     },
     closeShow(e) {
       // e.stopPropagation() // 阻止事件冒泡
+      // e.preventDefault() // 阻止默认事件
       this.isShow = false
     },
+    touchClick(e) {
+      console.log(
+        `监听%cTouchBox%c的click事件`,
+        'background:red;',
+        'background:black;'
+      )
+      this.getElementLeft(e)
+    },
+    documentClick(e) {
+      console.log(
+        `监听%cdocument%c的click事件`,
+        'background:yellow;color:black;',
+        'background:black;'
+      )
+      this.getElementLeft(e)
+    },
   },
-  watch: {},
-  created() {},
-  mounted() {},
+  mounted() {
+    // document.getElementById('TouchBox').addEventListener('click', (e) => {
+    //   console.log('事件：', e)
+    // })
+    console.log('挂载：开启click监听--------------------')
+    document.addEventListener('click', this.documentClick)
+  },
+  beforeDestroy() {
+    console.log('销毁：移除click监听--------------------')
+    document.removeEventListener('click', this.documentClick)
+  },
 }
 </script>
 
@@ -44,6 +69,7 @@ export default {
   width: 100%;
   height: 90vh;
   border: 2px solid red;
+
   .dialogBox {
     width: 200px;
     height: 300px;
@@ -51,6 +77,7 @@ export default {
     border-radius: 10px;
     display: grid;
     place-content: center;
+
     i {
       cursor: pointer;
       font-size: 40px;
