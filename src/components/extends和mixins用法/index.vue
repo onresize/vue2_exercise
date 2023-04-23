@@ -26,7 +26,7 @@
     </el-card>
   </div>
 </template>
- 
+
 <script>
 import ComA from './comA.vue'
 
@@ -109,7 +109,7 @@ export default {
   },
 }
 </script>
- 
+
 <style scoped lang="less">
 p::selection {
   background: rgb(225, 145, 0);

@@ -2,6 +2,7 @@
   "data": [
     { "value": "map" },
     { "value": "webRtcDemo" },
+    { "value": "DPlayerPage" },
     { "value": "hlsDemo" },
     { "value": "HKVideo" },
     { "value": "flvDemo" },
