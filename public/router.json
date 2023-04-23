@@ -115,6 +115,7 @@
     { "value": "numberPeople" },
     { "value": "landscape" },
     { "value": "customCom" },
-    { "value": "extends_mixins" }
+    { "value": "extends_mixins" },
+    { "value": "Click_Dom" }
   ]
 }

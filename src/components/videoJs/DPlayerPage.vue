@@ -1,16 +1,14 @@
 <template>
-  <div>
-    <Dplayer
-      :video="dplayerObj.video"
-      :danmaku="dplayerObj.danmaku"
-      :contextmenu="dplayerObj.contextmenu"
-      :highlight="dplayerObj.highlight"
-    />
-  </div>
+  <Dplayer
+    :video="dplayerObj.video"
+    :danmaku="dplayerObj.danmaku"
+    :contextmenu="dplayerObj.contextmenu"
+    :highlight="dplayerObj.highlight"
+  />
 </template>
 
 <script>
-import Hls from 'hls.js';
+import Hls from 'hls.js'
 
 export default {
   data() {
@@ -28,13 +26,11 @@ export default {
           },
         },
         danmaku: {
-          id: '9E2E3368B56CDBB4',
-          api: 'https://api.prprpr.me/dplayer/',
+          id: '4157142',
+          api: 'http://localhost:1207/',
           token: 'tokendemo',
           maximum: 1000,
-          addition: [
-            'https://api.prprpr.me/dplayer/v3/bilibili?aid=4157142',
-          ],
+          addition: ['http://localhost:1207/v2/bilibili?aid=4157142'],
           user: 'DIYgod',
           bottom: '15%',
           unlimited: true,
@@ -76,4 +72,4 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style scoped lang="less"></style>
