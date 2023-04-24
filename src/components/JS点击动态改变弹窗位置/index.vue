@@ -1,5 +1,23 @@
 <template>
   <div @click.stop="touchClick" class="ttBox" id="TouchBox">
+    <h3>
+      <p style="padding: 10px">
+        1、screenX、screenY：获取鼠标点击的点距离电脑屏幕左侧和顶端的距离
+        <br />
+        2、clientX、clientY：获取鼠标点击的点距离视口的左侧距离和顶端距离，简单说，clientX、clientY不受滚动条影响
+        <br />
+        3、pageX、pageY：获取鼠标点击的点距离网页页面左侧距离和页面顶端距离，简单说，pageX、pageY受滚动条影响
+        <br />
+        4、offsetX、offsetY：获取鼠标点击的点距离自身左侧和顶端的距离
+        <br />
+        <el-link
+          href="https://blog.csdn.net/weixin_51077152/article/details/120366150"
+          target="_bank"
+        >
+          (JS事件)CSDN参考：
+        </el-link>
+      </p>
+    </h3>
     <div
       class="dialogBox"
       :style="{
