@@ -135,6 +135,7 @@ const landscape = () => import('@/components/强制横屏/index.vue')
 const customCom = () => import('@/components/多种自定义组件/index.vue')
 const extends_mixins = () => import('@/components/extends和mixins用法/index.vue')
 const Click_Dom = () => import('@/components/JS点击动态改变弹窗位置/index.vue')
+const Fs_write_dir = () => import('@/components/fs重写文件保存到目录/index.vue')
 
 Vue.use(VueRouter)
 
@@ -280,6 +281,7 @@ const router = new VueRouter({
                 { path: '/customCom', component: customCom },
                 { path: '/extends_mixins', component: extends_mixins },
                 { path: '/Click_Dom', component: Click_Dom },
+                { path: '/Fs_write_dir', component: Fs_write_dir },
                 //为组件做缓存  
                 { path: '/dragCharts', name: 'dragCharts', component: dragCharts },
             ]

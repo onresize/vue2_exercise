@@ -116,6 +116,7 @@
     { "value": "landscape" },
     { "value": "customCom" },
     { "value": "extends_mixins" },
-    { "value": "Click_Dom" }
+    { "value": "Click_Dom" },
+    { "value": "Fs_write_dir" }
   ]
 }

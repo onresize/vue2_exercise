@@ -133,7 +133,7 @@ export default {
         v.ICON = this.randomColor() || 'bug'
       })
       this.RouterList = options
-      console.log('路由数组：', options)
+      // console.log('路由数组：', options)
     },
     openWindow(h = 400, w = 600) {
       // window.open('https://gitee.com/onresize/vue2_exercise')
