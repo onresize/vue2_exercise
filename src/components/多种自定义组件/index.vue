@@ -40,14 +40,14 @@
           倒计时：{{ day }}天 {{ hour }} : {{ min }} : {{ second }}
         </p>
       </div>
-      <div class="flex">
-        <h2>elemUI新组件</h2>
+      <div class="flex j-c">
+        <h2>elemUI新组件👉</h2>
         <el-statistic
           style="width: 100px; height: 22px; margin-top: 5px"
           :value="deadline"
           format="HH:mm:ss"
           time-indices
-        />
+        ></el-statistic>
       </div>
     </el-card>
     <el-card class="box_item">
@@ -190,6 +190,13 @@ export default {
 <style scoped lang="less">
 .flex {
   display: flex;
+  width: 100%;
+}
+.j-c {
+  justify-content: center;
+}
+.a-c {
+  align-items: center;
 }
 .box_item {
   width: 390px;

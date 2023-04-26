@@ -21,7 +21,7 @@
     "dplayer": "^1.27.1",
     "driver.js": "^0.9.8",
     "echarts": "^5.2.1",
-    "element-ui": "^2.15.6",
+    "element-ui": "^2.15.13",
     "fake-progress": "^1.0.4",
     "file-saver": "^2.0.5",
     "flv.js": "^1.6.2",
