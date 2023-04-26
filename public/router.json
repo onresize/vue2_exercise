@@ -117,6 +117,7 @@
     { "value": "customCom" },
     { "value": "extends_mixins" },
     { "value": "Click_Dom" },
-    { "value": "Fs_write_dir" }
+    { "value": "Fs_write_dir" },
+    { "value": "js_scroll" }
   ]
 }

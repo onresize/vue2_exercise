@@ -87,7 +87,7 @@ export default {
       if (this.$refs['imgBoxRef'].scrollTop > 0) {
         setTimeout(() => {
           this.returnTop()
-        }, 30)
+        }, 10)
       }
 
       // XXX 方法二
