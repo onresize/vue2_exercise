@@ -104,8 +104,13 @@ export default {
       // }, 8)
     },
     toTop() {
-      this.returnTop()
-      // this.$refs['imgBoxRef'].scrollTo(0, 0)
+      // this.returnTop()
+      // 平滑滚动
+      this.$refs['imgBoxRef'].scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth',
+      })
     },
     // XXX 动画回到顶部、方法三(RAF)
     goToTop() {
