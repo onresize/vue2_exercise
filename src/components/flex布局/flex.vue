@@ -51,11 +51,11 @@ export default {
   height: 600px;
   padding: 2px;
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
   align-content: flex-start; // 解决换行后行间距的空隙、控制轴线对齐
-  justify-content: flex-start;
-  border: 1px solid black;
+  border: 3px solid black;
+  resize: both;
+  overflow: hidden;
 
   .child {
     width: 100px;

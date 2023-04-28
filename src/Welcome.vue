@@ -38,10 +38,18 @@
       readOnly
     >
     </el-input>
-
+    <ul class="ul_box">
+      <li
+        v-for="(item, i) in cursorList"
+        :key="i"
+        :style="{ cursor: item.cursor }"
+      >
+        {{ item.cursor }}
+      </li>
+    </ul>
   </div>
 </template>
- 
+
 <script>
 import {
   getSpeed,
@@ -60,6 +68,25 @@ export default {
       sayingText: '',
       wenAnMenText: '',
       iKunText: '',
+      cursorList: [
+        { cursor: 'auto' },
+        { cursor: 'pointer' },
+        { cursor: 'grab' },
+        { cursor: 'grabbing' },
+        { cursor: 'help' },
+        { cursor: 'move' },
+        { cursor: 'text' },
+        { cursor: 'crosshair' },
+        { cursor: 'progress' },
+        { cursor: 'wait' },
+        { cursor: 'no-drop' },
+        { cursor: 'not-allowed' },
+        { cursor: 'zoom-in' },
+        { cursor: 'zoom-out' },
+        { cursor: 'ne-resize' },
+        { cursor: 'ns-resize' },
+        { cursor: 'nw-resize' },
+      ],
     }
   },
   methods: {
@@ -117,9 +144,34 @@ export default {
   },
 }
 </script>
- 
-<style scoped >
+
+<style scoped lang="less">
 .textarea {
   margin-top: 20px;
+}
+
+.ul_box {
+  width: 100%;
+  height: auto;
+  border: 1px solid lighten(gray, 30%);
+  border-radius: 4px;
+  margin-top: 10px;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  resize: both;
+  overflow: hidden;
+  li {
+    color: #fff;
+    width: 90px;
+    height: 50px;
+    border-radius: 6px;
+    list-style: none;
+    line-height: 50px;
+    text-align: center;
+    background: goldenrod;
+    border: 3px solid #fff;
+  }
 }
 </style>
