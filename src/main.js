@@ -173,8 +173,3 @@ new Vue({
 //   router,
 //   render: h => h(App),
 // })
-
-new Vue({
-  el: '#ScreenApp',
-  render: h => h(App),
-})

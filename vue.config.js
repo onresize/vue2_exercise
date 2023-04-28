@@ -36,6 +36,12 @@ module.exports = {
       .exclude.add(resolve('src/assets/icons'))
       .end();
 
+    config.module.rule('pug')
+      .test(/\.pug$/)
+      .use('pug-html-loader')
+      .loader('pug-html-loader')
+      .end()
+
     config.module
       .rule('icons')
       .test(/\.svg$/)
