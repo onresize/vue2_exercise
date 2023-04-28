@@ -1,5 +1,15 @@
 <template>
   <div style="width: 100%; height: 100%; background: #282c34">
+    <el-button
+      class="po_btn"
+      @click="
+        () => {
+          this.$router.push('/')
+        }
+      "
+    >
+      返回主页
+    </el-button>
     <div class="data">
       <!-- 头部 -->
       <div class="data-title">
@@ -63,7 +73,7 @@
     </div>
   </div>
 </template>
- 
+
 <script>
 import LeftTop from './newChart/leftTop.vue'
 import LeftCenter from './newChart/leftCenter.vue'
@@ -87,8 +97,16 @@ export default {
   },
 }
 </script>
- 
-<style scoped >
+
+<style scoped>
+.po_btn {
+  width: 100px;
+  height: 40px;
+  letter-spacing: 3px;
+  position: absolute;
+  left: 20px;
+  top: 20px;
+}
 /*css 初始化 */
 html,
 body,

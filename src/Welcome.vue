@@ -47,6 +47,20 @@
         {{ item.cursor }}
       </li>
     </ul>
+
+    <myH1FuncCom :title="'父组件单向绑定的值'"></myH1FuncCom>
+    <myH2FuncCom></myH2FuncCom>
+
+    <el-button
+      type="primary"
+      @click="
+        () => {
+          this.$router.push('/myScreen')
+        }
+      "
+    >
+      跳转大屏
+    </el-button>
   </div>
 </template>
 
@@ -88,6 +102,10 @@ export default {
         { cursor: 'nw-resize' },
       ],
     }
+  },
+  components: {
+    myH1FuncCom: () => import('@/myCom/hFuncCom/h1.js'),
+    myH2FuncCom: () => import('@/myCom/hFuncCom/h2.js'),
   },
   methods: {
     async textToSpeed() {

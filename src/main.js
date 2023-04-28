@@ -160,8 +160,21 @@ Vue.prototype.$bus = new Vue()
 window.AAA = '全局变量AAA'
 
 new Vue({
-  // 全局挂载vuex
   store,
   router,
   render: h => h(App),
 }).$mount('#app')
+
+
+// 下面写法和上面写法效果一致
+// new Vue({
+//   el: '#app',
+//   store,
+//   router,
+//   render: h => h(App),
+// })
+
+new Vue({
+  el: '#ScreenApp',
+  render: h => h(App),
+})

@@ -19,7 +19,6 @@ const Printnb = () => import('@/components/print/print-nb.vue')
 const Vuextext = () => import('@/components/vuex/vuex-text.vue')
 const Computedtest = () => import('@/components/computed/computed-test.vue')
 const Chart = () => import('@/components/echart/chart.vue')
-const EchartTest = () => import('@/components/echart/echartTest.vue')
 const Dexie = () => import('@/components/indexdb/dexie.vue')
 const Axiosfenz = () => import('@/components/axiosfenz/axios.vue')
 const Nexttick = () => import('@/components/$nextTick测试/nextTick.vue')
@@ -140,16 +139,22 @@ const Js_scroll = () => import('@/components/控制滚动条平滑滚动/index.v
 
 Vue.use(VueRouter)
 
+// 防止连续点击多次路由报错
+let routerPush = VueRouter.prototype.push;
+VueRouter.prototype.push = function push(location) {
+    return routerPush.call(this, location).catch(err => err)
+}
+
 const router = new VueRouter({
     mode: 'history',
     // scrollBehavior: () => ({ y: 0 }),
     routes: [
         { path: '/', redirect: '/Welcome' },
         { path: '*', redirect: { path: '/404' } },
-        { path: '/echartTest', component: EchartTest },
         { path: '/vrThreeJs', component: VrThreeJS },
         { path: '/threeJsExample', component: ThreeJsExample },
         { path: '/waterfall1', component: waterfall1 },
+        { path: '/myScreen', component: () => import('@/views/myScreen.vue') },
         {
             path: '/home',
             name: 'home',
@@ -291,10 +296,5 @@ const router = new VueRouter({
     ]
 })
 
-// 防止连续点击多次路由报错
-let routerPush = VueRouter.prototype.push;
-VueRouter.prototype.push = function push(location) {
-    return routerPush.call(this, location).catch(err => err)
-}
 
 export default router
