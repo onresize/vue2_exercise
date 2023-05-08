@@ -3,10 +3,15 @@
 1. npm install
 2. npm run dev
 
-## git commit 指南
+```js
+ // node -v
+ v14.20.0
 
-```bash
-<类型>[可选 范围]: <描述>
+ // npm -v
+ 6.14.17
+
+ // yarn -v
+ 1.22.19
 ```
 
 ### commit 类型
