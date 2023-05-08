@@ -75,7 +75,7 @@ export default {
         }
         li.style.opacity = '1'
         index++
-      }, 500)
+      }, 0)
     },
   },
 }

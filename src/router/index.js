@@ -156,8 +156,8 @@ const router = new VueRouter({
         { path: '*', redirect: { path: '/404' } },
         { path: '/vrThreeJs', component: VrThreeJS },
         { path: '/threeJsExample', component: ThreeJsExample },
-        { path: '/waterfall1', component: waterfall1 },
         { path: '/myScreen', component: () => import('@/views/myScreen.vue') },
+        { path: '/waterfall1', component: waterfall1 },
         {
             path: '/home',
             name: 'home',
